@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Iconlink-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!--closeIconLink-->
+
+    <!--Css-->
+    <!-- <link rel="stylesheet" href="./UserLogin.css"> -->
+    <!--Css Close-->
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <div class="form logo">
+                    <img src="../../../assets/images/logoprikriti.png" alt="" class="logo">
+                </div>
+
+                <form action="#">
+                    <div class="input-field" style="margin-top: 0%;">
+                        <input [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope-alt icon"></i>
+                        <span class="text-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+                            Address</span>
+                        <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+                            <div *ngIf="Email.errors?.required">Email is required.</div>
+                        </div> -->
+                    </div>
+                    <div class="input-field">
+                        <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                        <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+                            <div *ngIf="Password.errors?.required">Password is required.</div>
+                        </div>
+                    </div>
+                    <div class="checkbox-text">
+                        <!-- <div class="checkbox-content" id="logcheck">
+                            <label for="logCheck" class="text" >Remember me</label>
+                        </div> -->
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+                    <div class="input-field button">
+                        <input (click)="login()" type="button" value="Signin ">
+                    </div>
+                    <div class="Google-signin">
+                        <span class="text">
+                            <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
+                        </span>
+                    </div>
+                    <div class="login-signup " style="justify-content: center;">
+                        <span class="text">Not a member?
+                            <a href="#" class="text signup-text">Signup Now</a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
