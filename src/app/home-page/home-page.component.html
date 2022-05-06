@@ -14,7 +14,7 @@
                         <div class="carousel-caption text-left ">
                             <h1>Example headline.</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary " href="#" role="button">Sign up</a></p>
+                            <p><a class="btn btn-lg btn-primary " routerLink="search-product" role="button">View Products</a></p>
                         </div>
                     </div>
                 </div>
@@ -62,16 +62,24 @@
 
 <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
     <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading text-center">
+                <h2>OUR CATEGORIES</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Three columns of text below the carousel -->
+    <div class="row mt-5">
         <div *ngFor="let category of categoryList" class="col-lg-3">
-            <img class="rounded-circle" src="{{category.categoryImage}}" alt="Generic placeholder image" width="140" height="140">
-            <h2>{{category.categoryName}}</h2>
+            <img routerLink="product-by-category/{{category._id}}" class="rounded-circle" src="{{category.categoryImage}}" alt="Generic placeholder image" width="140" height="140">
+            <h4 class="mt-3">{{category.categoryName | uppercase}}</h4>
         </div>
     </div>
     <!-- /.row -->
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12">
                 <!-- Section Heading -->
@@ -83,8 +91,40 @@
         </div>
     </div>
 
-    <app-view-product></app-view-product>
+    <!-- <app-view-product></app-view-product> -->
 
+
+    <section class="new-arrivals-products-area bg-gray section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div *ngFor="let product of productList; index as i" class="col-12 col-sm-6 col-lg-3">
+                    <div *ngIf="i < 8" class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
+                        <div class="product-img">
+                            <a href="shop-details.html"><img class="product-image" src="{{product.productImage}}" alt=""></a>
+                            <div class="product-meta d-flex">
+
+                                <a href="#" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
+                                    /></a>
+                                <a routerLink="view-particular-product/{{product._id}}" class="add-to-cart-btn">About</a>
+                                <a href="#" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
+                                    /></a>
+                            </div>
+                        </div>
+                        <!-- Product Info -->
+                        <div class="product-info mt-2 text-center">
+                            <a href="shop-details.html">
+                                <p style="">{{product.productName | uppercase}}</p>
+                            </a>
+                            <h6>Rs. {{product.productPrice}}.00</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <a routerLink="search-product" class="btn alazea-btn">View All</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Bootstrap core JavaScript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -92,7 +132,17 @@
     <script>
         window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
     </script>
+
+
+
     <script src="../../assets/js/vendor/popper.min.js"></script>
+
+
+
+
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../../assets/js/vendor/holder.min.js"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>

@@ -1,135 +1,36 @@
-* {
-    box-sizing: border-box;
+.hero-image {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/images/closeup-water-drops-nature-macro-wallpaper-preview.jpg"); */
+    /* height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; */
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    font-family: 'Knewave', bold;
-    font-weight: 8000;
+.hero-text {
+    text-align: center;
+    /* margin-top: -200px; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    color: rgb(5, 5, 5);
+    /* position: absolute; */
 }
 
-label {
-    width: 100%;
-    max-width: 450px;
+.hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
 }
 
-input {
-    width: 100%;
-    display: flex;
-    padding: 15px;
-    background-color: white;
-    border: 2px solid black;
-    color: #111;
-    font-size: 15px;
-    box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
-    height: 58px;
-    // transform: skew(-3deg, 1deg);
-    font-family: 'Knewave', bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    &:focus,
-    &:valid {
-        outline: none;
-        ~ul li {
-            @for $i from 1 through 6 {
-                &:nth-child(#{$i}) {
-                    &::before {
-                        filter: blur(20px);
-                        transform: translate(0, -35px) rotate(-210deg);
-                    }
-                    &::after {
-                        filter: blur(0);
-                        transform: scale(1) rotate(0);
-                    }
-                }
-            }
-            @for $i from 1 through 6 {
-                &:nth-child(#{$i}) {
-                    &::after {
-                        transition-delay: 200ms + ($i * 200ms);
-                    }
-                }
-            }
-        }
-    }
-}
 
-label {
-    position: relative;
-}
+/* Product Css=========================================== */
 
-ul {
-    position: absolute;
-    top: 38px;
-    left: -4px;
-    margin: 0;
-    list-style: none;
-    padding-left: 22px;
-    position: absolute;
-    display: flex;
-    pointer-events: none;
-    transition: 200ms;
-    li {
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: transparent;
-        pointer-events: none;
-        transition: 500ms ease-in-out;
-         ::selection {
-            color: transparent;
-        }
-        &::after,
-        &::before {
-            color: black;
-            position: absolute;
-            transition: 500ms ease-in-out;
-        }
-        &::before {
-            top: -20px;
-        }
-        &::after {
-            top: -63px;
-            transform: scale(0) rotate(210deg);
-            filter: blur(20px);
-        }
-        $chars: s,
-        e,
-        a,
-        r,
-        c,
-        h;
-        @each $char in $chars {
-            $i: index($chars, $char);
-            $x: index($chars, $char);
-            $i: $i * 200;
-            $y: $x * 12;
-            &[#{$char}]::before {
-                content: attr($char) quote($char);
-                transition-delay: $i+ms;
-            }
-            &[#{$char}]::after {
-                content: attr($char) quote($char);
-                left: unquote($y+'px');
-                color: #666;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    label {
-        width: 100%;
-        max-width: 350px;
-    }
-}
-
-// ====================Product Css
 
 /* :: 7.0 New Arrivals Products Area */
 

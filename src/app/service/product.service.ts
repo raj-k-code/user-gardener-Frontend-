@@ -16,7 +16,18 @@ export class ProductService {
   }
 
   public searchProduct(searchText: any): Observable<Product[]> {
-    let searchProductApi = "http://localhost:3000/product/product-search/" + searchText;
-    return this.http.get<Product[]>(searchProductApi);
+    let searchProductApi = "http://localhost:3000/product/product-search";
+    return this.http.post<Product[]>(searchProductApi, { searchText: searchText });
   }
+
+  public productByCategory(categoryName: String): Observable<Product[]> {
+    let productByCategoryApi = "http://localhost:3000/product/product-list-category/" + categoryName;
+    return this.http.get<Product[]>(productByCategoryApi);
+  }
+
+  public productById(productId: any): Observable<Product> {
+    let productByIdApi = "http://localhost:3000/product/product-by-id/" + productId;
+    return this.http.get<Product>(productByIdApi);
+  }
+
 }

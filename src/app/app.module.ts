@@ -15,7 +15,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ViewProductComponent } from './user/view-product/view-product.component';
 import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
 import { SearchProductComponent } from './user/search-product/search-product.component';
+import { ProductByCategoryComponent } from './user/product-by-category/product-by-category.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ContactUsComponent } from './user/contact-us/contact-us.component';
+import { AboutUsComponent } from './user/about-us/about-us.component';
+import { ViewParticularProductComponent } from './user/view-particular-product/view-particular-product.component';
 
 
 const socialProvider = {
@@ -38,7 +43,11 @@ const socialProvider = {
     HomePageComponent,
     ViewProductComponent,
     GardenerListComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    ProductByCategoryComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    ViewParticularProductComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +56,8 @@ const socialProvider = {
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SocialLoginModule
+    SocialLoginModule,
+    NgxPaginationModule
 
   ],
   providers: [

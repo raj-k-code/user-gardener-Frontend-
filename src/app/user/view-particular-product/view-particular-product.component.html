@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row pt-5 ">
+        <div class="col">
+            <h1 style="justify-content: center;text-align: center;">PRODUCT DETAILS</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{product.productImage}}" alt="First slide">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <!-- <p class="newarrival texgt-center">New</p> -->
+                <h2>{{product.productName | uppercase}}</h2>
+                <!-- <p>Product Code:ISRC2018</p> -->
+
+                <!-- <div>
+                    <span class="sr-only">Four out of Five Stars</span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                    <span class="label label-success">61</span>
+                </div> -->
+
+                <p class="price">Rs. ₹{{product.productPrice}}.00</p>
+
+                <p><b>Description:</b>{{product.productDescription}}</p>
+                <button type="button" class="btn btn-default wish">Add to favourite</button>
+                <button type="button" class="btn btn-default cart">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>

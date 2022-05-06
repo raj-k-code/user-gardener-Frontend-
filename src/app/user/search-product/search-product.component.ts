@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class SearchProductComponent implements OnInit {
   searchText: any;
   productList: any[] = []
-
+  page: any
   constructor(private productService: ProductService, private toaster: ToastrService) {
     productService.viewProductList().subscribe(data => {
       this.productList = data
@@ -36,9 +36,11 @@ export class SearchProductComponent implements OnInit {
   }
 
   searchTheProduct() {
-    this.productService.searchProduct(this.searchText + "").subscribe(data => {
+    this.productService.searchProduct(this.searchText).subscribe(data => {
       if (data.length > 0)
         this.productList = data;
+      else
+        this.productList = []
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 500) {
