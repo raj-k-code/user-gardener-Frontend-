@@ -14,4 +14,9 @@ export class CategoryService {
     let categoryListApi = "http://localhost:3000/admin/category/category-list"
     return this.http.get<Category[]>(categoryListApi);
   }
+
+  public categoryById(categoryId: any): Observable<Category> {
+    let categoryByIdApi = "http://localhost:3000/admin/category-by-id/" + categoryId;
+    return this.http.get<Category>(categoryByIdApi);
+  }
 }

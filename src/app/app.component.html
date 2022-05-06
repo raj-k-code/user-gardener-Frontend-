@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark back sticky-top ">
-  
-        <a class="navbar-brand" href="#"> <img style="background-color: white;" src="../assets/images/logoprikriti1.png" alt=""> </a>
 
-   
+    <a class="navbar-brand" href="#"> <img style="background-color: white;" src="../assets/images/logoprikriti1.png" alt=""> </a>
+
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" style="border: 0;" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,12 +10,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" routerLink="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">About us</a>
+                <a class="nav-link active" routerLink="about-us">About Us</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="contact-us">Contact Us</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Caterories
         </a>
@@ -25,7 +28,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            </li>
+            </li> -->
             <li *ngIf="gardenerOrUser() && isLoggedIn()" class="nav-item">
                 <a class="nav-link active" routerLink="gardener-list">Gardners List</a>
             </li>
@@ -87,7 +90,7 @@
 <router-outlet></router-outlet>
 
 
-<footer class="footer-area bg-img " style="background-image: url(../assets/images/water-plant-green-fine-layers.webp);  background-repeat: no-repeat;background-size: cover;  ">
+<footer class="footer-area bg-img mt-5" style="background-image: url(../assets/images/water-plant-green-fine-layers.webp);  background-repeat: no-repeat;background-size: cover;  ">
     <!-- Main Footer Area -->
     <div class="main-footer-area">
         <div class="container">

@@ -1,16 +1,19 @@
 /* :: 7.0 New Arrivals Products Area */
-.product-image{
+
+.product-image {
     width: 200px;
     height: 200px;
-    box-shadow: 0 0 8px green;
+    /* box-shadow: 0 0 8px green; */
     /* border-radius: 50%; */
 }
-.product-image:hover{
+
+.product-image:hover {
     width: 200px;
     height: 200px;
     box-shadow: 0 0 15px gray;
     /* border-radius: 50%; */
 }
+
 .single-product-area {
     position: relative;
     z-index: 1;
@@ -127,6 +130,10 @@
     margin-bottom: 0;
     -webkit-transition-duration: 300ms;
     transition-duration: 300ms;
+    font-family: 'Courier New', Courier, monospace;
+    color: #303030;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .single-product-area .product-info a p:hover,

@@ -4,28 +4,23 @@
 <section class="new-arrivals-products-area bg-gray section-padding-100">
     <div class="container">
         <div class="row">
-
-            <!-- Single Product Area -->
             <div *ngFor="let product of productList" class="col-12 col-sm-6 col-lg-3">
                 <div class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
-                    <!-- Product Image -->
                     <div class="product-img">
                         <a href="shop-details.html"><img class="product-image" src="{{product.productImage}}" alt=""></a>
-                        <!-- Product Tag -->
-                        <!-- <div class="product-tag">
-                            <a href="#">Hot</a>
-                        </div> -->
                         <div class="product-meta d-flex">
-                            
-                            <a href="#" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"/></a>
+
+                            <a href="#" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
+                                /></a>
                             <a href="cart.html" class="add-to-cart-btn">About</a>
-                            <a href="#" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="/></a>
+                            <a href="#" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
+                                /></a>
                         </div>
                     </div>
                     <!-- Product Info -->
-                    <div class="product-info mt-15 text-center">
+                    <div class="product-info mt-2 text-center">
                         <a href="shop-details.html">
-                            <p>{{product.productName}}</p>
+                            <p style="">{{product.productName | uppercase}}</p>
                         </a>
                         <h6>Rs. {{product.productPrice}}.00</h6>
                     </div>
