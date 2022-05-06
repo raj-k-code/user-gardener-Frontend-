@@ -1,0 +1,53 @@
+<div class="contain">
+    <div class="row">
+        <div class="col col-12 search">
+            <label class="mt-5 mb-5">
+        <input (keypress)="searchTheProduct()" (keyup)="searchTheProduct()" [(ngModel)]="searchText" type="text"
+          required>
+        <ul>
+          <li s>s</li>
+          <li e>e</li>
+          <li a>a</li>
+          <li r>r</li>
+          <li c>c</li>
+          <li h>h</li>
+        </ul>
+      </label>
+        </div>
+    </div>
+    <hr>
+    <div *ngIf="(productList.length > 0)" class="row">
+        <div class="col-12">
+            <h1 style="justify-content: center; text-align: center;">All Products</h1>
+        </div>
+    </div>
+    <!-- <div *ngIf="!(productList.length > 0)" class="row">
+        <div class="col">
+            <app-view-product></app-view-product>
+        </div>
+    </div> -->
+
+    <div *ngIf="(productList.length > 0)" class="row new-arrivals-products-area bg-gray section-padding-100">
+        <div *ngFor="let product of productList" class="col-12 col-sm-6 col-lg-3">
+            <div class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
+                <!-- Product Image -->
+                <div class="product-img">
+                    <a href="shop-details.html"><img src="{{product.productImage}}" alt=""></a>
+                    <!-- Product Tag -->
+                    <div class="product-meta d-flex">
+                        <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                        <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                        <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                    </div>
+                </div>
+                <!-- Product Info -->
+                <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html">
+                        <p>{{product.productName}}</p>
+                    </a>
+                    <h6>Rs. {{product.productPrice}}.00</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
