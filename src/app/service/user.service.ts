@@ -20,4 +20,9 @@ export class UserService {
     let signInWithGoogleApi = "http://localhost:3000/user/signin-with-google";
     return this.http.post<any>(signInWithGoogleApi, { userEmail: email });
   }
+
+  public signUp(user: User) {
+    let signUpApi = "http://localhost:3000/user/signup";
+    return this.http.post<any>(signUpApi, user);
+  }
 }

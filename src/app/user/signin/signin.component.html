@@ -28,8 +28,8 @@
                     <div class="input-field" style="margin-top: 0%;">
                         <input [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
                         <i class="uil uil-envelope-alt icon"></i>
-                        <span class="text-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
-                            Address</span>
+                        <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+              Address</span>
                         <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
                             <div *ngIf="Email.errors?.required">Email is required.</div>
                         </div> -->
@@ -53,13 +53,13 @@
                     </div>
                     <div class="Google-signin">
                         <span class="text">
-                            <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
-                        </span>
+              <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
+            </span>
                     </div>
                     <div class="login-signup " style="justify-content: center;">
                         <span class="text">Not a member?
-                            <a href="#" class="text signup-text">Signup Now</a>
-                        </span>
+              <a href="#" class="text signup-text">Signup Now</a>
+            </span>
                     </div>
                 </form>
             </div>

@@ -17,35 +17,40 @@
         <div class="forms">
             <div class="form login">
                 <div class="form logo" style="margin-left: 100px; margin-bottom: 5px;">
-                    <img src="../../../assets/images/logoprikriti.png" alt="" class="logo">
+                    <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
                 </div>
 
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your Name" required>
+                        <input [(ngModel)]="gardener.gardenerName" name="username" type="text" placeholder="Enter your Name" required>
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input [(ngModel)]="gardener.gardenerEmail" name="email" type="text" placeholder="Enter your email" required>
                         <i class="uil uil-envelope-alt icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your password" required>
+                        <input [(ngModel)]="gardener.gardenerPassword" name="password" type="text" placeholder="Enter your password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your Mobile" required>
+                        <input [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
                         <i class="uil uil-mobile-android"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your Address" required>
+                        <input [(ngModel)]="gardener.gardenerAddress" name="address" type="text" placeholder="Enter your Address" required>
+                        <i class="uil uil-house-user"></i>
+                    </div>
+                    <div *ngIf="!gardenerOrUser()" class="input-field">
+                        <input [(ngModel)]="gardener.gardenerExperience" name="experience" type="text" placeholder="Enter your Experience" required>
                         <i class="uil uil-house-user"></i>
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="SignUp ">
+                        <input (click)="SignUp()" type="button" value="SignUp ">
                     </div>
+
 
                 </form>
             </div>
