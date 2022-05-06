@@ -2,20 +2,10 @@
 <section class="new-arrivals-products-area bg-gray section-padding-100">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>NEW ARRIVALS</h2>
-                    <p>We have the latest products, it must be exciting for you</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
 
             <!-- Single Product Area -->
             <div *ngFor="let product of productList" class="col-12 col-sm-6 col-lg-3">
-                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
                     <!-- Product Image -->
                     <div class="product-img">
                         <a href="shop-details.html"><img src="{{product.productImage}}" alt=""></a>
@@ -38,11 +28,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 text-center">
-                <a href="#" class="btn alazea-btn">View All</a>
-            </div>
-
         </div>
     </div>
 </section>

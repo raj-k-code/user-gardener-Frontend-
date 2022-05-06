@@ -14,6 +14,7 @@ import { SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ViewProductComponent } from './user/view-product/view-product.component';
 import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
+import { SearchProductComponent } from './user/search-product/search-product.component';
 
 
 
@@ -36,7 +37,8 @@ const socialProvider = {
     SignupComponent,
     HomePageComponent,
     ViewProductComponent,
-    GardenerListComponent
+    GardenerListComponent,
+    SearchProductComponent
   ],
   imports: [
     BrowserModule,

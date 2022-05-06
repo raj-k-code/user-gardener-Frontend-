@@ -14,4 +14,9 @@ export class ProductService {
     let viewProductListApi = "http://localhost:3000/product/product-list";
     return this.http.get<Product[]>(viewProductListApi);
   }
+
+  public searchProduct(searchText: any): Observable<Product[]> {
+    let searchProductApi = "http://localhost:3000/product/product-search/" + searchText;
+    return this.http.get<Product[]>(searchProductApi);
+  }
 }
