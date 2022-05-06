@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,44 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'user-gardener';
+
+  constructor(private router: Router) { }
+
+  isLoggedIn() {
+    if (sessionStorage.getItem('token')) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  signOut() {
+    if (confirm("Are You Sure ?")) {
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('userId');
+      sessionStorage.removeItem('number');
+
+      this.router.navigate(['/']);
+    }
+  }
+
+  whoseSignIn(number: any) {
+    sessionStorage.setItem("number", number);
+    this.router.navigate(['signin']);
+  }
+
+  whoseSignUp(number: any) {
+    sessionStorage.setItem("number", number);
+    this.router.navigate(['signup']);
+    // location.reload();
+
+  }
+
+  gardenerOrUser(): boolean {
+    if (sessionStorage.getItem("number") == "1")
+      return true
+    else
+      return false
+  }
 }

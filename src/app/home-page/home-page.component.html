@@ -9,7 +9,7 @@
 
             <div class="carousel-inner ">
                 <div class="carousel-item active">
-                    <img class="first-slide" src="../../assets/images/3.jpg" alt="First slide">
+                    <img class="first-slide" src="../../assets/images/slider1.jpg" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption text-left ">
                             <h1>Example headline.</h1>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="second-slide" src="../../assets/images/20.jpg" alt="Second slide">
+                    <img class="second-slide" src="../../assets/images/slider2.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption  text-left">
                             <h1>Another example headline.</h1>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="third-slide" src="../../assets/images/closeup-water-drops-nature-macro-wallpaper-preview.jpg" alt="Third slide">
+                    <img class="third-slide" src="../../assets/images/slider3.jpg" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption  text-left">
                             <h1>One more for good measure.</h1>
@@ -58,41 +58,23 @@
 
 
 
-<!-- Marketing messaging and featurettes
-      ================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
+<!-- Marketing messaging and featurettes================================================== -->
 
 <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-        <div class="col-lg-3">
-            <img class="rounded-circle" src="../../assets/images/3.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-3">
-            <img class="rounded-circle" src="../../assets/images/3.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-3">
-            <img class="rounded-circle" src="../../assets/images/3.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-3">
-            <img class="rounded-circle" src="../../assets/images/3.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
+        <div *ngFor="let category of categoryList" class="col-lg-3">
+            <img class="rounded-circle" src="{{category.categoryImage}}" alt="Generic placeholder image" width="140" height="140">
+            <h2>{{category.categoryName}}</h2>
         </div>
     </div>
     <!-- /.row -->
 
+    <app-view-product></app-view-product>
 
 
-
-    <!-- Bootstrap core JavaScript
-              ================================================== -->
+    <!-- Bootstrap core JavaScript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
