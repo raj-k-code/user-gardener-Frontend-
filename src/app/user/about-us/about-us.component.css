@@ -4,15 +4,15 @@
 }
 
 .about-Text {
-    /* padding-right: 200px; */
-    /* padding-left: 200px; */
+    /* padding-right: 200px;
+    padding-left: 200px; */
     padding-top: 570px;
     margin: auto;
     text-align: center;
 }
 
 .container {
-    box-shadow: 3px;
+    /* box-shadow: 3px; */
 }
 
 .col-md-6 box {
