@@ -26,9 +26,11 @@
 
                 <form action="#">
                     <div class="input-field" style="margin-top: 0%;">
-                        <input [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
+                        <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
                         <i class="uil uil-envelope-alt icon"></i>
                         <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+              Address</span>
+                        <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
               Address</span>
                         <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
                             <div *ngIf="Email.errors?.required">Email is required.</div>

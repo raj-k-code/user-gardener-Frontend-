@@ -21,6 +21,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ContactUsComponent } from './user/contact-us/contact-us.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { ViewParticularProductComponent } from './user/view-particular-product/view-particular-product.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 const socialProvider = {
@@ -57,7 +58,8 @@ const socialProvider = {
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     SocialLoginModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule
 
   ],
   providers: [

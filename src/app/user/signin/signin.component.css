@@ -127,7 +127,7 @@
 
     .forms .button input {
         border: none;
-        color: rgb(92, 222, 105);
+        color: rgb(239, 243, 240);
         font-size: 17px;
         width: 200px;
         margin-left: 70px;
@@ -141,7 +141,7 @@
 
     .button input:hover {
         box-shadow: inset 400px 0 0 0 rgb(76, 217, 97);
-        transition: ease-out 3s;
+        transition: ease-out 50s;
         color: rgb(255, 255, 255)
     }
 
