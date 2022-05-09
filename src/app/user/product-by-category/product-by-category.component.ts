@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
@@ -17,7 +18,7 @@ export class ProductByCategoryComponent implements OnInit {
   productList: Product[] = []
   page: any
 
-  constructor(private activatedRouter: ActivatedRoute, private categoryService: CategoryService, private toaster: ToastrService, private router: Router, private productService: ProductService) { }
+  constructor(private activatedRouter: ActivatedRoute, private categoryService: CategoryService, private toaster: ToastrService, private router: Router, private productService: ProductService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
 
@@ -62,6 +63,14 @@ export class ProductByCategoryComponent implements OnInit {
         }
       }
     });
+
+    /** spinner starts on init */
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
 
 
   }

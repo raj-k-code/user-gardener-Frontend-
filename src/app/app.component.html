@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark back sticky-top ">
 
-    <a class="navbar-brand" routerLink="/"> <img style="background-color: white;" src="../assets/images/logoprikriti1.png" alt=""> </a>
+    <a class="navbar-brand" routerLink="/"> <img src="../assets/images/WhatsApp Image 2022-05-07 at 4.13.27 PM.jpeg" alt=""> </a>
 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" style="border: 0;" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link active" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link navigation-item " routerLink="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" routerLink="about-us">About Us</a>
+                <a class="nav-link navigation-item" routerLink="about-us">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" routerLink="contact-us">Contact Us</a>
+                <a class="nav-link navigation-item" routerLink="contact-us">Contact Us</a>
             </li>
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -30,10 +30,10 @@
                 </div>
             </li> -->
             <li *ngIf="gardenerOrUser() && isLoggedIn()" class="nav-item">
-                <a class="nav-link active" routerLink="gardener-list">Gardners List</a>
+                <a class="nav-link" routerLink="gardener-list">Gardners List</a>
             </li>
             <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
-                <a class="nav-link active" href="#">Nursery List</a>
+                <a class="nav-link" href="#">Nursery List</a>
             </li>
 
         </ul>
@@ -41,7 +41,7 @@
         <ul class="navbar navbar-right navbar-nav ">
 
             <li class="nav-item dropdown">
-                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Sign-up
         </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,7 +52,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Sign-in
         </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,16 +63,16 @@
             <li>
                 <a (click)="signOut()" *ngIf="isLoggedIn()" class="nav-link active" href="#">Sign-out</a>
             </li>
-            <li>
-                <a class="nav-link active  " routerLink="search-product"><i class="fa fa-search "></i> </a>
+            <li class="nav-item">
+                <a class="nav-link  " routerLink="search-product"><i class="fa fa-search "></i> </a>
 
             </li>
-            <li>
-                <a class="nav-link active" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 
             </li>
-            <li>
-                <a class="nav-link active" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
 
             </li>
 
@@ -230,3 +230,4 @@
         </div>
     </div>
 </footer>
+

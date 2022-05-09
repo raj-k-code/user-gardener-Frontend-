@@ -1,11 +1,18 @@
     .back {
-        background-color: #3e8329;
+        /* background-color: #3e8329; */
+        background-color: #000000;
         /* background: linear-gradient(to right, #06f311 0%, #194d14 100%); */
     }
+
+    .nav-item :hover {
+        color: rgb(0, 247, 0);
+    }
     /* Footer Css */
- nav.img{
-     border-radius: 10px;
- }
+
+    nav.img {
+        border-radius: 10px;
+    }
+
     .footer-area {
         position: relative;
         z-index: 1;
