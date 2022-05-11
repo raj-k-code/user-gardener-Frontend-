@@ -1,12 +1,13 @@
+
 .about-banner {
     /* height: 80vh; */
     text-align: center;
 }
 
-.about-Text {
+.about-Text h2 {
     /* padding-right: 200px; */
     /* padding-left: 200px; */
-    padding-top: 570px;
+    padding-top: 600px;
     margin: auto;
     text-align: center;
 }
@@ -63,12 +64,16 @@
     text-align: center;
 }
 
-.aboutsubhero {
+.about_banner2 video4{
+    width: 100%;
+  }
+  
+/* .aboutsubhero {
     -webkit-box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, 1.56);
     box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, 0.315);
-}
-
+} */
+/* 
 .aboutheroimg {
     -webkit-box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, 1.56);
     box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, 0.315);
-}
+} */
