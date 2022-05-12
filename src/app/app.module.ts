@@ -22,6 +22,9 @@ import { ContactUsComponent } from './user/contact-us/contact-us.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { ViewParticularProductComponent } from './user/view-particular-product/view-particular-product.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ViewCartComponent } from './user/view-cart/view-cart.component';
+import { ViewFavoriteComponent } from './user/view-favorite/view-favorite.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const socialProvider = {
@@ -48,7 +51,9 @@ const socialProvider = {
     ProductByCategoryComponent,
     ContactUsComponent,
     AboutUsComponent,
-    ViewParticularProductComponent
+    ViewParticularProductComponent,
+    ViewCartComponent,
+    ViewFavoriteComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,9 @@ const socialProvider = {
     ToastrModule.forRoot(),
     SocialLoginModule,
     NgxPaginationModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgbModule,
+
 
   ],
   providers: [

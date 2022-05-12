@@ -11,12 +11,22 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ViewParticularProductComponent implements OnInit {
   productId: any;
-  product = new Product("", "", "", "", "", "");
+  product = new Product("", "", "", "", "", "", "");
+  starRating = 0;
+
   constructor(private activatedRouter: ActivatedRoute, private toaster: ToastrService, private productService: ProductService, private router: Router) {
     this.productId = activatedRouter.snapshot.paramMap.get('id');
 
     productService.productById(this.productId).subscribe(data => {
+      console.log(data);
+      var total = 0;
       if (data._id) {
+        for (let rating of data.productRating) {
+          total = total + rating.rate;
+        }
+
+        this.starRating = total / 5;
+
         this.product = data;
         console.log(this.product);
       }

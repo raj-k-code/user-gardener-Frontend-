@@ -8,5 +8,6 @@ export class Gardener {
     public gardenerAddress: String,
     public gardenerImage: any,
     public gardenerExperience: String,
+    public gardenerRating: any
   ) { }
 }

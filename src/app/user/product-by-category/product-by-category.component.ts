@@ -1,11 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
+import { CartService } from 'src/app/service/cart.service';
 import { CategoryService } from 'src/app/service/category.service';
+import { FavoriteService } from 'src/app/service/favorite.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -16,9 +18,19 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductByCategoryComponent implements OnInit {
   category = new Category("", "", "");
   productList: Product[] = []
-  page: any
+  page: any;
+  status: boolean = false
+  number: any;
 
-  constructor(private activatedRouter: ActivatedRoute, private categoryService: CategoryService, private toaster: ToastrService, private router: Router, private productService: ProductService, private spinner: NgxSpinnerService) { }
+  constructor(private activatedRouter: ActivatedRoute,
+    private categoryService: CategoryService,
+    private toaster: ToastrService,
+    private router: Router,
+    private productService: ProductService,
+    private spinner: NgxSpinnerService,
+    private cartService: CartService,
+    private favService: FavoriteService
+  ) { }
 
   ngOnInit(): void {
 
@@ -72,7 +84,74 @@ export class ProductByCategoryComponent implements OnInit {
       this.spinner.hide();
     }, 2000);
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        location.reload();
+      }
+    })
 
   }
 
+
+  public addToCart(productId: any) {
+    if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
+      this.cartService.addToCart(productId).subscribe(data => {
+        console.log(data);
+
+        if (data.message) {
+          this.toaster.info("Already Added In Cart", "");
+        }
+        else {
+          this.toaster.success("Item Added Successfully", "Success");
+        }
+      }, err => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status == 500) {
+            this.toaster.error("Internal Server Error", "Error");
+          }
+          else if (err.status == 400) {
+            this.toaster.error("Bad Request", "Error");
+
+          }
+        }
+      });
+    }
+    else {
+      this.status = true;
+    }
+  }
+
+  continueToLogin() {
+    sessionStorage.setItem("number", this.number);
+    this.router.navigate(['signin']);
+
+  }
+
+  public addToFav(productId: any) {
+    if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
+      this.favService.addToFav(productId).subscribe(data => {
+        console.log(data);
+
+        if (data.message) {
+          this.toaster.info("Already Added In Favorite", "");
+        }
+        else {
+          this.toaster.success("Item Added Successfully", "Success");
+        }
+      }, err => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status == 500) {
+            this.toaster.error("Internal Server Error", "Error");
+          }
+          else if (err.status == 400) {
+            this.toaster.error("Bad Request", "Error");
+
+          }
+        }
+      });
+    }
+    else {
+      this.status = true;
+    }
+  }
 }

@@ -25,4 +25,9 @@ export class UserService {
     let signUpApi = "http://localhost:3000/user/signup";
     return this.http.post<any>(signUpApi, user);
   }
+
+  public forgotPassword(email: string) {
+    let forgotPasswordApi = "http://localhost:3000/user/forgot-password"
+    return this.http.post<any>(forgotPasswordApi, { userEmail: email });
+  }
 }

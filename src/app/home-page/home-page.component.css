@@ -239,6 +239,7 @@ body {
     border: 2px solid #70c745;
     border-radius: 2px;
     padding: 0 20px;
+    margin-top: -350px;
     font-size: 16px;
     line-height: 42px;
     text-transform: uppercase;

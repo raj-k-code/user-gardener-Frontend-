@@ -1,72 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container signin" style="overflow: hidden;">
+    <div class="forms">
+        <div class="form login">
+            <div class="form logo">
+                <img src="../../../assets/images/logoprikriti1.png" style="margin-left: 30%; margin-bottom: 5px;" alt="" class="logo">
+            </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Iconlink-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!--closeIconLink-->
-
-    <!--Css-->
-    <!-- <link rel="stylesheet" href="./UserLogin.css"> -->
-    <!--Css Close-->
-
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="forms">
-            <div class="form login">
-                <div class="form logo">
-                    <img src="../../../assets/images/logoprikriti1.png" style="margin-left: 30%; margin-bottom: 5px;" alt="" class="logo">
-                </div>
-
-                <form action="#">
-                    <div class="input-field" style="margin-top: 0%;">
-                        <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
-                        <i class="uil uil-envelope-alt icon"></i>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
-              Address</span>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
-              Address</span>
-                        <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+            <form action="#">
+                <div class="input-field" style="margin-top: 0%;">
+                    <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="user.userEmail" ngModel name="email" type="text" #Email="ngModel" placeholder="Enter your email" required>
+                    <i class="uil uil-envelope-alt icon"></i>
+                    <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+            Address</span>
+                    <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
+            Address</span>
+                    <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
                             <div *ngIf="Email.errors?.required">Email is required.</div>
                         </div> -->
+                </div>
+                <div class="input-field">
+                    <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text" placeholder="Enter your password" required>
+                    <i class="uil uil-lock icon"></i>
+                    <i class="uil uil-eye-slash showHidePw"></i>
+                    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+                        <div *ngIf="Password.errors?.required">Password is required.</div>
                     </div>
-                    <div class="input-field">
-                        <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                        <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
-                            <div *ngIf="Password.errors?.required">Password is required.</div>
-                        </div>
-                    </div>
-                    <div class="checkbox-text">
-                        <!-- <div class="checkbox-content" id="logcheck">
+                </div>
+                <div class="checkbox-text">
+                    <!-- <div class="checkbox-content" id="logcheck">
                             <label for="logCheck" class="text" >Remember me</label>
                         </div> -->
-                        <a href="#" class="text">Forgot password?</a>
+                    <a data-toggle="modal" data-target="#exampleModalCenter">Forgot
+            password?</a>
+                </div>
+                <div class="input-field button">
+                    <input (click)="login()" type="button" value="Signin ">
+                </div>
+                <div class="Google-signin">
+                    <span class="text">
+            <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
+          </span>
+                </div>
+                <div class="login-signup " style="justify-content: center;">
+                    <span class="text">Not a member?
+            <a href="#" class="text signup-text">Signup Now</a>
+          </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="forgotEmail" #email="ngModel" type="email" class="form-control" required>
+                                <span class="alert alert-danger" *ngIf="email.errors?.required && email.touched ">Please Enter Email
+                  Address</span>
+                                <span class="alert alert-danger" *ngIf="email.errors?.pattern&& email.touched ">Please Enter Valid
+                  Email
+                  Address</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field button">
-                        <input (click)="login()" type="button" value="Signin ">
-                    </div>
-                    <div class="Google-signin">
-                        <span class="text">
-              <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
-            </span>
-                    </div>
-                    <div class="login-signup " style="justify-content: center;">
-                        <span class="text">Not a member?
-              <a href="#" class="text signup-text">Signup Now</a>
-            </span>
-                    </div>
-                </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" [disabled]="email.invalid" (click)="forgotPassword()" class="btn btn-primary">Send</button>
             </div>
         </div>
     </div>
-</body>
 
-</html>
+
+
+</div>
