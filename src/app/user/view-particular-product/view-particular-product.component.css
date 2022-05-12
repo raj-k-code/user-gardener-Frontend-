@@ -65,3 +65,9 @@ img {
 .container-fluid {
     padding: auto;
 }
+
+ngb-rating {
+    /* color: #469609; */
+    color: #FFC107;
+    font-size: 30px;
+}

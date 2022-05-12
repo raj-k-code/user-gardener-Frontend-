@@ -24,10 +24,10 @@
                               </div> -->
                     <div class="product-meta d-flex">
 
-                        <a href="#" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
+                        <a data-toggle="modal" data-target="#exampleModal" (click)="addToFav(product._id)" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
                             /></a>
                         <a routerLink="view-particular-product/{{product._id}}" class="add-to-cart-btn">About</a>
-                        <a href="#" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
+                        <a data-toggle="modal" data-target="#exampleModal" (click)="addToCart(product._id)" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
                             /></a>
                     </div>
                 </div>
@@ -53,8 +53,50 @@
 
 
 
+<!-- The Modal -->
+<div class="modal fade" id="exampleModal" *ngIf="status">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body inline-block">
+                <label for="">Continue As :</label>
+                <div class="form-check">
+                    <input #user="ngModel" [(ngModel)]="number" value="1" class="form-check-input" type="radio" name="User" id="User">
+                    <label class="form-check-label">
+            User
+          </label>
+                </div>
+                <div class="form-check">
+                    <input #gardener="ngModel" [(ngModel)]="number" value="2" class="form-check-input" type="radio" name="Gardener" id="Gardener" checked>
+                    <label class="form-check-label">
+            Gardener
+          </label>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" [disabled]="!user.touched && !gardener.touched" (click)="continueToLogin()" class="btn btn-success">Continue</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
 <ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />">
     <!-- <p style="font-size: 20px; color: green;margin-top: 100;text-align: center;">Lodding...</p> -->
 </ngx-spinner>
 <!-- template="<img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' />" -->
 <!-- bdColor="rgba(0, 0, 0, 1)" -->
+

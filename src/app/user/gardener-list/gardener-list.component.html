@@ -5,6 +5,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Experience</th>
+            <th>Rating</th>
             <th>Mobile</th>
         </tr>
     </thead>
@@ -14,6 +15,10 @@
             <td>{{gardener.gardenerName}}</td>
             <td>{{gardener.gardenerEmail}}</td>
             <td>{{gardener.gardenerExperience}}</td>
+            <td>
+                <ngb-rating (click)="ratingGardener(gardener.gardenerRating)" [max]="5" [(rate)]="starRating" [readonly]="true">
+                </ngb-rating>
+            </td>
             <td>{{gardener.gardenerMobile}}</td>
         </tr>
     </tbody>

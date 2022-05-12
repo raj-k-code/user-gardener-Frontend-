@@ -11,6 +11,8 @@ import { GardenerService } from 'src/app/service/gardener.service';
 })
 export class GardenerListComponent implements OnInit {
   gardenerList?: Gardener[]
+  starRating = 0;
+
   constructor(private gardenerService: GardenerService, private toaster: ToastrService) { }
 
   ngOnInit(): void {
@@ -35,6 +37,16 @@ export class GardenerListComponent implements OnInit {
         }
       }
     });
+  }
+
+  public ratingGardener(gardenerRating: any) {
+    var total = 0;
+    for (let rating of gardenerRating) {
+      total = total + rating.rate;
+    }
+    this.starRating = total / 5;
+    console.log(this.starRating);
+    alert(this.starRating);
   }
 
 }

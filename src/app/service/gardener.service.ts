@@ -29,4 +29,9 @@ export class GardenerService {
     let gardenerListApi = "http://localhost:3000/gardener/gardener-list"
     return this.http.get<Gardener[]>(gardenerListApi);
   }
+
+  public forgotPassword(email: string) {
+    let forgotPasswordApi = "http://localhost:3000/gardener/forgot-password"
+    return this.http.post<any>(forgotPasswordApi, { gardenerEmail: email });
+  }
 }

@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <h1>My Favorites</h1>
+    <div class="project">
+        <div class="shop">
+            <div *ngFor="let product of productList;  index as i" class="box">
+                <img src="{{product.productImage}}">
+                <div class="content">
+                    <h4>{{product.productName}}</h4>
+                    <h4>Price: Rs {{product.productPrice}}</h4>
+                    <!-- <p class="unit">Quantity: <input name="" type="number" value="1" min="1"></p> -->
+
+
+                    <p (click)="removeFromFav(i, product._id)" class="icon1 icon2"><i aria-hidden="true" class="fa fa-trash "></i>
+                    </p>
+                    <p (click)="moveToFav(product._id, i)" class="icon1 icon3"><i aria-hidden="true" class="fa fa-cart-plus"></i>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="productList.length == 0" class="contaier">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-danger">No Item In Favorites.</h1>
+            </div>
+        </div>
+    </div>
+</div>

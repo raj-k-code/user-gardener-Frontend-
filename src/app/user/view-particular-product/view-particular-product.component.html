@@ -32,8 +32,14 @@
                 </div> -->
 
                 <p class="price">Rs. ₹{{product.productPrice}}.00</p>
+                <p *ngIf="product.productRating.length > 0"><b>Rating: </b>
+                    <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
+                    Based On {{product.productRating.length}} Users
+                </p>
+
 
                 <p><b>Description:</b>{{product.productDescription}}</p>
+
                 <button type="button" class="btn btn-default wish">Add to favourite</button>
                 <button type="button" class="btn btn-default cart">Add to cart</button>
             </div>
