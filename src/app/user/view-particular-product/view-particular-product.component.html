@@ -34,15 +34,54 @@
                 <p class="price">Rs. ₹{{product.productPrice}}.00</p>
                 <p *ngIf="product.productRating.length > 0"><b>Rating: </b>
                     <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
-                    Based On {{product.productRating.length}} Users
+                    {{product.productRating.length}} Ratings
                 </p>
 
 
                 <p><b>Description:</b>{{product.productDescription}}</p>
 
-                <button type="button" class="btn btn-default wish">Add to favourite</button>
-                <button type="button" class="btn btn-default cart">Add to cart</button>
+                <button data-toggle="modal" data-target="#exampleModal" (click)="addToFav(product._id)" type="button" class="btn btn-default wish">Add to favourite</button>
+                <button data-toggle="modal" data-target="#exampleModal" (click)="addToCart(product._id)" type="button" class="btn btn-default cart">Add to cart</button>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade" id="exampleModal" *ngIf="status">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body inline-block">
+                <label for="">Continue As :</label>
+                <div class="form-check">
+                    <input #user="ngModel" [(ngModel)]="number" value="1" class="form-check-input" type="radio" name="User" id="User">
+                    <label class="form-check-label">
+            User
+          </label>
+                </div>
+                <div class="form-check">
+                    <input #gardener="ngModel" [(ngModel)]="number" value="2" class="form-check-input" type="radio" name="Gardener" id="Gardener" checked>
+                    <label class="form-check-label">
+            Gardener
+          </label>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" [disabled]="!user.touched && !gardener.touched" (click)="continueToLogin()" class="btn btn-success">Continue</button>
+            </div>
+
         </div>
     </div>
 </div>

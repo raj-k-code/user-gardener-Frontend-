@@ -21,4 +21,9 @@ export class CartService {
     let removeFromCartApi = "http://localhost:3000/cart/removeProduct";
     return this.http.post<any>(removeFromCartApi, { userId: sessionStorage.getItem('userId'), productId: productId });
   }
+
+  public deleteCart() {
+    let deleteCartApi = "http://localhost:3000/cart/delete";
+    return this.http.post<any>(deleteCartApi, { userId: sessionStorage.getItem('userId') });
+  }
 }

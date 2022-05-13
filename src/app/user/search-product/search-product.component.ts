@@ -99,7 +99,6 @@ export class SearchProductComponent implements OnInit {
   continueToLogin() {
     sessionStorage.setItem("number", this.number);
     this.router.navigate(['signin']);
-
   }
 
   public addToFav(productId: any) {
