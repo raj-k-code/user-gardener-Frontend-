@@ -57,35 +57,32 @@
 .btn-area {
     position: absolute;
     bottom: 20px;
-    right: 80px;
-    padding: 10px 25px;
-    background-color: rgb(60, 207, 60);
-    color: white;
+    right: 15%;
+    font-size: 20px;
+    color: red;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .btn-area1 {
     position: absolute;
     bottom: 20px;
-    right: 0;
-    padding: 15px 25px;
-    background-color: rgb(60, 207, 60);
-    color: white;
+    right: 2%;
+    font-size: 20px;
+    color: green;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-.btn-area:hover {
+/* .btn-area:hover {
     background-color: #76bfb6;
     color: #fff;
     font-weight: 600;
-}
+} */
 
 .unit input {
     width: 60px;
     padding: 5px;
     text-align: center;
+    /* margin-bottom: 20px; */
 }
 
 .btn-area i {
