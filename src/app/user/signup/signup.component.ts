@@ -14,7 +14,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class SignupComponent implements OnInit {
   user = new User("", "", "", "", "");
-  gardener = new Gardener("", "", "", "", "", "", "", "");
+  gardener = new Gardener("", "", "", "", "", "", "", "", "");
 
   constructor(private userService: UserService, private toaster: ToastrService, private router: Router, private gardenerService: GardenerService) { }
 

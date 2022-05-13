@@ -7,11 +7,10 @@
                 <div class="content">
                     <h3>{{product.productName}}</h3>
                     <h4>Price: Rs {{product.productPrice}}</h4>
-                    <p class="unit">Quantity: <input name="" type="number" value="1" min="1" max="100"></p>
-                        <i class="fa fa-trash btn-area"></i>
-                       
-                    
-                    <i class="fa fa-heart btn-area1"></i>
+                    <p class="unit">Quantity: <input (change)="updatePrice(i,product.productPrice)" (keyup)="updatePrice(i,product.productPrice)" [(ngModel)]="qty[i]" [defaultValue]="1" name="qty" type="number" [defaultValue]="1" min="1" max="10" />
+                    </p>   
+                        <i (click)="removeFromCart(i,product._id)" class="fa fa-trash btn-area"></i>              
+                        <i class="fa fa-heart btn-area1"></i>
                     <br>
                 </div>
             </div>
@@ -20,9 +19,10 @@
         <div class="right-bar">
             <p><span>Shipping</span> <span>Free</span></p>
             <hr>
-            <p><span>Subtotal</span> <span>Rs 120</span></p>
-            <hr>
-            <p><span>Total</span> <span>Rs 141</span></p><a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
+            <!-- <p><span>Subtotal</span> <span>Rs {{grandTotal}}</span></p>
+            <hr> -->
+            <p><span>Total</span> <span>Rs {{grandTotal}}</span></p><a (click)="checkout()"><i
+          class="fa fa-shopping-cart"></i>Checkout</a>
         </div>
     </div>
 

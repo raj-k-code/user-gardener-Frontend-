@@ -1,5 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
@@ -12,12 +13,29 @@ import { FavoriteService } from 'src/app/service/favorite.service';
 })
 export class ViewCartComponent implements OnInit {
   productList: any[] = [];
-  constructor(private cartService: CartService, private toaster: ToastrService, private favService: FavoriteService) { }
+  grandTotal: any = 0;
+  qty: any[] = [];
+  subTotal: any[] = [];
+  cartData: any[] = [];
+
+  constructor(private cartService: CartService, private toaster: ToastrService, private favService: FavoriteService, private router: Router) { }
 
   ngOnInit(): void {
+
     this.cartService.viewCart().subscribe(data => {
       console.log(data);
       this.productList = data.productList
+
+      this.grandTotal = 0;
+
+      for (let index in this.productList) {
+        this.subTotal[index] = this.productList[index].productPrice * 1;
+
+        this.grandTotal += this.productList[index].productPrice
+        console.log(this.productList[index].productPrice);
+
+        this.qty[index] = 1
+      }
 
     }, err => {
       if (err instanceof HttpErrorResponse) {
@@ -45,6 +63,7 @@ export class ViewCartComponent implements OnInit {
         else {
           this.toaster.success("Successfully Removed");
           this.productList.splice(index, 1);
+          this.ngOnInit();
         }
       }, err => {
         if (err instanceof HttpErrorResponse) {
@@ -110,5 +129,41 @@ export class ViewCartComponent implements OnInit {
     });
   }
 
+  public updatePrice(index: any, productPrice: any) {
+    if (this.qty[index] <= 100) {
+      this.subTotal[index] = productPrice * this.qty[index]
+      let sum = 0;
+      for (let i in this.subTotal) {
+        sum += this.subTotal[i];
+      }
 
+      this.grandTotal = sum
+    }
+    else {
+      this.qty[index] = 100
+      this.toaster.warning("Maximum Qauntity Is 100");
+    }
+
+    // this.grandTotal -= productPrice * (this.qty[index] - 1)
+    // this.grandTotal += productPrice * this.qty[index];
+  }
+
+  public checkout() {
+    // let datList = JSON.parse(localStorage.getItem('cart') + "");
+
+    for (let index in this.productList) {
+      this.cartData[index] = {
+        productId: this.productList[index]._id,
+        qty: this.qty[index]
+      }
+    }
+
+    console.log(this.cartData);
+    var orderDetails = {
+      cartData: this.cartData,
+      total: this.grandTotal
+    }
+    localStorage.setItem("cart", JSON.stringify(orderDetails));
+    this.router.navigate(['place-order']);
+  }
 }

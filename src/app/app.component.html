@@ -29,11 +29,15 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li> -->
-            <li *ngIf="gardenerOrUser() && isLoggedIn()" class="nav-item">
-                <a class="nav-link" routerLink="gardener-list">Gardners List</a>
+            <!-- *ngIf="gardenerOrUser() && isLoggedIn()" -->
+            <li class="nav-item">
+                <a *ngIf="gardenerOrUser() || !isLoggedIn()" class=" nav-link" routerLink="gardener-list">Gardners List</a>
             </li>
             <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="#">Nursery List</a>
+            </li>
+            <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="view-requests">Reuests List</a>
             </li>
 
         </ul>

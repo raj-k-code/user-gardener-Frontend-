@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row mt-5 align-content-center">
+        <div *ngFor="let user of dataList; index as i" class="col-md-3 p-1">
+            <div class="steps12">
+                <img style="margin-top: 5%;" src="{{user.userId.userImage}}" alt="">
+                <h4 class="mt-1">{{user.userId.userName}}</h4>
+                <h6>+91 {{user.userId.userMobile}}</h6>
+                <p>{{user.userId.userAddress}}</p>
+                <button (click)="approveRequest(user)" class="mb-1 btn btn-success p-1 mb-3 mr-1" type="button">Acceept</button>
+                <button (click)="cancelRequest(user,i)" class="mb-1 btn btn-danger pt-1 pb-1 mb-3">Cancel</button>
+            </div>
+        </div>
+        <div *ngIf="dataList.length == 0" class="col">
+            <h1 class="text-danger" style="text-align: center;">No Request Yet</h1>
+        </div>
+    </div>
+</div>

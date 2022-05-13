@@ -24,6 +24,7 @@ export class HomePageComponent implements OnInit {
   constructor(private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.activatedRouter)
     this.categoryService.categoryList().subscribe(data => {
       this.categoryList = data;
     }, err => {

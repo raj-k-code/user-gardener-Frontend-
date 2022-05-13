@@ -25,6 +25,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ViewCartComponent } from './user/view-cart/view-cart.component';
 import { ViewFavoriteComponent } from './user/view-favorite/view-favorite.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PlaceOrderComponent } from './user/place-order/place-order.component';
+import { ViewRequestsComponent } from './user/view-requests/view-requests.component';
 
 
 const socialProvider = {
@@ -53,7 +55,9 @@ const socialProvider = {
     AboutUsComponent,
     ViewParticularProductComponent,
     ViewCartComponent,
-    ViewFavoriteComponent
+    ViewFavoriteComponent,
+    PlaceOrderComponent,
+    ViewRequestsComponent
   ],
   imports: [
     BrowserModule,

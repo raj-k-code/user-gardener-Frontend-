@@ -1,0 +1,45 @@
+.news123 {
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+body {
+    background-color: rgb(245, 244, 245);
+}
+
+.steps12 {
+    justify-content: center;
+    background-color: white;
+    border: 5px solid rgb(245, 244, 245);
+    border-radius: 5%;
+    text-align: center;
+    background-color: rgb(218, 230, 218);
+    border: 5px solid rgb(91, 201, 91);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    /* width: 95%; */
+    /* height: inherit; */
+}
+
+.steps12:hover {
+    box-shadow: 0 0 10px gray;
+}
+
+
+/* button{
+            width: 20%;
+        } */
+
+img {
+    width: 30%;
+    height: 30%;
+    margin-top: 5%;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .steps12 {
+        height: 400px;
+    }
+}
