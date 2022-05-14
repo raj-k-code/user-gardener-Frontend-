@@ -40,7 +40,8 @@ export class SigninComponent implements OnInit {
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('userId', data.data._id);
           this.toaster.success("Login Successfully", "Success");
-          // sessionStorage.removeItem('number');
+
+          sessionStorage.setItem('userImage', data.data.userImage);
           this.router.navigate(['/']);
 
         }, err => {
@@ -67,6 +68,9 @@ export class SigninComponent implements OnInit {
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('userId', data.data._id);
           this.toaster.success("Login Successfully", "Success");
+
+          sessionStorage.setItem('userImage', data.data.gardenerImage);
+
           // sessionStorage.removeItem('number');
           this.router.navigate(['/']);
 
@@ -117,6 +121,8 @@ export class SigninComponent implements OnInit {
             this.toaster.success("Login Successfully", "Success", {
               positionClass: 'toast-top-center'
             });
+            sessionStorage.setItem('userImage', data.data.userImage);
+
             // sessionStorage.removeItem('number');
             this.router.navigate(['/']);
 
@@ -141,6 +147,8 @@ export class SigninComponent implements OnInit {
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('userId', data.data._id);
             this.toaster.success("Login Successfully", "Success");
+            sessionStorage.setItem('userImage', data.data.gardenerImage);
+
             // sessionStorage.removeItem('number');
             this.router.navigate(['/']);
 

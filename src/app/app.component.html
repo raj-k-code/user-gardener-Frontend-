@@ -1,12 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark back sticky-top ">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark back sticky-top ">
 
     <a class="navbar-brand" routerLink="/"> <img src="../assets/images/WhatsApp Image 2022-05-07 at 4.13.27 PM.jpeg" alt=""> </a>
-
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" style="border: 0;" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item activated">
@@ -21,18 +18,6 @@
             <li class="nav-item">
                 <a class="nav-link navigation-item" routerLink="blog-list">Blogs</a>
             </li>
-            <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          Caterories
-        </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li> -->
-            <!-- *ngIf="gardenerOrUser() && isLoggedIn()" -->
             <li class="nav-item">
                 <a *ngIf="gardenerOrUser() || !isLoggedIn()" class=" nav-link" routerLink="gardener-list">Gardners List</a>
             </li>
@@ -75,30 +60,99 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link  " routerLink="search-product"><i class="fa fa-search "></i> </a>
-
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="view-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                <!-- <i style='font-size:24px' class='fas'>&#xf2bd;</i> -->
-                <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-                <!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
-
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="view-favorite"><i class="fa fa-heart" aria-hidden="true"></i></a>
-
             </li>
-
         </ul>
-
-        <!--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
     </div>
-</nav>
+</nav> -->
 
+
+<!-- New Navigation======================================= -->
+
+
+<nav class="navbar navbar-dark  navbar-expand-sm sticky-top">
+    <a class="navbar-brand ml-5" routerLink="/">
+        <img src="../assets/images/WhatsApp Image 2022-05-07 at 4.13.27 PM.jpeg" width="150px" height="50px" alt="logo">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <div class="navbar-nav ">
+            <a routerLink="/" class="nav-item nav-link active">Home</a>
+            <a routerLink="about-us" class="nav-item nav-link">About</a>
+            <a routerLink="contact-us" class="nav-item nav-link">Contact</a>
+            <a routerLink="blog-list" class="nav-item nav-link">Blogs</a>
+
+            <!-- <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Web Design</a>
+          <a href="#" class="dropdown-item">Web Development</a>
+          <a href="#" class="dropdown-item">Graphic Design</a>
+          <a href="#" class="dropdown-item">Digital Marketing</a>
+        </div>
+      </div> -->
+            <a *ngIf="gardenerOrUser() || !isLoggedIn()" routerLink="gardener-list" class="nav-item nav-link">Gardeners</a>
+            <a *ngIf="!gardenerOrUser() && isLoggedIn()" routerLink="view-requests" class="nav-item nav-link">Requests</a>
+            <!-- <a *ngIf="isLoggedIn()" routerLink="order-history" class="nav-item nav-link">Order History</a> -->
+
+
+        </div>
+
+        <div class="navbar-nav ml-auto ">
+            <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i class="fa fa-search"></i></a>
+
+            <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-in</a>
+                <div class="dropdown-menu">
+                    <a (click)="whoseSignIn(1)" class="dropdown-item">User</a>
+                    <a (click)="whoseSignIn(2)" class="dropdown-item">Gardener</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Register Nursery</a>
+                </div>
+            </div>
+
+            <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-up</a>
+                <div class="dropdown-menu">
+                    <a (click)="whoseSignUp(1)" class="dropdown-item">User</a>
+                    <a (click)="whoseSignUp(2)" class="dropdown-item">Gardener</a>
+                </div>
+            </div>
+
+
+            <!-- <a href="#" class="nav-item nav-link">Signup</a> -->
+
+            <div *ngIf="isLoggedIn()" class="nav-item dropdown mr-5">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{profileImage}}" class="avatar" alt="Image"> <b class="caret"></b></a>
+                <div class="dropdown-menu">
+                    <a routerLink="view-profile" class="dropdown-item"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
+                    <a routerLink="view-cart" class="dropdown-item"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Cart</a>
+                    <a routerLink="view-favorite" class="dropdown-item"><i class="fa fa-heart" aria-hidden="true"></i>
+            Favourite</a>
+                    <a *ngIf="isLoggedIn()" routerLink="order-history" class="dropdown-item"><i class="fa fa-history"
+              aria-hidden="true"></i> Orders</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a style="cursor: pointer;" (click)="signOut()" *ngIf="isLoggedIn()" class="dropdown-item"><i
+              class="fa fa-sign-out" aria-hidden="true"></i>
+            Sign-out</a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</nav>
 
 <router-outlet></router-outlet>
 
