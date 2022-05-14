@@ -1,0 +1,62 @@
+<!-- <div class="bgimg" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/126/860/932/green-plants-saturated-vibrant-wallpaper-preview.jpg');">
+    <div class="container">
+        <div class="container text-center hearderset ">
+            <h1>BLOGS</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div *ngFor="let blog of blogList" class="card">
+        <img style="cursor: pointer;" (click)="viewBlog(blog._id)" src="{{blog.blogImage}}" class="card-img-top" />
+        <div class="card-body">
+            <h5 style="cursor: pointer;" (click)="viewBlog(blog._id)" class="card-title">{{blog.blogTitle}}</h5>
+            <p class="card-text">
+                {{blog.blogSubTitle}}
+            </p>
+            <a (click)="viewBlog(blog._id)" class="btn btn-primary">Read More</a>
+        </div>
+    </div>
+</div>
+ -->
+
+
+
+
+
+
+<div class="bgimg" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/126/860/932/green-plants-saturated-vibrant-wallpaper-preview.jpg');">
+    <div class="container">
+        <div class="container text-center hearderset ">
+            <h1>BLOGS</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+
+    <div class="cards grid-row">
+        <div *ngFor="let blog of blogList" class="card flex-row colmun">
+            <div class="col-left card-image">
+                <div class="card-bg-img">
+                    <img style="cursor: pointer;" (click)="viewBlog(blog._id)" src="{{blog.blogImage}}" alt="card background image">
+                </div>
+                <div class="profile-img">
+                    <img style="cursor: pointer;" (click)="viewBlog(blog._id)" src="{{blog.blogImage}}" alt="rahul">
+                </div>
+            </div>
+            <div class="col-right card-info">
+                <div class="card-info-inner">
+                    <h2 style="cursor: pointer;" (click)="viewBlog(blog._id)" class="card-title">{{blog.blogTitle}}</h2>
+                    <p>{{blog.blogSubTitle}}</p>
+                    <ul class="social">
+                        <a style="cursor: pointer;" (click)="viewBlog(blog._id)" class="btn btn-success">Read More</a>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,8 +16,6 @@ export class ViewParticularProductComponent implements OnInit {
   productId: any;
   product = new Product("", "", "", "", "", "", "");
   starRating = 0;
-  status = false;
-  number: any
 
   constructor(private activatedRouter: ActivatedRoute, private toaster: ToastrService, private productService: ProductService, private router: Router, private cartService: CartService, private favService: FavoriteService) {
     this.productId = activatedRouter.snapshot.paramMap.get('id');
@@ -76,13 +74,8 @@ export class ViewParticularProductComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
-  }
-
-  continueToLogin() {
-    sessionStorage.setItem("number", this.number);
-    this.router.navigate(['signin']);
   }
 
   public addToFav(productId: any) {
@@ -109,7 +102,7 @@ export class ViewParticularProductComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
 

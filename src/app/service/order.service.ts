@@ -13,4 +13,9 @@ export class OrderService {
     let placeOrderPi = "http://localhost:3000/order/order";
     return this.http.post<any>(placeOrderPi, orderDetails);
   }
+
+  public viewOrderHistory() {
+    let viewOrderHistoryApi = "http://localhost:3000/order/view-order";
+    return this.http.post(viewOrderHistoryApi, { userId: sessionStorage.getItem('userId') });
+  }
 }

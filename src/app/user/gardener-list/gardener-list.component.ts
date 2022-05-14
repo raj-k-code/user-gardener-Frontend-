@@ -14,8 +14,7 @@ import { GardenerService } from 'src/app/service/gardener.service';
 export class GardenerListComponent implements OnInit {
   gardenerList?: Gardener[]
   starRating = 0;
-  status = false;
-  number: any;
+
 
   constructor(private gardenerService: GardenerService, private toaster: ToastrService, private router: Router) { }
 
@@ -82,14 +81,7 @@ export class GardenerListComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
-
-  continueToLogin() {
-    sessionStorage.setItem("number", this.number);
-    this.router.navigate(['signin']);
-  }
-
-
 }

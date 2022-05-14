@@ -26,23 +26,23 @@
                     </div>
                 </div>
                 <div class="checkbox-text">
-                    <!-- <div class="checkbox-content" id="logcheck">
-                            <label for="logCheck" class="text" >Remember me</label>
-                        </div> -->
-                    <a data-toggle="modal" data-target="#exampleModalCenter">Forgot
+                    <a data-toggle="modal" data-target="#exampleModalCenter" style="cursor: pointer;">Forgot
             password?</a>
                 </div>
                 <div class="input-field button">
-                    <input (click)="login()" type="button" value="Signin ">
+                    <input data-toggle="modal" data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
                 </div>
                 <div class="Google-signin">
                     <span class="text">
-            <a (click)="googleSignin()" class="text signup-text">Signin with Google</a>
+            <a data-toggle="modal" data-target="#exampleModal" (click)="googleSignin()" style="cursor: pointer;"
+              class="text signup-text">Signin with Google</a>
           </span>
                 </div>
                 <div class="login-signup " style="justify-content: center;">
                     <span class="text">Not a member?
-            <a href="#" class="text signup-text">Signup Now</a>
+            <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal" (click)="goToSignUp()"
+              class="text signup-text">Signup
+              Now</a>
           </span>
                 </div>
             </form>
@@ -50,6 +50,46 @@
     </div>
 </div>
 
+
+
+<!-- The Modal -->
+<div class="modal fade" id="exampleModal" *ngIf="status">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Continue As...</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body inline-block">
+                <div class="form-check">
+                    <input #user="ngModel" [(ngModel)]="number" value="1" class="form-check-input" type="radio" name="User" id="User">
+                    <label class="form-check-label">
+            User
+          </label>
+                </div>
+                <div class="form-check">
+                    <input #gardener="ngModel" [(ngModel)]="number" value="2" class="form-check-input" type="radio" name="Gardener" id="Gardener" checked>
+                    <label class="form-check-label">
+            Gardener
+          </label>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+                <button type="button" [disabled]="!user.touched && !gardener.touched" (click)="continueToLogin()" class="btn btn-success" data-dismiss="modal">Continue</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 <!-- Modal -->
@@ -77,15 +117,14 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" [disabled]="email.invalid" (click)="forgotPassword()" class="btn btn-primary">Send</button>
+                <button data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" type="button" [disabled]="email.invalid" (click)="forgotPassword()" class="btn btn-primary">Send</button>
             </div>
         </div>
     </div>
-
-
-
 </div>

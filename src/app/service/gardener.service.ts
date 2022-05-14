@@ -54,4 +54,14 @@ export class GardenerService {
     let viewRequestApi = "http://localhost:3000/gardener/view-request"
     return this.http.post<any>(viewRequestApi, { gardenerId: gardenerId });
   }
+
+  public viewProfile(): Observable<Gardener> {
+    let viewProfileApi = "http://localhost:3000/gardener/gardner-by-id/" + sessionStorage.getItem('userId');
+    return this.http.get<Gardener>(viewProfileApi);
+  }
+
+  public updateProfile(formData: any): Observable<any> {
+    let updateProfileApi = "http://localhost:3000/gardener/edit";
+    return this.http.post<any>(updateProfileApi, formData);
+  }
 }

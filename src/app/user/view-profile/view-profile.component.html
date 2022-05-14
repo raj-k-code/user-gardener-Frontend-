@@ -1,0 +1,142 @@
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row  d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                    <img src="{{image}}" width="150px" height="150px" class="img-radius" alt="User-Profile-Image">
+                                </div>
+                                <h6 class="f-w-600">{{name}}</h6>
+                                <p *ngIf="!(number == '2')">User</p>
+                                <p *ngIf="number == '2'">Gardener</p>
+                                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Name</p>
+                                        <h6 class="text-muted f-w-400">{{name}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Address</p>
+                                        <h6 class="text-muted f-w-400">{{address}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Email</p>
+                                        <h6 class="text-muted f-w-400">{{email}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Phone</p>
+                                        <h6 class="text-muted f-w-400">{{mobile}}</h6>
+                                    </div>
+                                    <div *ngIf="number =='2'" class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Experience</p>
+                                        <h6 class="text-muted f-w-400">{{experience}}</h6>
+                                    </div>
+                                    <button data-toggle="modal" data-target="#exampleModalCenter" class="mt-5 text-center btn1 " style="width: 25%; margin-left: 35%;">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Edit Profile</button> -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="container rounded bg-white">
+                    <div class="row a12">
+                        <div class="col-md-4 border-right">
+
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5 ">
+                                <img class="rounded-circle mt-5" [src]="showImage" width="150">
+                                <span class="font-weight-bold">{{name}}</span>
+                                <span class="text-black-50">
+                  <label for="file-input"><i style="cursor: pointer;" class="fa fa-edit"></i></label>
+                  <input ngModel #foto="ngModel" id="file-input" (change)="onSelect($event)" type="file"
+                    style="display: none;" />
+                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-md-8">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                            <div class="p-3 py-5">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                                        <h6 routerLink="/" data-dismiss="modal">Back to home</h6>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12"><input required ngModel #nam="ngModel" [(ngModel)]="name" type="text" class="form-control" placeholder="Name" value="{{name}}">
+                                    </div>
+                                    <span class="alert alert-danger" *ngIf="nam.errors?.required && nam.touched ">Please Enter Name</span>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12"><input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" required ngModel #emailId="ngModel" [(ngModel)]="email" type="text" class="form-control" placeholder="Email" value="{{email}}">
+                                    </div>
+                                    <span class="alert alert-danger" *ngIf="emailId.errors?.required && emailId.touched ">Please Enter
+                    Email
+                    Address</span>
+                                    <span class="alert alert-danger" *ngIf="emailId.errors?.pattern&& emailId.touched ">Please Enter Valid
+                    Email
+                    Address</span>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12"><input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" required ngModel #mob="ngModel" [(ngModel)]="mobile" type="text" class="form-control" value="{{mobile}}" placeholder="Mobile"></div>
+                                    <span class="alert alert-danger" *ngIf="mob.errors?.required && mob.touched ">Please Enter Mobile
+                    Number</span>
+                                    <span class="alert alert-danger" *ngIf="mob.errors?.pattern && mob.touched ">Please Enter Valid
+                    Mobile Number</span>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12"><input required ngModel #add="ngModel" [(ngModel)]="address" type="text" class="form-control" placeholder="Address" value="{{address}}"></div>
+                                    <span class="alert alert-danger" *ngIf="add.errors?.required && add.touched ">Please Enter
+                    Address</span>
+                                </div>
+                                <div *ngIf="number =='2'" class="row mt-3">
+                                    <div class="col-md-12"><input required ngModel #exp="ngModel" [(ngModel)]="experience" type="text" class="form-control" placeholder="Experience" value="{{experience}}"></div>
+                                    <span class="alert alert-danger" *ngIf="exp.errors?.required && exp.touched ">Please Enter
+                    Your Experience</span>
+                                </div>
+                                <div class="mt-5 text-right"><button [disabled]="nam.untouched && emailId.untouched && mob.untouched && add.untouched && foto.untouched" (click)="updateProfile()" data-dismiss="modal" class="btn btn-primary profile-button" type="button">Save
+                    Profile</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
