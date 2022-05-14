@@ -18,8 +18,7 @@ import { ProductService } from '../service/product.service';
 export class HomePageComponent implements OnInit {
   categoryList?: Category[]
   productList: Product[] = [];
-  status: boolean = false;
-  number: any;
+
 
   constructor(private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) { }
 
@@ -101,15 +100,10 @@ export class HomePageComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
 
-  continueToLogin() {
-    sessionStorage.setItem("number", this.number);
-    this.router.navigate(['signin']);
-
-  }
 
   public addToFav(productId: any) {
     if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
@@ -117,10 +111,14 @@ export class HomePageComponent implements OnInit {
         console.log(data);
 
         if (data.message) {
-          this.toaster.info("Already Added In Favorite", "");
+          this.toaster.info("Already Added In Favorite", "", {
+            positionClass: 'toast-top-center'
+          });
         }
         else {
-          this.toaster.success("Item Added Successfully", "Success");
+          this.toaster.success("Item Added Successfully", "Success", {
+            positionClass: 'toast-top-center'
+          });
         }
       }, err => {
         if (err instanceof HttpErrorResponse) {
@@ -135,7 +133,7 @@ export class HomePageComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
 

@@ -27,6 +27,10 @@ import { ViewFavoriteComponent } from './user/view-favorite/view-favorite.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { ViewRequestsComponent } from './user/view-requests/view-requests.component';
+import { BlogsListComponent } from './user/blogs-list/blogs-list.component';
+import { BlogDescriptionComponent } from './user/blog-description/blog-description.component';
+import { OrderHistoryComponent } from './user/order-history/order-history.component';
+import { ViewProfileComponent } from './user/view-profile/view-profile.component';
 
 
 const socialProvider = {
@@ -57,7 +61,11 @@ const socialProvider = {
     ViewCartComponent,
     ViewFavoriteComponent,
     PlaceOrderComponent,
-    ViewRequestsComponent
+    ViewRequestsComponent,
+    BlogsListComponent,
+    BlogDescriptionComponent,
+    OrderHistoryComponent,
+    ViewProfileComponent,
   ],
   imports: [
     BrowserModule,

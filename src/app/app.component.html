@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item activated">
                 <a class="nav-link navigation-item " routerLink="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -17,6 +17,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link navigation-item" routerLink="contact-us">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navigation-item" routerLink="blog-list">Blogs</a>
             </li>
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -38,6 +41,9 @@
             </li>
             <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
                 <a class="nav-link" routerLink="view-requests">Reuests List</a>
+            </li>
+            <li *ngIf="isLoggedIn()" class="nav-item">
+                <a routerLink="order-history" class="nav-link"> Order History</a>
             </li>
 
         </ul>
@@ -65,7 +71,7 @@
                 </div>
             </li>
             <li>
-                <a (click)="signOut()" *ngIf="isLoggedIn()" class="nav-link active" href="#">Sign-out</a>
+                <a (click)="signOut()" *ngIf="isLoggedIn()" class="nav-link" href="#">Sign-out</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  " routerLink="search-product"><i class="fa fa-search "></i> </a>
@@ -226,13 +232,6 @@
                                 <li><a href="#">Blog</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
-
-
-
-
-
-
-
                         </nav>
                     </div>
                 </div>

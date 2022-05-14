@@ -16,8 +16,6 @@ export class SearchProductComponent implements OnInit {
   productList: any[] = []
   page: any;
   id: any;
-  status = false;
-  number: any;
 
   constructor(private productService: ProductService, private toaster: ToastrService, private cartService: CartService, private router: Router, private activetedRoute: ActivatedRoute, private favService: FavoriteService) {
 
@@ -92,14 +90,14 @@ export class SearchProductComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
 
-  continueToLogin() {
-    sessionStorage.setItem("number", this.number);
-    this.router.navigate(['signin']);
-  }
+  // continueToLogin() {
+  //   sessionStorage.setItem("number", this.number);
+  //   this.router.navigate(['signin']);
+  // }
 
   public addToFav(productId: any) {
     if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
@@ -125,8 +123,12 @@ export class SearchProductComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
+  }
+
+  public viewProduct(productId: any) {
+    this.router.navigate(['view-particular-product/' + productId]);
   }
 
 }

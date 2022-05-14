@@ -19,8 +19,7 @@ export class ProductByCategoryComponent implements OnInit {
   category = new Category("", "", "");
   productList: Product[] = []
   page: any;
-  status: boolean = false
-  number: any;
+
 
   constructor(private activatedRouter: ActivatedRoute,
     private categoryService: CategoryService,
@@ -117,15 +116,10 @@ export class ProductByCategoryComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
   }
 
-  continueToLogin() {
-    sessionStorage.setItem("number", this.number);
-    this.router.navigate(['signin']);
-
-  }
 
   public addToFav(productId: any) {
     if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
@@ -151,7 +145,11 @@ export class ProductByCategoryComponent implements OnInit {
       });
     }
     else {
-      this.status = true;
+      this.router.navigate(['signin']);
     }
+  }
+
+  public viewProduct(productId: any) {
+    this.router.navigate(['view-particular-product/' + productId]);
   }
 }

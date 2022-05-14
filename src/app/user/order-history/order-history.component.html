@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <h2>Order History</h2>
+    <div class="box">
+
+        <table class="table" style="margin-top: 30px;">
+            <thead class="table" style="background-color:rgb(74, 199, 74) ;">
+                <tr>
+                    <th>Order Id</th>
+                    <th>Order Date</th>
+                    <th>Totel Products</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orderData">
+                    <td>{{order._id}}</td>
+                    <td>{{order.createdAt | date}}</td>
+                    <td>{{order.productList.length}}</td>
+                    <td>{{order.total}}</td>
+                    <td>{{order.orderStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

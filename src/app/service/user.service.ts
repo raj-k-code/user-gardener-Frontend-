@@ -2,6 +2,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -29,5 +30,15 @@ export class UserService {
   public forgotPassword(email: string) {
     let forgotPasswordApi = "http://localhost:3000/user/forgot-password"
     return this.http.post<any>(forgotPasswordApi, { userEmail: email });
+  }
+
+  public viewProfile(): Observable<User> {
+    let viewProfileApi = "http://localhost:3000/user/user-by-id/" + sessionStorage.getItem('userId');
+    return this.http.get<User>(viewProfileApi);
+  }
+
+  public updateProfile(formData: any): Observable<any> {
+    let updateProfileApi = "http://localhost:3000/user/edit";
+    return this.http.post<any>(updateProfileApi, formData);
   }
 }

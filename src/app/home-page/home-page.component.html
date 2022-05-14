@@ -1,195 +1,140 @@
-<main role="main ">
-    <div class="col-sm-12  ">
-        <div id="myCarousel" class="carousel slide " data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+<!-- <main role="main"> -->
+<div class="col-sm-12  ">
+    <div id="myCarousel" class="carousel slide " data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-            <div class="carousel-inner ">
-                <div class="carousel-item active">
-                    <img class="first-slide" src="../../assets/images/slider1.jpg" alt="First slide">
-                    <div class="container">
-                        <div class="carousel-caption text-left ">
-                            <h1>Example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary " routerLink="search-product" role="button">View Products</a></p>
-                        </div>
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img class="first-slide" src="../../assets/images/slider1.jpg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-left ">
+                        <h1>Example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non <br> mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary " routerLink="search-product" role="button">View Products</a></p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="second-slide" src="../../assets/images/slider2.jpg" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption  text-left">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                        </div>
+            </div>
+            <div class="carousel-item">
+                <img class="second-slide" src="../../assets/images/slider2.jpg" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption  text-left">
+                        <h1>Another example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non <br> mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="third-slide" src="../../assets/images/slider3.jpg" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption  text-left">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
+            </div>
+            <div class="carousel-item">
+                <img class="third-slide" src="../../assets/images/slider3.jpg" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption  text-left">
+                        <h1>One more for good measure.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non <br> mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 
-</main>
 
-
-
-
+<!-- </main> -->
 
 
 
 <!-- Marketing messaging and featurettes================================================== -->
 
 <div class="container marketing">
-
     <div class="row">
         <div class="col-12">
-            <!-- Section Heading -->
             <div class="section-heading text-center">
                 <h2>OUR CATEGORIES</h2>
             </div>
         </div>
     </div>
-    <!-- Three columns of text below the carousel -->
+
     <div class="row mt-5">
-        <div *ngFor="let category of categoryList; index as i" class="col-lg-3">
-            <img *ngIf="i < 4" routerLink="product-by-category/{{category._id}}" class="rounded-circle" src="{{category.categoryImage}}" alt="Generic placeholder image" width="140" height="140">
-            <h4 *ngIf="i < 4" class="mt-3">{{category.categoryName | uppercase}}</h4>
+        <div *ngFor="let category of categoryList; index as i" class="col-lg-3 col-md-6 col-sm-12">
+            <img *ngIf="i < 4" style="cursor: pointer;" routerLink="product-by-category/{{category._id}}" class="rounded-circle" src="{{category.categoryImage}}" alt="Generic placeholder image" width="140" height="140">
+            <h4 *ngIf="i < 4" style="cursor: pointer;" routerLink="product-by-category/{{category._id}}" class="mt-3">
+                {{category.categoryName | uppercase}}</h4>
         </div>
     </div>
-    <!-- /.row -->
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>NEW ARRIVALS</h2>
-                    <p>We have the latest products, it must be exciting for you</p>
-                </div>
+    <!-- <div class="container mt-5"> -->
+    <div class="row " style="margin-top: 100px;">
+        <div class="col-12 ">
+            <div class="section-heading text-center">
+                <h2>NEW ARRIVALS</h2>
+                <p>We have the latest products, it must be exciting for you</p>
             </div>
         </div>
     </div>
-
-    <!-- <app-view-product></app-view-product> -->
+    <!-- </div> -->
 
 
     <section class="new-arrivals-products-area bg-gray section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div *ngFor="let product of productList; index as i" class="col-12 col-sm-6 col-lg-3">
-                    <div *ngIf="i < 8" class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
-                        <div class="product-img">
-                            <a href="shop-details.html"><img class="product-image" src="{{product.productImage}}" alt=""></a>
-                            <div class="product-meta d-flex">
+        <div class="row">
+            <div *ngFor="let product of productList; index as i" class="col-12 col-sm-6 col-lg-3">
+                <div *ngIf="i < 8" class="single-product-area mb-50 wow fadeInUp mt-5" data-wow-delay="100ms">
+                    <div class="product-img">
+                        <a routerLink="view-particular-product/{{product._id}}"><img class="product-image" src="{{product.productImage}}" alt=""></a>
+                        <div class="product-meta d-flex">
 
-                                <a data-toggle="modal" data-target="#exampleModal" (click)="addToFav(product._id)" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
-                                    /></a>
-                                <a routerLink="view-particular-product/{{product._id}}" class="add-to-cart-btn">About</a>
-                                <a data-toggle="modal" data-target="#exampleModal" (click)="addToCart(product._id)" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
-                                    /></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-2 text-center">
-                            <a href="shop-details.html">
-                                <p style="">{{product.productName | uppercase}}</p>
-                            </a>
-                            <h6>Rs. {{product.productPrice}}.00</h6>
+                            <a style="cursor: pointer;" (click)="addToFav(product._id)" class="wishlist-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC"
+                                /></a>
+                            <a style="cursor: pointer;" routerLink="view-particular-product/{{product._id}}" class="add-to-cart-btn">About</a>
+                            <a style="cursor: pointer;" (click)="addToCart(product._id)" class="compare-btn"><img style="width: 20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ9JREFUSEvNlM0RAUEQhb+NgBCIABkQARngygEZEAEXrogAGRABIkAEiIBqtbO1Zn9myhplrt37vnnzutfD8fEc6/NTwMN3cwMWwOAb7sIOFEDp1oBtVkjcE/WBMbABGi4AeeDqCxeBcxZIUsiSQTOD8AGoyPdJgDKwzwC4AIU0gNTkFqUEiLqYPhiqfQQMTYAWMP8QEGRnWjTZiVwMJM3BDqiqb0yACdALAST8tgbUnUpd+l7HBJCgTppgGKKL3/1wxbkVQJrWQD0GIk+hZ7QEBBockwNplG1eWY5s5PdiAzCNrGIfAdmft2MLsDQQbbMFTIEOMAO6mkxazThFSiu8sfql0mrWAOcOnGfwv4AnHowxGW0UtfQAAAAASUVORK5CYII="
+                                /></a>
                         </div>
                     </div>
+                    <!-- Product Info -->
+                    <div class="product-info mt-2 text-center">
+                        <a routerLink="view-particular-product/{{product._id}}">
+                            <p style="">{{product.productName | uppercase}}</p>
+                        </a>
+                        <h6>Rs. {{product.productPrice}}.00</h6>
+                    </div>
                 </div>
-                <div class="col-12 text-center">
-                    <a routerLink="search-product" class="btn alazea-btn">View All</a>
-                </div>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <a routerLink="search-product" class="btn alazea-btn">View All</a>
             </div>
         </div>
     </section>
+</div>
 
-    <!-- The Modal -->
-    <div class="modal fade" id="exampleModal" *ngIf="status">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body inline-block">
-                    <label for="">Continue As :</label>
-                    <div class="form-check">
-                        <input #user="ngModel" [(ngModel)]="number" value="1" class="form-check-input" type="radio" name="User" id="User">
-                        <label class="form-check-label">
-              User
-            </label>
-                    </div>
-                    <div class="form-check">
-                        <input #gardener="ngModel" [(ngModel)]="number" value="2" class="form-check-input" type="radio" name="Gardener" id="Gardener" checked>
-                        <label class="form-check-label">
-              Gardener
-            </label>
-                    </div>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" [disabled]="!user.touched && !gardener.touched" (click)="continueToLogin()" class="btn btn-success">Continue</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>
 
 
+<!-- Bootstrap core JavaScript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script>
 
 
-    <!-- SPINNER -->
-    <ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>
+<script src="../../assets/js/vendor/popper.min.js"></script>
 
 
-    <!-- Bootstrap core JavaScript ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="../../assets/js/vendor/holder.min.js"></script>
 
-
-
-
-
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-
-
-
-
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
