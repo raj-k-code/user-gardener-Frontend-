@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'user-gardener';
+  profileImage = sessionStorage.getItem('userImage');
 
   constructor(private router: Router) { }
 
@@ -25,6 +26,7 @@ export class AppComponent {
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('userId');
       sessionStorage.removeItem('number');
+      sessionStorage.removeItem('userImage');
 
       this.router.navigate(['/']);
     }
