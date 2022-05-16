@@ -1,9 +1,5 @@
 /* Navigation======================== */
 
-body {
-    background: #eeeeee;
-}
-
 .form-inline {
     display: inline-block;
 }
@@ -14,9 +10,7 @@ body {
 
 .navbar {
     background: rgb(86, 210, 75);
-    padding-left: 16px;
-    padding-right: 16px;
-    padding: 20px;
+    padding: 20px 16px;
     border-bottom: 1px solid #cfc9c9;
     box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 }
@@ -72,6 +66,7 @@ body {
     border-radius: 1px;
     border-color: #e5e5e5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    left: -40px;
 }
 
 .navbar .dropdown-menu a {
