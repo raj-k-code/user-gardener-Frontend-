@@ -6,13 +6,22 @@
 .about-Text {
     /* padding-right: 200px;
     padding-left: 200px; */
-    padding-top: 570px;
+    padding: 0;
     margin: auto;
     text-align: center;
 }
 
-.container {
-    /* box-shadow: 3px; */
+.bgimg {
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .col-md-6 box {
