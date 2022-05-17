@@ -23,9 +23,14 @@ export class HomePageComponent implements OnInit {
   constructor(private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) { }
 
   ngOnInit(): void {
+    this.spinner.show();
+
+
     console.log(this.activatedRouter)
     this.categoryService.categoryList().subscribe(data => {
       this.categoryList = data;
+      this.spinner.hide();
+
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 401) {
@@ -44,6 +49,7 @@ export class HomePageComponent implements OnInit {
 
     this.productService.viewProductList().subscribe(data => {
       this.productList = data;
+      this.spinner.hide();
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 401) {
@@ -61,12 +67,11 @@ export class HomePageComponent implements OnInit {
     });
 
     /** spinner starts on init */
-    this.spinner.show();
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1000);
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+
+    // }, 1000);
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
