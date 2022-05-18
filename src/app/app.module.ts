@@ -10,7 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenIntercepterService } from './intercepter/token-intercepter.service';
-import { SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ViewProductComponent } from './user/view-product/view-product.component';
 import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
@@ -37,6 +37,8 @@ const socialProvider = {
   provide: 'SocialAuthServiceConfig',
   useValue: {
     providers: [
+      //
+      // 204956875095-57a6uitqt7u5kq7i4tu01im83ok6u1tj.apps.googleusercontent.com
       {
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider("1001369966895-6h7jafhdsqlk1u6asklf0jbulj8c4h8q.apps.googleusercontent.com"),
