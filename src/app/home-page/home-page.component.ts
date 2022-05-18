@@ -1,4 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { AotSummaryResolver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -9,7 +10,6 @@ import { CartService } from '../service/cart.service';
 import { CategoryService } from '../service/category.service';
 import { FavoriteService } from '../service/favorite.service';
 import { ProductService } from '../service/product.service';
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
