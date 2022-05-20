@@ -31,6 +31,8 @@ import { BlogsListComponent } from './user/blogs-list/blogs-list.component';
 import { BlogDescriptionComponent } from './user/blog-description/blog-description.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { ViewProfileComponent } from './user/view-profile/view-profile.component';
+import { ViewOrderComponent } from './user/view-order/view-order.component';
+import { NurserySignupComponent } from './user/nursery-signup/nursery-signup.component';
 
 
 const socialProvider = {
@@ -68,6 +70,8 @@ const socialProvider = {
     BlogDescriptionComponent,
     OrderHistoryComponent,
     ViewProfileComponent,
+    ViewOrderComponent,
+    NurserySignupComponent,
   ],
   imports: [
     BrowserModule,

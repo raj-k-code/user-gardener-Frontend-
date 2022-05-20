@@ -1,29 +1,66 @@
-<div class="wrapper">
-    <h1>My Favorites</h1>
-    <div class="project">
-        <div class="shop">
-            <div *ngFor="let product of productList;  index as i" class="box">
-                <img src="{{product.productImage}}">
-                <div class="content">
-                    <h4>{{product.productName}}</h4>
-                    <h4>Price: Rs {{product.productPrice}}</h4>
-                    <!-- <p class="unit">Quantity: <input name="" type="number" value="1" min="1"></p> -->
+<!-- <div class="wrapper">
+  <h1>My Favorites</h1>
+  <div class="project">
+    <div class="shop">
+      <div *ngFor="let product of productList;  index as i" class="box">
+        <img src="{{product.productImage}}">
+        <div class="content">
+          <h4>{{product.productName}}</h4>
+          <h4>Price: Rs {{product.productPrice}}</h4>
 
 
-                    <p (click)="removeFromFav(i, product._id)" class="icon1 icon2"><i aria-hidden="true" class="fa fa-trash "></i>
-                    </p>
-                    <p (click)="moveToFav(product._id, i)" class="icon1 icon3"><i aria-hidden="true" class="fa fa-cart-plus"></i>
-                    </p>
+          <p (click)="removeFromFav(i, product._id)" class="icon1 icon2"><i aria-hidden="true" class="fa fa-trash "></i>
+          </p>
+          <p (click)="moveToFav(product._id, i)" class="icon1 icon3"><i aria-hidden="true" class="fa fa-cart-plus"></i>
+          </p>
 
-                </div>
-            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="productList.length == 0" class="contaier">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-danger">No Item In Favorites.</h1>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="text-capitalize font-weight-bold">
+            Favourite <span class="headline">My</span>
+        </h1>
+    </div>
+
+    <div *ngFor="let product of productList;  index as i" class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between">
+        <div (click)="viewProduct(product._id)" style="cursor: pointer;" class="text-center">
+            <img style="height: 100px" src={{product.productImage}} alt="" />
+        </div>
+        <div class="text-center text-uppercase text-secondary">
+            <h5 (click)="viewProduct(product._id)" style="cursor: pointer;" class="d-block my-3">{{product.productName}}</h5>
+        </div>
+        <div class="text-center">
+            <h3 class="my-2 font-weight-bold">₹{{product.productPrice}}</h3>
+        </div>
+
+        <div class="text-center">
+            <a (click)="viewProduct(product._id)" class="btn btn-primary text-dark px-3 py-2 mr-2 main-btn">View
+        More</a>
+            <a style="cursor: pointer;" class=" text-success px-4 py-3 h2 main-btn"><i (click)="moveToFav(product._id, i)"
+          class="fa fa-cart-plus"></i>
+        <i (click)="removeFromFav(i, product._id)" class="fa fa-trash text-danger ml-4"></i></a>
         </div>
     </div>
-    <div *ngIf="productList.length == 0" class="contaier">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-danger">No Item In Favorites.</h1>
-            </div>
+
+    <div *ngIf="productList.length == 0" class="row">
+        <div class="col">
+            <h1 class="text-danger text-center">No Item In Favorites.</h1>
         </div>
     </div>
 </div>
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

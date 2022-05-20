@@ -18,4 +18,11 @@ export class OrderService {
     let viewOrderHistoryApi = "http://localhost:3000/order/view-order";
     return this.http.post(viewOrderHistoryApi, { userId: sessionStorage.getItem('userId') });
   }
+
+  public particularOrder(orderId: any) {
+    let particularOrderApi = "http://localhost:3000/order/order-by-id/" + orderId;
+    return this.http.get(particularOrderApi);
+  }
+
+
 }

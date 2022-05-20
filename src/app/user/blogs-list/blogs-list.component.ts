@@ -1,6 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Blog } from 'src/app/model/blog';
 import { BlogService } from 'src/app/service/blog.service';
@@ -11,16 +13,18 @@ import { BlogService } from 'src/app/service/blog.service';
   styleUrls: ['./blogs-list.component.css']
 })
 export class BlogsListComponent implements OnInit {
-
-  constructor(private blogService: BlogService, private toaster: ToastrService, private router: Router) { }
+  page: any;
+  constructor(private sppiner: NgxSpinnerService, private blogService: BlogService, private toaster: ToastrService, private router: Router) { AOS.init(); }
 
   blogList: Blog[] = []
 
   ngOnInit(): void {
+    AOS.init();
+    this.sppiner.show();
     this.blogService.blogList().subscribe(data => {
       if (data.length > 0) {
         this.blogList = data
-        console.log(this.blogList)
+        this.sppiner.hide();
       }
     }, err => {
       if (err instanceof HttpErrorResponse) {

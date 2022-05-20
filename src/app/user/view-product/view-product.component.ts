@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { ProductService } from 'src/app/service/product.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-product',
@@ -16,6 +17,7 @@ export class ViewProductComponent implements OnInit {
   constructor(private productService: ProductService, private toaster: ToastrService, private cartService: CartService) { }
 
   ngOnInit(): void {
+    AOS.init();;
     this.productService.viewProductList().subscribe(data => {
       this.productList = data
     }, err => {

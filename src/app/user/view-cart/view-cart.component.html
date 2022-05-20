@@ -3,9 +3,9 @@
     <div *ngIf="productList.length > 0" class="project">
         <div class="shop">
             <div *ngFor="let product of productList; index as i" class="box">
-                <img src="{{product.productImage}}">
+                <img style="cursor: pointer;" (click)="viewProduct(product._id)" src="{{product.productImage}}">
                 <div class="content">
-                    <h3>{{product.productName}}</h3>
+                    <h3 style="cursor: pointer;" (click)="viewProduct(product._id)">{{product.productName}}</h3>
                     <h4>Price: Rs {{product.productPrice}}</h4>
                     <p class="unit">Quantity: <input (change)="updatePrice(i,product.productPrice)" (keyup)="updatePrice(i,product.productPrice)" [(ngModel)]="qty[i]" [defaultValue]="1" name="qty" type="number" [defaultValue]="1" min="1" max="10" />
                     </p>
@@ -34,3 +34,6 @@
         </div>
     </div>
 </div>
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

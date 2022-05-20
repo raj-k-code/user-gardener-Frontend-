@@ -1,7 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-requests',
@@ -12,14 +15,18 @@ export class ViewRequestsComponent implements OnInit {
   dataList: any;
   gardenerId = sessionStorage.getItem('userId');
 
-  constructor(private gardenerService: GardenerService, private toaster: ToastrService) { }
+  constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService) {
+    spinner.show();
+    AOS.init();
+  }
 
   ngOnInit(): void {
     this.gardenerService.viewRequest(this.gardenerId).subscribe(data => {
       if (!data.message) {
+        console.log(data)
         this.dataList = data.bookRequests;
-        console.log(this.dataList[0].userId.userImage);
       }
+      this.spinner.hide()
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 500) {
@@ -34,8 +41,21 @@ export class ViewRequestsComponent implements OnInit {
   }
 
   public approveRequest(user: any) {
+    var userId = "";
+    var nurseryId = "";
+    var email = "";
+
     if (user.isApproved == false) {
-      this.gardenerService.approveRequest(user.userId._id).subscribe(data => {
+      if (user.userId) {
+        userId = user.userId._id
+        email = user.userId.userEmail
+      }
+      else {
+        nurseryId = user.nurseryId._id
+        email = user.nurseryId.nurseryOwnerEmail
+      }
+
+      this.gardenerService.approveRequest(userId, email, nurseryId).subscribe(data => {
         if (data.failed) {
           this.toaster.error("Not Approved");
         }
@@ -59,26 +79,38 @@ export class ViewRequestsComponent implements OnInit {
   }
 
   public cancelRequest(user: any, index: any) {
-    if (user.isApproved == true) {
-      this.gardenerService.cancelRequest(user.userId._id).subscribe(data => {
-        if (data.failed) {
-          this.toaster.error("Not Canceled");
-        }
-        else {
-          this.toaster.success("Canceled Successfully");
-          this.dataList.splice(index, 1)
-        }
-      }, err => {
-        if (err instanceof HttpErrorResponse) {
-          if (err.status == 500) {
-            this.toaster.error("Internal Server Error", "Error");
-          }
-          else if (err.status == 400) {
-            this.toaster.error("Bad Request", "Error");
-          }
-        }
-      });
+    var userId = "";
+    var nurseryId = "";
+    var email = "";
+
+    if (user.userId) {
+      userId = user.userId._id
+      email = user.userId.userEmail
     }
+    else {
+      nurseryId = user.nurseryId._id
+      email = user.nurseryId.nurseryOwnerEmail
+    }
+
+    this.gardenerService.cancelRequest(userId, email, nurseryId).subscribe(data => {
+      if (data.failed) {
+        this.toaster.error("Not Canceled");
+      }
+      else {
+        this.toaster.success("Canceled Successfully");
+        this.dataList.splice(index, 1)
+      }
+    }, err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status == 500) {
+          this.toaster.error("Internal Server Error", "Error");
+        }
+        else if (err.status == 400) {
+          this.toaster.error("Bad Request", "Error");
+        }
+      }
+    });
   }
 
 }
+// raj

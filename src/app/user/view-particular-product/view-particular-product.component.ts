@@ -1,11 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
 import { ProductService } from 'src/app/service/product.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-particular-product',
@@ -17,11 +19,12 @@ export class ViewParticularProductComponent implements OnInit {
   product = new Product("", "", "", "", "", "", "");
   starRating = 0;
 
-  constructor(private activatedRouter: ActivatedRoute, private toaster: ToastrService, private productService: ProductService, private router: Router, private cartService: CartService, private favService: FavoriteService) {
+  constructor(private spinner: NgxSpinnerService, private activatedRouter: ActivatedRoute, private toaster: ToastrService, private productService: ProductService, private router: Router, private cartService: CartService, private favService: FavoriteService) {
+    spinner.show();
+
     this.productId = activatedRouter.snapshot.paramMap.get('id');
 
     productService.productById(this.productId).subscribe(data => {
-      console.log(data);
       var total = 0;
       if (data._id) {
         for (let rating of data.productRating) {
@@ -37,12 +40,14 @@ export class ViewParticularProductComponent implements OnInit {
         toaster.info("This Is Product Not Found", "Sorry");
         router.navigate(['/']);
       }
+      spinner.hide()
     }, err => {
 
     });
   }
 
   ngOnInit(): void {
+    AOS.init();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         location.reload();

@@ -40,14 +40,14 @@ export class GardenerService {
     return this.http.post<any>(bookTheGardenerApi, { userId: sessionStorage.getItem('userId'), gardenerId: gardenerId });
   }
 
-  public approveRequest(userId: any) {
+  public approveRequest(userId: any, email: any, nurseryId: any) {
     let approveRequestApi = "http://localhost:3000/gardener/approve-request"
-    return this.http.post<any>(approveRequestApi, { gardenerId: sessionStorage.getItem('userId'), userId: userId });
+    return this.http.post<any>(approveRequestApi, { gardenerId: sessionStorage.getItem('userId'), nurseryId: nurseryId, userId: userId, email: email });
   }
 
-  public cancelRequest(userId: string) {
+  public cancelRequest(userId: any, email: any, nurseryId: any) {
     let cancelRequestApi = "http://localhost:3000/gardener/cancel-request"
-    return this.http.post<any>(cancelRequestApi, { gardenerId: sessionStorage.getItem('userId'), userId: userId });
+    return this.http.post<any>(cancelRequestApi, { gardenerId: sessionStorage.getItem('userId'), nurseryId: nurseryId, userId: userId, email: email });
   }
 
   public viewRequest(gardenerId: any) {

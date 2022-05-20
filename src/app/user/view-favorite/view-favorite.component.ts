@@ -1,8 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/service/cart.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-favorite',
@@ -11,13 +14,18 @@ import { FavoriteService } from 'src/app/service/favorite.service';
 })
 export class ViewFavoriteComponent implements OnInit {
   productList: any;
-  constructor(private favoriteService: FavoriteService, private toaster: ToastrService, private cartService: CartService) { }
+  constructor(private spinner: NgxSpinnerService, private router: Router, private favoriteService: FavoriteService, private toaster: ToastrService, private cartService: CartService) {
+    AOS.init();
+  }
 
   ngOnInit(): void {
+
+    this.spinner.show()
+
     this.favoriteService.viewFav().subscribe(data => {
       console.log(data);
       this.productList = data.productList
-
+      this.spinner.hide()
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 401) {
@@ -107,6 +115,10 @@ export class ViewFavoriteComponent implements OnInit {
         }
       }
     });
+  }
+
+  public viewProduct(productId: any) {
+    this.router.navigate(['view-particular-product/' + productId]);
   }
 
 }

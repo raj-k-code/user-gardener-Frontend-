@@ -1,11 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ExternalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Gardener } from 'src/app/model/gardener';
 import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
 import { UserService } from 'src/app/service/user.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-profile',
@@ -29,9 +31,12 @@ export class ViewProfileComponent implements OnInit {
   showImage: any;
 
 
-  constructor(private userService: UserService, private toaster: ToastrService, private gardenerService: GardenerService) { }
+  constructor(private spinner: NgxSpinnerService, private userService: UserService, private toaster: ToastrService, private gardenerService: GardenerService) {
+    spinner.show();
+  }
 
   ngOnInit(): void {
+    AOS.init();
     if (sessionStorage.getItem('number') == "1") {
       this.userService.viewProfile().subscribe(data => {
         if (data.userEmail) {
@@ -44,6 +49,7 @@ export class ViewProfileComponent implements OnInit {
 
           console.log(this.userData + "============");
         }
+        this.spinner.hide();
       }, err => {
         if (err instanceof HttpErrorResponse) {
           if (err.status == 500) {

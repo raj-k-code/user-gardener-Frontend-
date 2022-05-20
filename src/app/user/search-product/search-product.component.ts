@@ -1,11 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/service/cart.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
 import { ProductService } from 'src/app/service/product.service';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.component.html',
@@ -17,10 +18,12 @@ export class SearchProductComponent implements OnInit {
   page: any;
   id: any;
 
-  constructor(private productService: ProductService, private toaster: ToastrService, private cartService: CartService, private router: Router, private activetedRoute: ActivatedRoute, private favService: FavoriteService) {
+  constructor(private spinner: NgxSpinnerService, private productService: ProductService, private toaster: ToastrService, private cartService: CartService, private router: Router, private activetedRoute: ActivatedRoute, private favService: FavoriteService) {
+    spinner.show();
 
     productService.viewProductList().subscribe(data => {
       this.productList = data
+      spinner.hide()
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 401) {
@@ -39,6 +42,7 @@ export class SearchProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         location.reload();
