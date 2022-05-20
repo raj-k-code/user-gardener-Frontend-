@@ -41,7 +41,7 @@ export class AppComponent {
     sessionStorage.setItem("number", number);
     this.router.navigate(['signup']);
     // location.reload();
-
+    //
   }
 
   gardenerOrUser(): boolean {
