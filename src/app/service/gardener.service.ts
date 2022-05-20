@@ -11,57 +11,57 @@ export class GardenerService {
   constructor(private http: HttpClient) { }
 
   public signIn(gardener: Gardener) {
-    let signInApi = "http://localhost:3000/gardener/signin";
+    let signInApi = "https://prakritee.herokuapp.com/gardener/signin";
     return this.http.post<any>(signInApi, { gardenerEmail: gardener.gardenerEmail, gardenerPassword: gardener.gardenerPassword });
   }
 
   public signInWithGoogle(email: any) {
-    let signInWithGoogleApi = "http://localhost:3000/gardener/signin-with-google";
+    let signInWithGoogleApi = "https://prakritee.herokuapp.com/gardener/signin-with-google";
     return this.http.post<any>(signInWithGoogleApi, { gardenerEmail: email });
   }
 
   public signUp(gardener: Gardener) {
-    let signUpApi = "http://localhost:3000/gardener/signup";
+    let signUpApi = "https://prakritee.herokuapp.com/gardener/signup";
     return this.http.post<any>(signUpApi, gardener)
   }
 
   public gardenerList(): Observable<Gardener[]> {
-    let gardenerListApi = "http://localhost:3000/gardener/gardener-list"
+    let gardenerListApi = "https://prakritee.herokuapp.com/gardener/gardener-list"
     return this.http.get<Gardener[]>(gardenerListApi);
   }
 
   public forgotPassword(email: string) {
-    let forgotPasswordApi = "http://localhost:3000/gardener/forgot-password"
+    let forgotPasswordApi = "https://prakritee.herokuapp.com/gardener/forgot-password"
     return this.http.post<any>(forgotPasswordApi, { gardenerEmail: email });
   }
 
   public bookTheGardener(gardenerId: string) {
-    let bookTheGardenerApi = "http://localhost:3000/gardener/book-gardener"
+    let bookTheGardenerApi = "https://prakritee.herokuapp.com/gardener/book-gardener"
     return this.http.post<any>(bookTheGardenerApi, { userId: sessionStorage.getItem('userId'), gardenerId: gardenerId });
   }
 
   public approveRequest(userId: any, email: any, nurseryId: any) {
-    let approveRequestApi = "http://localhost:3000/gardener/approve-request"
+    let approveRequestApi = "https://prakritee.herokuapp.com/gardener/approve-request"
     return this.http.post<any>(approveRequestApi, { gardenerId: sessionStorage.getItem('userId'), nurseryId: nurseryId, userId: userId, email: email });
   }
 
   public cancelRequest(userId: any, email: any, nurseryId: any) {
-    let cancelRequestApi = "http://localhost:3000/gardener/cancel-request"
+    let cancelRequestApi = "https://prakritee.herokuapp.com/gardener/cancel-request"
     return this.http.post<any>(cancelRequestApi, { gardenerId: sessionStorage.getItem('userId'), nurseryId: nurseryId, userId: userId, email: email });
   }
 
   public viewRequest(gardenerId: any) {
-    let viewRequestApi = "http://localhost:3000/gardener/view-request"
+    let viewRequestApi = "https://prakritee.herokuapp.com/gardener/view-request"
     return this.http.post<any>(viewRequestApi, { gardenerId: gardenerId });
   }
 
   public viewProfile(): Observable<Gardener> {
-    let viewProfileApi = "http://localhost:3000/gardener/gardner-by-id/" + sessionStorage.getItem('userId');
+    let viewProfileApi = "https://prakritee.herokuapp.com/gardener/gardner-by-id/" + sessionStorage.getItem('userId');
     return this.http.get<Gardener>(viewProfileApi);
   }
 
   public updateProfile(formData: any): Observable<any> {
-    let updateProfileApi = "http://localhost:3000/gardener/edit";
+    let updateProfileApi = "https://prakritee.herokuapp.com/gardener/edit";
     return this.http.post<any>(updateProfileApi, formData);
   }
 }

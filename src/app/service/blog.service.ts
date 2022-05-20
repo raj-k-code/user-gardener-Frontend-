@@ -11,12 +11,12 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   public blogList(): Observable<Blog[]> {
-    let blogListApi = "http://localhost:3000/blog/blog-list";
+    let blogListApi = "https://prakritee.herokuapp.com/blog/blog-list";
     return this.http.get<Blog[]>(blogListApi);
   }
 
   public blogDescription(blogId: any): Observable<Blog> {
-    let blogDescriptionApi = "http://localhost:3000/blog/blog-by-id/" + blogId;
+    let blogDescriptionApi = "https://prakritee.herokuapp.com/blog/blog-by-id/" + blogId;
     return this.http.get<Blog>(blogDescriptionApi);
   }
 }
