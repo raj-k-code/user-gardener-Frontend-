@@ -10,7 +10,7 @@ export class NurseryownerService {
   constructor(private http: HttpClient) { }
 
   public register(nursery: Nursury) {
-    let registerApi = "http://localhost:3000/nurseryowner/signup";
+    let registerApi = "https://prakritee.herokuapp.com/nurseryowner/signup";
     return this.http.post<any>(registerApi, { nurseryName: nursery.nurseryName, nurseryOwnerName: nursery.nurseryOwnerName, nurseryOwnerEmail: nursery.nurseryOwnerEmail, nurseryOwnerPassword: nursery.nurseryOwnerPassword, nurseryOwnerMobile: nursery.nurseryOwnerMobile, nurseryAddress: nursery.nurseryAddress })
   }
 }

@@ -11,12 +11,12 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   public categoryList(): Observable<Category[]> {
-    let categoryListApi = "http://localhost:3000/admin/category/category-list"
+    let categoryListApi = "https://prakritee.herokuapp.com/admin/category/category-list"
     return this.http.get<Category[]>(categoryListApi);
   }
 
   public categoryById(categoryId: any): Observable<Category> {
-    let categoryByIdApi = "http://localhost:3000/admin/category-by-id/" + categoryId;
+    let categoryByIdApi = "https://prakritee.herokuapp.com/admin/category-by-id/" + categoryId;
     return this.http.get<Category>(categoryByIdApi);
   }
 }
