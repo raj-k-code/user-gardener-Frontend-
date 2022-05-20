@@ -39,7 +39,7 @@ const socialProvider = {
   provide: 'SocialAuthServiceConfig',
   useValue: {
     providers: [
-      //
+
       // 204956875095-57a6uitqt7u5kq7i4tu01im83ok6u1tj.apps.googleusercontent.com
       {
         id: GoogleLoginProvider.PROVIDER_ID,
