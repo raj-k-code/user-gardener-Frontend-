@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/service/cart.service';
 import { OrderService } from 'src/app/service/order.service';
-
+import * as AOS from 'aos';
 declare let Razorpay: any;
 
 @Component({
@@ -24,9 +24,12 @@ export class PlaceOrderComponent implements OnInit {
   total: any;
   paymentMethod: any;
 
-  constructor(private orderService: OrderService, private toaster: ToastrService, private cartService: CartService, private router: Router) { }
+  constructor(private orderService: OrderService, private toaster: ToastrService, private cartService: CartService, private router: Router) {
+    AOS.init();
+  }
 
   ngOnInit(): void {
+    // AOS.init()
   }
 
   public placeOrder() {

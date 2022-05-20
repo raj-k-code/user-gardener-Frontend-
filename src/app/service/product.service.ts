@@ -30,4 +30,9 @@ export class ProductService {
     return this.http.get<Product>(productByIdApi);
   }
 
+  public rateTheProduct(productId: any, rate: any): Observable<any> {
+    let rateTheProductApi = "http://localhost:3000/product/rate-the-product";
+    return this.http.post<any>(rateTheProductApi, { productId: productId, rate: rate, userId: sessionStorage.getItem('userId') });
+  }
+
 }

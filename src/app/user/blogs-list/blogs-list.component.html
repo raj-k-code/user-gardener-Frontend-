@@ -36,9 +36,8 @@
     </div>
 </div>
 <div class="container mt-5">
-
     <div class="cards grid-row">
-        <div *ngFor="let blog of blogList" class="card flex-row colmun">
+        <div *ngFor="let blog of blogList | paginate: { itemsPerPage: 8, currentPage: page}" class="card flex-row colmun">
             <div class="col-left card-image">
                 <div class="card-bg-img">
                     <img style="cursor: pointer;" (click)="viewBlog(blog._id)" src="{{blog.blogImage}}" alt="card background image">
@@ -59,4 +58,15 @@
             </div>
         </div>
     </div>
+    <div *ngIf="(blogList.length > 0)" class="row mt-5">
+        <div class="col col-lg-4 col-md-2"></div>
+        <div class="col col-lg-4 col-md-8 col-sm-12">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+        <div class="col col-lg-4 col-md-2"></div>
+    </div>
 </div>
+
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

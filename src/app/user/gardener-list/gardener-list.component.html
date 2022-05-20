@@ -1,30 +1,4 @@
-<!-- <table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Profile Image</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Experience</th>
-            <th>Rating</th>
-            <th>Mobile</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let gardener of gardenerList">
-            <td><img src="{{gardener.gardenerImage}}" style="height: 100px; width: 100px; border-radius: 50%;" alt=""></td>
-            <td>{{gardener.gardenerName}}</td>
-            <td>{{gardener.gardenerEmail}}</td>
-            <td>{{gardener.gardenerExperience}}</td>
-            <td>
-                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true">
-                </ngb-rating>
-            </td>
-            <td>{{gardener.gardenerMobile}}</td>
-        </tr>
-    </tbody>
-</table> -->
-
-<div class="container ">
+<!-- <div class="container ">
     <div class="row m-5">
         <div class="col">
             <h1 style="text-align: center;">All Gardeners</h1>
@@ -52,3 +26,44 @@
         </div>
     </div>
 </div>
+ -->
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
+            <h2 class="text-center">Our Expert Gardeners</h2>
+            <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let gardener of gardenerList | paginate: { itemsPerPage: 8, currentPage: page};  index as i " class="col-md-4">
+            <div class="card-box text-center">
+                <div class="user-pic">
+                    <img src="{{gardener.gardenerImage}}" class="img-fluid" alt="User Pic">
+                </div>
+                <ngb-rating [max]="5" [(rate)]="starRating[i]" [readonly]="true"></ngb-rating>
+                <h4>{{gardener.gardenerName | uppercase}}</h4>
+                <h6>{{gardener.gardenerMobile }}</h6>
+                <hr>
+                <p>{{gardener.gardenerAddress}}</p>
+                <hr>
+                <a (click)="bookGardener(gardener._id)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Book
+            Now</span></a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="(gardenerList.length > 0)" class="row mt-5">
+        <div class="col col-lg-4 col-md-2"></div>
+        <div class="col col-lg-4 col-md-8 col-sm-12">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+        <div class="col col-lg-4 col-md-2"></div>
+    </div>
+</div>
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

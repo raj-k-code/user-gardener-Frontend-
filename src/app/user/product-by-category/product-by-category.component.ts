@@ -9,6 +9,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { CategoryService } from 'src/app/service/category.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
 import { ProductService } from 'src/app/service/product.service';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-product-by-category',
@@ -32,7 +33,7 @@ export class ProductByCategoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    Aos.init();
     let id = this.activatedRouter.snapshot.paramMap.get('id')
     this.categoryService.categoryById(id).subscribe(data => {
       this.category = data;

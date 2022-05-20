@@ -31,7 +31,7 @@
                     <span class="label label-success">61</span>
                 </div> -->
 
-                <p class="price">Rs. ₹{{product.productPrice}}.00</p>
+                <p class="price">Price: ₹{{product.productPrice}}.00</p>
                 <p *ngIf="product.productRating.length > 0"><b>Rating: </b>
                     <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
                     {{product.productRating.length}} Ratings
@@ -46,3 +46,6 @@
         </div>
     </div>
 </div>
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

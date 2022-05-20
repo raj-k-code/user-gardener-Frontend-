@@ -1,11 +1,19 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row mt-5 align-content-center">
         <div *ngFor="let user of dataList; index as i" class="col-md-3 p-1">
-            <div class="steps12">
+            <div *ngIf="user.userId != null" class="steps12">
                 <img style="margin-top: 5%;" src="{{user.userId.userImage}}" alt="">
                 <h4 class="mt-1">{{user.userId.userName}}</h4>
                 <h6>+91 {{user.userId.userMobile}}</h6>
                 <p>{{user.userId.userAddress}}</p>
+                <button (click)="approveRequest(user)" class="mb-1 btn btn-success p-1 mb-3 mr-1" type="button">Acceept</button>
+                <button (click)="cancelRequest(user,i)" class="mb-1 btn btn-danger pt-1 pb-1 mb-3">Cancel</button>
+            </div>
+            <div *ngIf="user.nurseryId != null" class="steps12">
+                <img style="margin-top: 5%;" src="{{user.nurseryId.Image}}" alt="">
+                <h4 class="mt-1">{{user.nurseryId.nurseryName}}</h4>
+                <h6>+91 {{user.nurseryId.nurseryOwnerMobile}}</h6>
+                <p>{{user.nurseryId.nurseryAddress}}</p>
                 <button (click)="approveRequest(user)" class="mb-1 btn btn-success p-1 mb-3 mr-1" type="button">Acceept</button>
                 <button (click)="cancelRequest(user,i)" class="mb-1 btn btn-danger pt-1 pb-1 mb-3">Cancel</button>
             </div>
@@ -14,4 +22,50 @@
             <h1 class="text-danger" style="text-align: center;">No Request Yet</h1>
         </div>
     </div>
+</div> -->
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
+            <h2 class="text-center">All Booking Requests</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let user of dataList; index as i" class="col-md-4">
+            <div *ngIf="user.userId != null" class="card-box text-center">
+                <div class="user-pic">
+                    <img src="{{user.userId.userImage}}" class="img-fluid" alt="User Pic">
+                </div>
+                <h4>{{user.userId.userName | uppercase}}</h4>
+                <p>(User)</p>
+                <h6>+91 {{user.userId.userMobile}}</h6>
+                <hr>
+                <p>{{user.userId.userAddress}}</p>
+                <hr>
+                <a (click)="approveRequest(user)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Accept</span></a>
+                <a (click)="cancelRequest(user,i)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Reject</span></a>
+            </div>
+            <div *ngIf="user.nurseryId != null" class="card-box text-center">
+                <div class="user-pic">
+                    <img src="{{user.nurseryId.Image}}" class="img-fluid" alt="User Pic">
+                </div>
+                <h4>{{user.nurseryId.nurseryName | uppercase}}</h4>
+                <p>(NurseryOwner)</p>
+                <h6>+91 {{user.nurseryId.nurseryOwnerMobile}}</h6>
+                <hr>
+                <p>{{user.nurseryId.nurseryAddress}}</p>
+                <hr>
+                <a (click)="approveRequest(user)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Accept</span></a>
+                <a (click)="cancelRequest(user,i)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Reject</span></a>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

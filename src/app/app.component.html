@@ -75,7 +75,7 @@
 <!-- New Navigation======================================= -->
 
 
-<nav class="navbar navbar-dark  navbar-expand-sm sticky-top navi">
+<nav class="navbar navbar-dark  navbar-expand-lg sticky-top navi">
     <a class="navbar-brand ml-5" routerLink="/">
         <img src="../assets/images/Group40.png" width="150px" height="50px" alt="logo">
     </a>
@@ -106,15 +106,14 @@
         </div>
 
         <div class="navbar-nav ml-auto ">
-            <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i class="fa fa-search"></i></a>
+            <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i
+          style="font-size: 25px; padding-top: 8px;" class="fa fa-search"></i></a>
 
             <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-in</a>
                 <div class="dropdown-menu">
                     <a (click)="whoseSignIn(1)" class="dropdown-item">User</a>
                     <a (click)="whoseSignIn(2)" class="dropdown-item">Gardener</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item">Register Nursery</a>
                 </div>
             </div>
 
@@ -123,6 +122,8 @@
                 <div class="dropdown-menu">
                     <a (click)="whoseSignUp(1)" class="dropdown-item">User</a>
                     <a (click)="whoseSignUp(2)" class="dropdown-item">Gardener</a>
+                    <div class="dropdown-divider"></div>
+                    <a routerLink="nursery-signup" class="dropdown-item">Register Nursery</a>
                 </div>
             </div>
 
@@ -158,6 +159,109 @@
 
 
 <footer>
+    <div class="container-fluid p-4">
+        <div class="row align-content-center ">
+            <div class="col-lg-3 col-md-4 mb-2 mt-3" style="padding-left: 10%;" data-aos="fade-right" data-aos-duration="2000">
+                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">shopping online</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a href="" style="color: black">frequently asked questions</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">delivery</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">pricing</a>
+                    </li>
+                    <!-- <li>
+                        <a href="" style="color: black">where we deliver?</a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-2 mt-3 " style="padding-left: 7%;" data-aos="fade-right" data-aos-duration="2000">
+                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Cards</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a href="" style="color: black">frequently asked questions</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">delivery and payment</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">activate the card</a>
+                    </li>
+                    <li>
+                        <a href="" style="color: black">rules</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-2 mt-3 " style="padding-left: 10%;" data-aos="fade-right" data-aos-duration="2000">
+                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">About</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a href="" style="color: black">buy a gift card</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">history</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">return</a>
+                    </li>
+                    <li>
+                        <a href="" style="color: black">contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-2 mt-3 " style="padding-left: 7%;" data-aos="fade-right" data-aos-duration="2000">
+                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Nursury</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a href="" style="color: black">registration</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">application</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="" style="color: black">about</a>
+                    </li>
+                    <li>
+                        <a href="" style="color: black">rules</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center " data-aos="fade-up" data-aos-duration="2000">
+        <li class="icons">
+            <img style="font-size: 50px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABVUlEQVRIS8WVgVECMRBFuQqwA6ED7OCsAKkArEA7UDvQCjgrgA6gA7UD6EAr0P+YXSdkEshw3JCZncxdsv/v/3vJVb2OR9Uxfu9iBLWUTRXMgyMqN1pfK95t3tueUjDTjvmJ1t0rrwlzYwIqXp0I7mm3oZKYAHasKR0/ZuOd5idLwipc2I2YYKN31xl0Ej9tbWSF8HyjgGBha2AMcwS/CfAvq8jBfQskjYKcgeIqyP0vPFaQIqBCqsKCmYEA/GLAH4miigncz1eBPERAb3p+NBVx34oJqPJZ8a3oRwTuNeveYN9yFoKtWdSKwC1Kgbi6pYjGkbpiBeTRZL4gSMIm88yX1KrJEOD1xEjCQgHn1Ief59EeAJY7aFgRHjQOV2p4b3Zrba+KFMHBq6I22Zniil4fvOxAoJGdXddeIkogYs71xPfi+VrR2Lwn82K/zCKzSzZ1ruAP7A1HGQIYrwwAAAAASUVORK5CYII="
+            />
+
+        </li>
+        <li class="icons">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABWUlEQVRIS7WVgbEBQQyGqeCVgAoeFdABKnhUgApQASpABehACXRAB1TA/5vbm4jdzZ55l5nM3e5t8mWz2Vy1UrJUS/ZfSQH0EEQX2syUMZ0y3eN5iAUZA9DxAlo3dnnB9wmUsA8JAZZYOSqYPtoQ9CY+wDfOndMVXsaSoAFMyy4S+TVzINMxw9xU2PRlujSA+awFAHfM86C5RooG8HvDLZAAK/otjAbCcwfvbSifVCn5LiRggxV/geg5PYcyWkpyMBLA2v5NBOi0aDP6anFSAh4R53oHFiD3nQKwbvsR3ngWWl520viCsa+CLMANdj/K+xljVtwbYIOx75AtgC+1ecVJ4wEA63865CH8MOCPbhpKU5FD5m2vu0CLtAp5D2JVFG0VBIeaXQrAbHZuZ74DtwC6lbx8WT8c7saVbgjg67B5rVglyIWsrg706CojMOctwBRApHLtT6UDnrHlSRl+jnqOAAAAAElFTkSuQmCC"
+            />
+        </li>
+        <li class="icons">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+WVYQ3CMBSENwUgAQeAApAADuYAnAAScAAKAAfgAAmgAO5LWtKMlUK77g+XXLom7d3u9TUti8woM+sXnRuclWiYmAqNsdWoJ3gkir/pfjLYavVNXESYvnR9BohXRngdYRI02Eh0mdMAbf4cWKNfKhVMcJca3QBGYk88mflAY1/ciVdxJtY7L2iA2NQIHjVORLupMuI0gAUpV848ycBXKgxJCpIMKM9BpHRzkwZRmzTZgNJhAPYiZ5DNoOmsWk3wxwa0nHvR6By6BPBNB4GmdV+dgdkfPXjvQRsPzsVJ2P2TGV0T38bsj/4TPzFLGRrKnG0AAAAASUVORK5CYII="
+            />
+        </li>
+        <li class="icons">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABV0lEQVRIS92V/VECMRDFoQItgQ6QCjw7gArUCsAOoALsgOtA7YAOlAqECoAK8P2YhMmFzd3FmfuHndk5Jvvx8l6Spd/r2Pod9+/dHsC9JDu0kG2snKm8kG/lpXzh6oh9+h6xRCST8FMDMlNsacSpeZC/yd8tgIEWfx2Dib5rowk533KYWgbIxgGcNxkyoGgfVJX6DW1YeYPdR6I5y0c5OZfNxRIReIwaoCcO0EhuyeNLvhzApUXMoFCEnd/V7LIuBON5mBAzOP2zsS+rHDCLbSTKwUTCyg2MAQZO72FOV5e705f6ilmjgnPgEXEbcuxKHksi1l7kq5zOymX3PLKrKZAadrxEWLS1JyWureS6aYqec/lzA8qr4mUqJwUAXRggV8p4tcylZHMKQ4DCFfCSU7PGg/Fiab5t0tBiwK4Bg4W/rgwwDjAcG029z/Hb+0drRTsnqXOJ/gC/IzgZKD4sGQAAAABJRU5ErkJggg=="
+            />
+        </li>
+
+
+    </div>
+    <div class="text-center p-3 ">
+        © 2022 Copyright:
+        <a class="text-dark" href="">Prakriti.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+
+<!-- <footer>
     <div class="container-fluid p-4">
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4">
@@ -256,8 +360,10 @@
         © 2020 Copyright:
         <a class="text-dark" href="">Prakriti.com</a>
     </div>
-    <!-- Copyright -->
-</footer>
+
+</footer> -->
+
+
 
 <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 

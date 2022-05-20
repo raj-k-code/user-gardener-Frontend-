@@ -10,6 +10,7 @@
                     <th>Totel Products</th>
                     <th>Total Amount</th>
                     <th>Status</th>
+                    <th>View</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,9 +20,19 @@
                     <td>{{order.productList.length}}</td>
                     <td>{{order.total}}</td>
                     <td>{{order.orderStatus}}</td>
+                    <td>
+                        <div class="text-center">
+                            <a routerLink="view-order/{{order._id}}" class="btn btn-success text-light px-3 py-2 mr-2 main-btn">View
+                More</a>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
 </div>
+
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img src='https://gardendevices.com/wp-content/uploads/2020/09/garden-loader.gif' />"></ngx-spinner>

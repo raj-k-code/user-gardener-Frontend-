@@ -8,6 +8,7 @@ import { BlogDescriptionComponent } from './user/blog-description/blog-descripti
 import { BlogsListComponent } from './user/blogs-list/blogs-list.component';
 import { ContactUsComponent } from './user/contact-us/contact-us.component';
 import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
+import { NurserySignupComponent } from './user/nursery-signup/nursery-signup.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { ProductByCategoryComponent } from './user/product-by-category/product-by-category.component';
@@ -16,6 +17,7 @@ import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { ViewCartComponent } from './user/view-cart/view-cart.component';
 import { ViewFavoriteComponent } from './user/view-favorite/view-favorite.component';
+import { ViewOrderComponent } from './user/view-order/view-order.component';
 import { ViewParticularProductComponent } from './user/view-particular-product/view-particular-product.component';
 import { ViewProductComponent } from './user/view-product/view-product.component';
 import { ViewProfileComponent } from './user/view-profile/view-profile.component';
@@ -41,7 +43,10 @@ const routes: Routes = [
   { path: "blog-list", component: BlogsListComponent },
   { path: "blog-description/:id", component: BlogDescriptionComponent },
   { path: "order-history", component: OrderHistoryComponent },
-  { path: "view-profile", component: ViewProfileComponent }
+  { path: "view-profile", component: ViewProfileComponent },
+  { path: "order-history/view-order/:id", component: ViewOrderComponent, canActivate: [AuthGaurdService] },
+  { path: "nursery-signup", component: NurserySignupComponent }
+
 
 ];
 

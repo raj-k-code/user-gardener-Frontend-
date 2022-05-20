@@ -1,10 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Gardener } from 'src/app/model/gardener';
 import { GardenerService } from 'src/app/service/gardener.service';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-gardener-list',
   templateUrl: './gardener-list.component.html',
@@ -12,16 +13,30 @@ import { GardenerService } from 'src/app/service/gardener.service';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GardenerListComponent implements OnInit {
-  gardenerList?: Gardener[]
-  starRating = 0;
+  gardenerList: Gardener[] = []
+  starRating: any[] = [];
+  page: any;
 
+  constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService, private router: Router) { AOS.init(); }
 
-  constructor(private gardenerService: GardenerService, private toaster: ToastrService, private router: Router) { }
+  // index = (pageNo - 1) * 8 + (index)
 
   ngOnInit(): void {
+    AOS.init();
+    this.spinner.show()
     this.gardenerService.gardenerList().subscribe(data => {
       if (data.length > 0) {
+        for (let gardener in data) {
+          var total = 0;
+          for (let rating of data[gardener].gardenerRating) {
+            total = total + rating.rate;
+          }
+          this.starRating[gardener] = total / 5;
+          console.log(this.starRating[gardener]);
+        }
+
         this.gardenerList = data;
+        this.spinner.hide()
       }
       else
         this.toaster.info("No Gardener Available", "Sorry");
@@ -48,15 +63,15 @@ export class GardenerListComponent implements OnInit {
     })
   }
 
-  public ratingGardener(gardenerRating: any) {
-    var total = 0;
-    for (let rating of gardenerRating) {
-      total = total + rating.rate;
-    }
-    this.starRating = total / 5;
-    console.log(this.starRating);
-    alert(this.starRating);
-  }
+  // public ratingGardener(gardenerRating: any) {
+  //   var total = 0;
+  //   for (let rating of gardenerRating) {
+  //     total = total + rating.rate;
+  //   }
+  //   this.starRating = total / 5;
+  //   console.log(this.starRating);
+  //   alert(this.starRating);
+  // }
 
   public bookGardener(gardenerId: any) {
     if (sessionStorage.getItem('userId') && sessionStorage.getItem('token')) {
