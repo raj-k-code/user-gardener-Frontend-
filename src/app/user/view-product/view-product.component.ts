@@ -5,6 +5,7 @@ import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { ProductService } from 'src/app/service/product.service';
 import * as AOS from 'aos';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-view-product',
@@ -14,12 +15,14 @@ import * as AOS from 'aos';
 export class ViewProductComponent implements OnInit {
   productList?: Product[]
 
-  constructor(private productService: ProductService, private toaster: ToastrService, private cartService: CartService) { }
+  constructor(private spinner: NgxSpinnerService, private productService: ProductService, private toaster: ToastrService, private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     AOS.init();;
     this.productService.viewProductList().subscribe(data => {
       this.productList = data
+      this.spinner.hide();
     }, err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status == 401) {
