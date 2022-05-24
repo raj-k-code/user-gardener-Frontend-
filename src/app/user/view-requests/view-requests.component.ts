@@ -4,7 +4,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-requests',
@@ -17,7 +16,6 @@ export class ViewRequestsComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService) {
     spinner.show();
-    AOS.init();
   }
 
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as AOS from 'aos';
 import { ToastrService } from 'ngx-toastr';
 import { QueryService } from 'src/app/service/query.service';
 
@@ -22,10 +21,9 @@ export class ContactUsComponent implements OnInit {
     userId: this.userId,
     gardenerId: this.gardenerId,
   }
-  constructor(private queryService: QueryService, private toaster: ToastrService, private router: Router) { AOS.init(); }
+  constructor(private queryService: QueryService, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    AOS.init();
   }
 
   addQuery() {

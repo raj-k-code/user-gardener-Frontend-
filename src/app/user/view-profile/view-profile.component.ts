@@ -7,7 +7,6 @@ import { Gardener } from 'src/app/model/gardener';
 import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
 import { UserService } from 'src/app/service/user.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-profile',
@@ -36,7 +35,6 @@ export class ViewProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
     if (sessionStorage.getItem('number') == "1") {
       this.userService.viewProfile().subscribe(data => {
         if (data.userEmail) {

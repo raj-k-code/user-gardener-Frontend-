@@ -2,78 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Iconlink-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!--closeIconLink-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Iconlink-->
+  <!--closeIconLink-->
 
-    <title>SignUp</title>
+  <title>SignUp</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="forms">
-            <div class="form login">
-                <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
-                    <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
-                </div>
+  <div class="container">
+    <div class="forms">
+      <div class="form login">
+        <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
+          <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
+        </div>
 
-                <form action="#">
-                    <div class="input-field">
-                        <input [(ngModel)]="gardener.gardenerName" #Name="ngModel" name="username" type="text" placeholder="Enter your Name" required>
-                        <i class="uil uil-user"></i>
-                        <span class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched ">Please Enter Name</span>
-                    </div>
-                    <div class="input-field">
-                        <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail" #Email="ngModel" name="email" type="text" placeholder="Enter your email" required>
-                        <i class="uil uil-envelope-alt icon"></i>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+        <form action="#">
+          <div class="input-field">
+            <input [(ngModel)]="gardener.gardenerName" #Name="ngModel" name="username" type="text"
+              placeholder="Enter your Name" required>
+            <i class="uil uil-user"></i>
+            <span class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched ">Please Enter Name</span>
+          </div>
+          <div class="input-field">
+            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail" #Email="ngModel"
+              name="email" type="text" placeholder="Enter your email" required>
+            <i class="uil uil-envelope-alt icon"></i>
+            <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
               Address</span>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
+            <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
               Address</span>
-                    </div>
-                    <div class="input-field">
-                        <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="text" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                        <span class="alert alert-danger" *ngIf="Password.errors?.required && Password.touched ">Please Enter
+          </div>
+          <div class="input-field">
+            <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="text"
+              placeholder="Enter your password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+            <span class="alert alert-danger" *ngIf="Password.errors?.required && Password.touched ">Please Enter
               Password</span>
-                        <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
+            <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
               characters.like: Ab@123 </span>
 
-                    </div>
-                    <div class="input-field">
-                        <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel" [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
-                        <i class="uil uil-mobile-android"></i>
-                        <span class="alert alert-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
+          </div>
+          <div class="input-field">
+            <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
+              [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
+            <i class="uil uil-mobile-android"></i>
+            <span class="alert alert-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
               Number</span>
-                        <span class="alert alert-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
+            <span class="alert alert-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
               Mobile Number</span>
-                    </div>
-                    <div class="input-field">
-                        <input #Address="ngModel" [(ngModel)]="gardener.gardenerAddress" name="address" type="text" placeholder="Enter your Address" required>
-                        <i class="uil uil-house-user"></i>
-                        <span class="alert alert-danger" *ngIf="Address.errors?.required && Address.touched ">Please Enter
+          </div>
+          <div class="input-field">
+            <input #Address="ngModel" [(ngModel)]="gardener.gardenerAddress" name="address" type="text"
+              placeholder="Enter your Address" required>
+            <i class="uil uil-house-user"></i>
+            <span class="alert alert-danger" *ngIf="Address.errors?.required && Address.touched ">Please Enter
               Address</span>
-                    </div>
-                    <div *ngIf="!gardenerOrUser()" class="input-field">
-                        <input #Experience="ngModel" [(ngModel)]="gardener.gardenerExperience" name="experience" type="text" placeholder="Enter your Experience" required>
-                        <i class="uil uil-user"></i>
-                        <span class="alert alert-danger" *ngIf="Experience.errors?.required && Experience.touched ">Please Enter
+          </div>
+          <div *ngIf="!gardenerOrUser()" class="input-field">
+            <input #Experience="ngModel" [(ngModel)]="gardener.gardenerExperience" name="experience" type="text"
+              placeholder="Enter your Experience" required>
+            <i class="uil uil-user"></i>
+            <span class="alert alert-danger" *ngIf="Experience.errors?.required && Experience.touched ">Please Enter
               Your Experience</span>
-                    </div>
+          </div>
 
-                    <div class="input-field button">
-                        <input [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid " (click)="SignUp()" type="button" value="SignUp ">
-                    </div>
+          <div class="input-field button">
+            <input [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid "
+              (click)="SignUp()" type="button" value="SignUp ">
+          </div>
 
 
-                </form>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>

@@ -5,7 +5,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { OrderService } from 'src/app/service/order.service';
 import { ProductService } from 'src/app/service/product.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-order',
@@ -20,7 +19,6 @@ export class ViewOrderComponent implements OnInit {
 
   constructor(private spnner: NgxSpinnerService, private productService: ProductService, private router: Router, private orderService: OrderService, private toaster: ToastrService, private activated: ActivatedRoute) {
     spnner.show();
-    AOS.init();
   }
 
   ngOnInit(): void {

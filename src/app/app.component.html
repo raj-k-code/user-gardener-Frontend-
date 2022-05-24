@@ -1,367 +1,189 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark back sticky-top ">
-
-    <a class="navbar-brand" routerLink="/"> <img src="../assets/images/WhatsApp Image 2022-05-07 at 4.13.27 PM.jpeg" alt=""> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" style="border: 0;" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item activated">
-                <a class="nav-link navigation-item " routerLink="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link navigation-item" routerLink="about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link navigation-item" routerLink="contact-us">Contact Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link navigation-item" routerLink="blog-list">Blogs</a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="gardenerOrUser() || !isLoggedIn()" class=" nav-link" routerLink="gardener-list">Gardners List</a>
-            </li>
-            <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
-                <a class="nav-link" href="#">Nursery List</a>
-            </li>
-            <li *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item">
-                <a class="nav-link" routerLink="view-requests">Reuests List</a>
-            </li>
-            <li *ngIf="isLoggedIn()" class="nav-item">
-                <a routerLink="order-history" class="nav-link"> Order History</a>
-            </li>
-
-        </ul>
-
-        <ul class="navbar navbar-right navbar-nav ">
-
-            <li class="nav-item dropdown">
-                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          Sign-up
-        </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" (click)="whoseSignUp(1)">user</a>
-                    <a class="dropdown-item" (click)="whoseSignUp(2)">Gardner</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ragister your nursury </a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a *ngIf="!isLoggedIn()" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          Sign-in
-        </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" (click)="whoseSignIn(1)">user</a>
-                    <a class="dropdown-item" (click)="whoseSignIn(2)">Gardner</a>
-                </div>
-            </li>
-            <li>
-                <a (click)="signOut()" *ngIf="isLoggedIn()" class="nav-link" href="#">Sign-out</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link  " routerLink="search-product"><i class="fa fa-search "></i> </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="view-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="view-favorite"><i class="fa fa-heart" aria-hidden="true"></i></a>
-            </li>
-        </ul>
-    </div>
-</nav> -->
-
-
 <!-- New Navigation======================================= -->
+<div class="mainpage-container">
 
-
-<nav class="navbar navbar-dark  navbar-expand-lg sticky-top navi">
+  <nav class="navbar  navbar-dark  navbar-expand-lg sticky-top navi ">
     <a class="navbar-brand ml-5" routerLink="/">
-        <img src="../assets/images/Group40.png" width="150px" height="50px" alt="logo">
+      <img src="../assets/images/Group40.png" width="150px" height="50px" alt="logo">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-        <div class="navbar-nav">
-            <a routerLink="/" class="nav-item nav-link active">Home</a>
-            <a routerLink="about-us" class="nav-item nav-link">About</a>
-            <a routerLink="contact-us" class="nav-item nav-link">Contact</a>
-            <a routerLink="blog-list" class="nav-item nav-link">Blogs</a>
+      <div class="navbar-nav m-auto">
+        <a routerLink="/" class="nav-item nav-link active">Home</a>
+        <a routerLink="about-us" class="nav-item nav-link">About</a>
+        <a routerLink="contact-us" class="nav-item nav-link">Contact</a>
+        <a routerLink="blog-list" class="nav-item nav-link">Blogs</a>
+        <a *ngIf="gardenerOrUser() || !isLoggedIn()" routerLink="gardener-list" class="nav-item nav-link">Gardeners</a>
+        <a *ngIf="!gardenerOrUser() && isLoggedIn()" routerLink="view-requests" class="nav-item nav-link">Requests</a>
+        <!-- <a *ngIf="isLoggedIn()" routerLink="order-history" class="nav-item nav-link">Order History</a> -->
 
-            <!-- <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item">Web Design</a>
-          <a href="#" class="dropdown-item">Web Development</a>
-          <a href="#" class="dropdown-item">Graphic Design</a>
-          <a href="#" class="dropdown-item">Digital Marketing</a>
+
+      </div>
+
+      <div class="navbar-nav ml-auto ">
+        <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i
+            style="font-size: 25px; padding-top: 8px;" class="fa fa-search"></i></a>
+
+        <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-in</a>
+          <div class="dropdown-menu">
+            <a (click)="whoseSignIn(1)" class="dropdown-item">User</a>
+            <a (click)="whoseSignIn(2)" class="dropdown-item">Gardener</a>
+          </div>
         </div>
-      </div> -->
-            <a *ngIf="gardenerOrUser() || !isLoggedIn()" routerLink="gardener-list" class="nav-item nav-link">Gardeners</a>
-            <a *ngIf="!gardenerOrUser() && isLoggedIn()" routerLink="view-requests" class="nav-item nav-link">Requests</a>
-            <!-- <a *ngIf="isLoggedIn()" routerLink="order-history" class="nav-item nav-link">Order History</a> -->
 
-
+        <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-up</a>
+          <div class="dropdown-menu">
+            <a (click)="whoseSignUp(1)" class="dropdown-item">User</a>
+            <a (click)="whoseSignUp(2)" class="dropdown-item">Gardener</a>
+            <div class="dropdown-divider"></div>
+            <a routerLink="nursery-signup" class="dropdown-item">Register Nursery</a>
+          </div>
         </div>
 
-        <div class="navbar-nav ml-auto ">
-            <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i
-          style="font-size: 25px; padding-top: 8px;" class="fa fa-search"></i></a>
 
-            <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-in</a>
-                <div class="dropdown-menu">
-                    <a (click)="whoseSignIn(1)" class="dropdown-item">User</a>
-                    <a (click)="whoseSignIn(2)" class="dropdown-item">Gardener</a>
-                </div>
-            </div>
+        <!-- <a href="#" class="nav-item nav-link">Signup</a> -->
 
-            <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-up</a>
-                <div class="dropdown-menu">
-                    <a (click)="whoseSignUp(1)" class="dropdown-item">User</a>
-                    <a (click)="whoseSignUp(2)" class="dropdown-item">Gardener</a>
-                    <div class="dropdown-divider"></div>
-                    <a routerLink="nursery-signup" class="dropdown-item">Register Nursery</a>
-                </div>
-            </div>
+        <div *ngIf="isLoggedIn()" class="nav-item dropdown mr-5">
+          <a data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{profileImage}}"
+              class="avatar" alt="Image"> <b class="caret"></b></a>
+          <div class="dropdown-menu">
+            <a routerLink="view-profile" class="dropdown-item"><i class="fa fa-user-o" aria-hidden="true"></i>
+              Profile</a>
+            <a routerLink="view-cart" class="dropdown-item"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Cart</a>
+            <a routerLink="view-favorite" class="dropdown-item"><i class="fa fa-heart" aria-hidden="true"></i>
+              Favourite</a>
+            <a *ngIf="isLoggedIn()" routerLink="order-history" class="dropdown-item"><i class="fa fa-history"
+                aria-hidden="true"></i> Orders</a>
 
+            <div class="dropdown-divider"></div>
+            <a style="cursor: pointer;" (click)="signOut()" *ngIf="isLoggedIn()" class="dropdown-item"><i
+                class="fa fa-sign-out" aria-hidden="true"></i>
+              Sign-out</a>
 
-            <!-- <a href="#" class="nav-item nav-link">Signup</a> -->
-
-            <div *ngIf="isLoggedIn()" class="nav-item dropdown mr-5">
-                <a data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{profileImage}}" class="avatar" alt="Image"> <b class="caret"></b></a>
-                <div class="dropdown-menu">
-                    <a routerLink="view-profile" class="dropdown-item"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
-                    <a routerLink="view-cart" class="dropdown-item"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            Cart</a>
-                    <a routerLink="view-favorite" class="dropdown-item"><i class="fa fa-heart" aria-hidden="true"></i>
-            Favourite</a>
-                    <a *ngIf="isLoggedIn()" routerLink="order-history" class="dropdown-item"><i class="fa fa-history"
-              aria-hidden="true"></i> Orders</a>
-
-                    <div class="dropdown-divider"></div>
-                    <a style="cursor: pointer;" (click)="signOut()" *ngIf="isLoggedIn()" class="dropdown-item"><i
-              class="fa fa-sign-out" aria-hidden="true"></i>
-            Sign-out</a>
-
-                </div>
-
-            </div>
+          </div>
 
         </div>
+
+      </div>
     </div>
 
-</nav>
+  </nav>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
 
-<footer>
-    <div class="container-fluid p-4">
-        <div class="row align-content-center ">
-            <div class="col-lg-3 col-md-4 mb-2 mt-3" style="padding-left: 10%;" data-aos="fade-right" data-aos-duration="2000">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">shopping online</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">frequently asked questions</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">delivery</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">pricing</a>
-                    </li>
-                    <!-- <li>
-                        <a href="" style="color: black">where we deliver?</a>
-                    </li> -->
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-4 mb-2 mt-3 " style="padding-left: 7%;" data-aos="fade-right" data-aos-duration="2000">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Cards</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">frequently asked questions</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">delivery and payment</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">activate the card</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">rules</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-4 mb-2 mt-3 " style="padding-left: 10%;" data-aos="fade-right" data-aos-duration="2000">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">About</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">buy a gift card</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">history</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">return</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-2 mt-3 " style="padding-left: 7%;" data-aos="fade-right" data-aos-duration="2000">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Nursury</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">registration</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">application</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">about</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">rules</a>
-                    </li>
-                </ul>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="row align-content-center ">
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>shopping online</h5>
+          <ul class="footer-menu">
+            <li>
+              <a>frequently asked questions</a>
+            </li>
+            <li>
+              <a>delivery</a>
+            </li>
+            <li>
+              <a>pricing</a>
+            </li>
+          </ul>
         </div>
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>Cards</h5>
+          <ul class="footer-menu">
+            <li>
+              <a>frequently asked questions</a>
+            </li>
+            <li>
+              <a>delivery and payment</a>
+            </li>
+            <li>
+              <a>activate the card</a>
+            </li>
+            <li>
+              <a>rules</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>About</h5>
+          <ul class="footer-menu">
+            <li>
+              <a>buy a gift card</a>
+            </li>
+            <li>
+              <a>history</a>
+            </li>
+            <li>
+              <a>return</a>
+            </li>
+            <li>
+              <a>contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>Nursury</h5>
+          <ul class="footer-menu">
+            <li>
+              <a>registration</a>
+            </li>
+            <li>
+              <a>application</a>
+            </li>
+            <li>
+              <a>about</a>
+            </li>
+            <li>
+              <a>rules</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
+    <div class="container copy-right">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="footer-social">
+            <li>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABVUlEQVRIS8WVgVECMRBFuQqwA6ED7OCsAKkArEA7UDvQCjgrgA6gA7UD6EAr0P+YXSdkEshw3JCZncxdsv/v/3vJVb2OR9Uxfu9iBLWUTRXMgyMqN1pfK95t3tueUjDTjvmJ1t0rrwlzYwIqXp0I7mm3oZKYAHasKR0/ZuOd5idLwipc2I2YYKN31xl0Ej9tbWSF8HyjgGBha2AMcwS/CfAvq8jBfQskjYKcgeIqyP0vPFaQIqBCqsKCmYEA/GLAH4miigncz1eBPERAb3p+NBVx34oJqPJZ8a3oRwTuNeveYN9yFoKtWdSKwC1Kgbi6pYjGkbpiBeTRZL4gSMIm88yX1KrJEOD1xEjCQgHn1Ief59EeAJY7aFgRHjQOV2p4b3Zrba+KFMHBq6I22Zniil4fvOxAoJGdXddeIkogYs71xPfi+VrR2Lwn82K/zCKzSzZ1ruAP7A1HGQIYrwwAAAAASUVORK5CYII=" />
+            </li>
+            <li>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABWUlEQVRIS7WVgbEBQQyGqeCVgAoeFdABKnhUgApQASpABehACXRAB1TA/5vbm4jdzZ55l5nM3e5t8mWz2Vy1UrJUS/ZfSQH0EEQX2syUMZ0y3eN5iAUZA9DxAlo3dnnB9wmUsA8JAZZYOSqYPtoQ9CY+wDfOndMVXsaSoAFMyy4S+TVzINMxw9xU2PRlujSA+awFAHfM86C5RooG8HvDLZAAK/otjAbCcwfvbSifVCn5LiRggxV/geg5PYcyWkpyMBLA2v5NBOi0aDP6anFSAh4R53oHFiD3nQKwbvsR3ngWWl520viCsa+CLMANdj/K+xljVtwbYIOx75AtgC+1ecVJ4wEA63865CH8MOCPbhpKU5FD5m2vu0CLtAp5D2JVFG0VBIeaXQrAbHZuZ74DtwC6lbx8WT8c7saVbgjg67B5rVglyIWsrg706CojMOctwBRApHLtT6UDnrHlSRl+jnqOAAAAAElFTkSuQmCC" />
+            </li>
+            <li>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+WVYQ3CMBSENwUgAQeAApAADuYAnAAScAAKAAfgAAmgAO5LWtKMlUK77g+XXLom7d3u9TUti8woM+sXnRuclWiYmAqNsdWoJ3gkir/pfjLYavVNXESYvnR9BohXRngdYRI02Eh0mdMAbf4cWKNfKhVMcJca3QBGYk88mflAY1/ciVdxJtY7L2iA2NQIHjVORLupMuI0gAUpV848ycBXKgxJCpIMKM9BpHRzkwZRmzTZgNJhAPYiZ5DNoOmsWk3wxwa0nHvR6By6BPBNB4GmdV+dgdkfPXjvQRsPzsVJ2P2TGV0T38bsj/4TPzFLGRrKnG0AAAAASUVORK5CYII=" />
+            </li>
+            <li>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABV0lEQVRIS92V/VECMRDFoQItgQ6QCjw7gArUCsAOoALsgOtA7YAOlAqECoAK8P2YhMmFzd3FmfuHndk5Jvvx8l6Spd/r2Pod9+/dHsC9JDu0kG2snKm8kG/lpXzh6oh9+h6xRCST8FMDMlNsacSpeZC/yd8tgIEWfx2Dib5rowk533KYWgbIxgGcNxkyoGgfVJX6DW1YeYPdR6I5y0c5OZfNxRIReIwaoCcO0EhuyeNLvhzApUXMoFCEnd/V7LIuBON5mBAzOP2zsS+rHDCLbSTKwUTCyg2MAQZO72FOV5e705f6ilmjgnPgEXEbcuxKHksi1l7kq5zOymX3PLKrKZAadrxEWLS1JyWureS6aYqec/lzA8qr4mUqJwUAXRggV8p4tcylZHMKQ4DCFfCSU7PGg/Fiab5t0tBiwK4Bg4W/rgwwDjAcG029z/Hb+0drRTsnqXOJ/gC/IzgZKD4sGQAAAABJRU5ErkJggg==" />
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center text-md-right">
+            © 2022 Copyright:
+            <a>Prakriti.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="text-center " data-aos="fade-up" data-aos-duration="2000">
-        <li class="icons">
-            <img style="font-size: 50px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABVUlEQVRIS8WVgVECMRBFuQqwA6ED7OCsAKkArEA7UDvQCjgrgA6gA7UD6EAr0P+YXSdkEshw3JCZncxdsv/v/3vJVb2OR9Uxfu9iBLWUTRXMgyMqN1pfK95t3tueUjDTjvmJ1t0rrwlzYwIqXp0I7mm3oZKYAHasKR0/ZuOd5idLwipc2I2YYKN31xl0Ej9tbWSF8HyjgGBha2AMcwS/CfAvq8jBfQskjYKcgeIqyP0vPFaQIqBCqsKCmYEA/GLAH4miigncz1eBPERAb3p+NBVx34oJqPJZ8a3oRwTuNeveYN9yFoKtWdSKwC1Kgbi6pYjGkbpiBeTRZL4gSMIm88yX1KrJEOD1xEjCQgHn1Ief59EeAJY7aFgRHjQOV2p4b3Zrba+KFMHBq6I22Zniil4fvOxAoJGdXddeIkogYs71xPfi+VrR2Lwn82K/zCKzSzZ1ruAP7A1HGQIYrwwAAAAASUVORK5CYII="
-            />
-
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABWUlEQVRIS7WVgbEBQQyGqeCVgAoeFdABKnhUgApQASpABehACXRAB1TA/5vbm4jdzZ55l5nM3e5t8mWz2Vy1UrJUS/ZfSQH0EEQX2syUMZ0y3eN5iAUZA9DxAlo3dnnB9wmUsA8JAZZYOSqYPtoQ9CY+wDfOndMVXsaSoAFMyy4S+TVzINMxw9xU2PRlujSA+awFAHfM86C5RooG8HvDLZAAK/otjAbCcwfvbSifVCn5LiRggxV/geg5PYcyWkpyMBLA2v5NBOi0aDP6anFSAh4R53oHFiD3nQKwbvsR3ngWWl520viCsa+CLMANdj/K+xljVtwbYIOx75AtgC+1ecVJ4wEA63865CH8MOCPbhpKU5FD5m2vu0CLtAp5D2JVFG0VBIeaXQrAbHZuZ74DtwC6lbx8WT8c7saVbgjg67B5rVglyIWsrg706CojMOctwBRApHLtT6UDnrHlSRl+jnqOAAAAAElFTkSuQmCC"
-            />
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+WVYQ3CMBSENwUgAQeAApAADuYAnAAScAAKAAfgAAmgAO5LWtKMlUK77g+XXLom7d3u9TUti8woM+sXnRuclWiYmAqNsdWoJ3gkir/pfjLYavVNXESYvnR9BohXRngdYRI02Eh0mdMAbf4cWKNfKhVMcJca3QBGYk88mflAY1/ciVdxJtY7L2iA2NQIHjVORLupMuI0gAUpV848ycBXKgxJCpIMKM9BpHRzkwZRmzTZgNJhAPYiZ5DNoOmsWk3wxwa0nHvR6By6BPBNB4GmdV+dgdkfPXjvQRsPzsVJ2P2TGV0T38bsj/4TPzFLGRrKnG0AAAAASUVORK5CYII="
-            />
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABV0lEQVRIS92V/VECMRDFoQItgQ6QCjw7gArUCsAOoALsgOtA7YAOlAqECoAK8P2YhMmFzd3FmfuHndk5Jvvx8l6Spd/r2Pod9+/dHsC9JDu0kG2snKm8kG/lpXzh6oh9+h6xRCST8FMDMlNsacSpeZC/yd8tgIEWfx2Dib5rowk533KYWgbIxgGcNxkyoGgfVJX6DW1YeYPdR6I5y0c5OZfNxRIReIwaoCcO0EhuyeNLvhzApUXMoFCEnd/V7LIuBON5mBAzOP2zsS+rHDCLbSTKwUTCyg2MAQZO72FOV5e705f6ilmjgnPgEXEbcuxKHksi1l7kq5zOymX3PLKrKZAadrxEWLS1JyWureS6aYqec/lzA8qr4mUqJwUAXRggV8p4tcylZHMKQ4DCFfCSU7PGg/Fiab5t0tBiwK4Bg4W/rgwwDjAcG029z/Hb+0drRTsnqXOJ/gC/IzgZKD4sGQAAAABJRU5ErkJggg=="
-            />
-        </li>
-
-
     </div>
-    <div class="text-center p-3 ">
-        © 2022 Copyright:
-        <a class="text-dark" href="">Prakriti.com</a>
-    </div>
+
     <!-- Copyright -->
-</footer>
+  </footer>
 
-
-<!-- <footer>
-    <div class="container-fluid p-4">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">shopping online</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">frequently asked questions</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">delivery</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">pricing</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">where we deliver?</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Cards</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">frequently asked questions</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">delivery and payment</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">activate the card</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">rules</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">About</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">buy a gift card</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">history</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">return</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: black; font-weight: 800">Nursury</h5>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="" style="color: black">registration</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">application</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="" style="color: black">about</a>
-                    </li>
-                    <li>
-                        <a href="" style="color: black">rules</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="text-center">
-        <li class="icons">
-            <img style="font-size: 50px; color:black;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABVUlEQVRIS8WVgVECMRBFuQqwA6ED7OCsAKkArEA7UDvQCjgrgA6gA7UD6EAr0P+YXSdkEshw3JCZncxdsv/v/3vJVb2OR9Uxfu9iBLWUTRXMgyMqN1pfK95t3tueUjDTjvmJ1t0rrwlzYwIqXp0I7mm3oZKYAHasKR0/ZuOd5idLwipc2I2YYKN31xl0Ej9tbWSF8HyjgGBha2AMcwS/CfAvq8jBfQskjYKcgeIqyP0vPFaQIqBCqsKCmYEA/GLAH4miigncz1eBPERAb3p+NBVx34oJqPJZ8a3oRwTuNeveYN9yFoKtWdSKwC1Kgbi6pYjGkbpiBeTRZL4gSMIm88yX1KrJEOD1xEjCQgHn1Ief59EeAJY7aFgRHjQOV2p4b3Zrba+KFMHBq6I22Zniil4fvOxAoJGdXddeIkogYs71xPfi+VrR2Lwn82K/zCKzSzZ1ruAP7A1HGQIYrwwAAAAASUVORK5CYII="
-            />
-
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABWUlEQVRIS7WVgbEBQQyGqeCVgAoeFdABKnhUgApQASpABehACXRAB1TA/5vbm4jdzZ55l5nM3e5t8mWz2Vy1UrJUS/ZfSQH0EEQX2syUMZ0y3eN5iAUZA9DxAlo3dnnB9wmUsA8JAZZYOSqYPtoQ9CY+wDfOndMVXsaSoAFMyy4S+TVzINMxw9xU2PRlujSA+awFAHfM86C5RooG8HvDLZAAK/otjAbCcwfvbSifVCn5LiRggxV/geg5PYcyWkpyMBLA2v5NBOi0aDP6anFSAh4R53oHFiD3nQKwbvsR3ngWWl520viCsa+CLMANdj/K+xljVtwbYIOx75AtgC+1ecVJ4wEA63865CH8MOCPbhpKU5FD5m2vu0CLtAp5D2JVFG0VBIeaXQrAbHZuZ74DtwC6lbx8WT8c7saVbgjg67B5rVglyIWsrg706CojMOctwBRApHLtT6UDnrHlSRl+jnqOAAAAAElFTkSuQmCC"
-            />
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+WVYQ3CMBSENwUgAQeAApAADuYAnAAScAAKAAfgAAmgAO5LWtKMlUK77g+XXLom7d3u9TUti8woM+sXnRuclWiYmAqNsdWoJ3gkir/pfjLYavVNXESYvnR9BohXRngdYRI02Eh0mdMAbf4cWKNfKhVMcJca3QBGYk88mflAY1/ciVdxJtY7L2iA2NQIHjVORLupMuI0gAUpV848ycBXKgxJCpIMKM9BpHRzkwZRmzTZgNJhAPYiZ5DNoOmsWk3wxwa0nHvR6By6BPBNB4GmdV+dgdkfPXjvQRsPzsVJ2P2TGV0T38bsj/4TPzFLGRrKnG0AAAAASUVORK5CYII="
-            />
-        </li>
-        <li class="icons">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABV0lEQVRIS92V/VECMRDFoQItgQ6QCjw7gArUCsAOoALsgOtA7YAOlAqECoAK8P2YhMmFzd3FmfuHndk5Jvvx8l6Spd/r2Pod9+/dHsC9JDu0kG2snKm8kG/lpXzh6oh9+h6xRCST8FMDMlNsacSpeZC/yd8tgIEWfx2Dib5rowk533KYWgbIxgGcNxkyoGgfVJX6DW1YeYPdR6I5y0c5OZfNxRIReIwaoCcO0EhuyeNLvhzApUXMoFCEnd/V7LIuBON5mBAzOP2zsS+rHDCLbSTKwUTCyg2MAQZO72FOV5e705f6ilmjgnPgEXEbcuxKHksi1l7kq5zOymX3PLKrKZAadrxEWLS1JyWureS6aYqec/lzA8qr4mUqJwUAXRggV8p4tcylZHMKQ4DCFfCSU7PGg/Fiab5t0tBiwK4Bg4W/rgwwDjAcG029z/Hb+0drRTsnqXOJ/gC/IzgZKD4sGQAAAABJRU5ErkJggg=="
-            />
-        </li>
-
-
-    </div>
-    <div class="text-center p-3 ">
-        © 2020 Copyright:
-        <a class="text-dark" href="">Prakriti.com</a>
-    </div>
-
-</footer> -->
+</div>
 
 
 

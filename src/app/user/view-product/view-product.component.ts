@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { ProductService } from 'src/app/service/product.service';
-import * as AOS from 'aos';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -19,7 +18,6 @@ export class ViewProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    AOS.init();;
     this.productService.viewProductList().subscribe(data => {
       this.productList = data
       this.spinner.hide();
