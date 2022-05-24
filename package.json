@@ -11,11 +11,11 @@
     },
     "private": true,
     "dependencies": {
-        "@angular/animations": "^12.2.16",
         "@angular/cli": "~12.2.17",
+        "@angular/compiler-cli": "~12.2.0",
+        "@angular/animations": "^12.2.16",
         "@angular/common": "~12.2.0",
         "@angular/compiler": "~12.2.0",
-        "@angular/compiler-cli": "~12.2.0",
         "@angular/core": "~12.2.0",
         "@angular/forms": "~12.2.0",
         "@angular/localize": "~12.2.0",
@@ -24,7 +24,6 @@
         "@angular/router": "~12.2.0",
         "@ng-bootstrap/ng-bootstrap": "^10.0.0",
         "angularx-social-login": "^4.1.0",
-        "aos": "^2.3.4",
         "bootstrap": "^4.5.0",
         "express": "^4.18.1",
         "ngx-pagination": "^5.1.1",
@@ -40,7 +39,6 @@
         "@angular-devkit/build-angular": "~12.2.17",
         "@angular/cli": "~12.2.17",
         "@angular/compiler-cli": "~12.2.0",
-        "@types/aos": "^3.0.4",
         "@types/jasmine": "~3.8.0",
         "@types/node": "^12.11.1",
         "enhanced-resolve": "^3.3.0",
@@ -56,7 +54,7 @@
         "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
     ],
     "engines": {
-        "node": "14.19.1",
+        "node": "v14.19.1",
         "npm": "6.14.16"
     }
 }

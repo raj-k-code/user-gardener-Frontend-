@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as AOS from 'aos';
 import { ToastrService } from 'ngx-toastr';
 import { Nursury } from 'src/app/model/nursury';
 import { NurseryownerService } from 'src/app/service/nurseryowner.service';
@@ -16,7 +15,6 @@ export class NurserySignupComponent implements OnInit {
   constructor(private nurseryService: NurseryownerService, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    AOS.init();
   }
 
   public SignUp() {

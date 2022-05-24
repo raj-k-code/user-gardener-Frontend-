@@ -7,7 +7,6 @@ import { Gardener } from 'src/app/model/gardener';
 import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
 import { UserService } from 'src/app/service/user.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-signin',
@@ -27,7 +26,6 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         location.reload();

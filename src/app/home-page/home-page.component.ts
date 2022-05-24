@@ -11,7 +11,7 @@ import { CategoryService } from '../service/category.service';
 import { FavoriteService } from '../service/favorite.service';
 import { ProductService } from '../service/product.service';
 
-import * as AOS from 'aos';
+// import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home-page',
@@ -22,13 +22,15 @@ export class HomePageComponent implements OnInit {
   categoryList?: Category[]
   productList: Product[] = [];
 
+  delay = 0.1
+
 
   constructor(private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) {
     this.spinner.show();
   }
 
   ngOnInit(): void {
-    AOS.init();
+    // AOS.init();
 
 
     console.log(this.activatedRouter)

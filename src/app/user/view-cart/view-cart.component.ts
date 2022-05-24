@@ -6,7 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-cart',
@@ -22,11 +21,9 @@ export class ViewCartComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService, private cartService: CartService, private toaster: ToastrService, private favService: FavoriteService, private router: Router) {
     spinner.show();
-    AOS.init();
   }
 
   ngOnInit(): void {
-    AOS.init();
 
     this.cartService.viewCart().subscribe(data => {
       console.log(data);

@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import * as AOS from 'aos';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Blog } from 'src/app/model/blog';
@@ -21,7 +20,6 @@ export class BlogDescriptionComponent implements OnInit {
   blog = new Blog("", "", "", "", "", "", "");
 
   ngOnInit(): void {
-    AOS.init();
     this.blogId = this.activated.snapshot.paramMap.get('id');
 
     this.blogService.blogDescription(this.blogId).subscribe(data => {

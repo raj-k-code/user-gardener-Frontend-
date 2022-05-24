@@ -5,7 +5,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Gardener } from 'src/app/model/gardener';
 import { GardenerService } from 'src/app/service/gardener.service';
-import * as AOS from 'aos';
 @Component({
   selector: 'app-gardener-list',
   templateUrl: './gardener-list.component.html',
@@ -17,12 +16,11 @@ export class GardenerListComponent implements OnInit {
   starRating: any[] = [];
   page: any;
 
-  constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService, private router: Router) { AOS.init(); }
+  constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService, private router: Router) { }
 
   // index = (pageNo - 1) * 8 + (index)
 
   ngOnInit(): void {
-    AOS.init();
     this.spinner.show()
     this.gardenerService.gardenerList().subscribe(data => {
       if (data.length > 0) {

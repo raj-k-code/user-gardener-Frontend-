@@ -7,7 +7,6 @@ import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/service/cart.service';
 import { FavoriteService } from 'src/app/service/favorite.service';
 import { ProductService } from 'src/app/service/product.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-view-particular-product',
@@ -47,7 +46,6 @@ export class ViewParticularProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         location.reload();
