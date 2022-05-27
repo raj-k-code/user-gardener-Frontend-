@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from '../model/category';
 import { Product } from '../model/product';
+import { BlogService } from '../service/blog.service';
 import { CartService } from '../service/cart.service';
 import { CategoryService } from '../service/category.service';
 import { FavoriteService } from '../service/favorite.service';
@@ -22,10 +23,9 @@ export class HomePageComponent implements OnInit {
   categoryList?: Category[]
   productList: Product[] = [];
 
-  delay = 0.1
+  blogList: any
 
-
-  constructor(private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) {
+  constructor(private blogService: BlogService, private categoryService: CategoryService, private toaster: ToastrService, private activatedRouter: ActivatedRoute, private productService: ProductService, private spinner: NgxSpinnerService, private cartService: CartService, private favService: FavoriteService, private router: Router) {
     this.spinner.show();
   }
 
@@ -73,12 +73,26 @@ export class HomePageComponent implements OnInit {
       }
     });
 
-    /** spinner starts on init */
+    this.blogService.blogList().subscribe(data => {
+      if (data.length > 0) {
+        this.blogList = data
+        this.spinner.hide();
+      }
+    }, err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status == 401) {
+          this.toaster.error("Invalid User", "Error");
+        }
+        else if (err.status == 500) {
+          this.toaster.error("Internal Server Error", "Error");
 
-    // setTimeout(() => {
-    //   /** spinner ends after 5 seconds */
+        }
+        else if (err.status == 400) {
+          this.toaster.error("Bad Request", "Error");
 
-    // }, 1000);
+        }
+      }
+    });
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -147,6 +161,10 @@ export class HomePageComponent implements OnInit {
     else {
       this.router.navigate(['signin']);
     }
+  }
+
+  public viewBlog(blogId: any) {
+    this.router.navigate(['blog-description/' + blogId]);
   }
 
 }

@@ -1,0 +1,214 @@
+<!-- <div class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="row  d-flex justify-content-center">
+      <div class="col-xl-6 col-md-12">
+        <div class="card user-card-full">
+          <div class="row m-l-0 m-r-0">
+            <div class="col-sm-4 bg-c-lite-green user-profile">
+              <div class="card-block text-center text-white">
+                <div class="m-b-25">
+                  <img src="{{gardenerData.gardenerImage}}" width="150px" height="150px" class="img-radius" alt="">
+                </div>
+                <h6 class="f-w-600">{{gardenerData.gardenerName}}</h6>
+                <p>Gardener</p>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
+                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Name</p>
+                    <h6 class="text-muted f-w-400">{{gardenerData.gardenerName}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Address</p>
+                    <h6 class="text-muted f-w-400">{{gardenerData.gardenerAddress}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Email</p>
+                    <h6 class="text-muted f-w-400">{{gardenerData.gardenerEmail}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Phone</p>
+                    <h6 class="text-muted f-w-400">{{gardenerData.gardenerMobile}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Experience</p>
+                    <h6 class="text-muted f-w-400">{{gardenerData.gardenerExperience}}</h6>
+                  </div>
+                  <div *ngIf="!oldRate" class="col-12 text-center mt-3">
+                    <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary border-btn">Rate
+                      Gardener</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="row  d-flex justify-content-center">
+      <div class="col-xl-10 col-md-12">
+        <div class="card user-card-full">
+          <div class="row m-l-0 m-r-0 hightw">
+            <div class="col-sm-4 bg-c-lite-green border1 user-profile">
+              <div class="card-block text-center ">
+                <div class="m-b-25 " style="margin-top: 10%;">
+                  <img src="{{gardenerData.gardenerImage}}" width="200px" height="200px" class="img-radius"
+                    alt="User-Profile-Image">
+                </div>
+                <h6 class="f-w-600 mt-3 imageName">{{gardenerData.gardenerName}}</h6>
+                <p class="mt-3">Gardener</p>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600 pHeading">Information</h6>
+                <div class="row mt-5">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600 pData">Name</p>
+                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerName}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600 pData">Address</p>
+                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerAddress}}
+                    </h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600 pData">Email</p>
+                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerEmail}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600 pData">Phone</p>
+                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerMobile}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600 pData">Experience</p>
+                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerExperience}}</h6>
+                  </div>
+                  <div *ngIf="!oldRate" class="col-12 text-center mt-3">
+                    <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary border-btn">Rate
+                      Gardener</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Rate {{gardenerData.gardenerName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="">Rating: </label>
+        <ngb-rating required ngModel #star="ngModel" [(ngModel)]="addStar" [max]="5" [(rate)]="addStar"
+          [readonly]="false">
+        </ngb-rating>
+        <div class="form-group justify-content-center">
+          <label for="">Review: </label>
+          <br>
+          <textarea required ngModel #mess="ngModel" [(ngModel)]="newReview" class="form-control" name="" id=""
+            cols="40" rows="5"></textarea>
+        </div>
+        <span class="text-danger" *ngIf="mess?.errors && mess.touched"><small>Please Add Some Message</small></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button [disabled]="star.invalid || mess.invalid" data-dismiss="modal" (click)="addReview()" type="button"
+          class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Review code -->
+<div class="container-fluid  p-2 mb-3">
+  <div *ngIf="oldRate" class="row mb-3">
+    <div class="col-lg-7 mx-auto bg-white rounded shadow">
+      <h5 class="m-1">Your Review</h5>
+      <hr>
+      <a (click)="setData()" class="text-dark cursor-pointer edit-icon" data-toggle="modal"
+        data-target="#exampleModalCenter"><i class="fa fa-edit"></i></a>
+      <div class=" row m-3">
+        <div class="col-md-2">
+          <img src="{{oldRate.userId.userImage}}" style="width:80px ; height: 80px; border-radius: 50%;" alt="">
+        </div>
+        <div class="col-md-10">
+          <h4>{{oldRate.userId.userName}} <span>{{oldRate.createdAt | date}}</span></h4>
+          <p>
+            <ngb-rating style="font-size: 20px;" [max]="5" [(rate)]="oldRate.rate" [readonly]="true">
+            </ngb-rating>
+            {{oldRate.createdAt | date}}
+          </p>
+          <p>{{oldRate.review}}</p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto bg-white rounded shadow">
+      <!-- Fixed header table-->
+      <div *ngIf="gardenerRating.length > 0" class="table-responsive">
+        <table class="table table-fixed">
+          <thead>
+            <tr>
+              <th scope="col" class="col-12">Reviews</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rate of gardenerRating">
+              <div class="row m-3">
+                <div class="col-md-2">
+                  <img src="{{rate.userId.userImage}}" style="width:80px ; height: 80px; border-radius: 50%;" alt="">
+                </div>
+                <div class="col-md-10">
+                  <h4>{{rate.userId.userName}}</h4>
+                  <p>
+                    <ngb-rating style="font-size: 20px;" [max]="5" [(rate)]="rate.rate" [readonly]="true">
+                    </ngb-rating>
+                    {{rate.createdAt | date}}
+                  </p>
+                  <p>{{rate.review}}</p>
+                </div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- SPINNER -->
+<ngx-spinner bdColor="white" template="<img style='height:300px;width:300px;' src='../../assets/images/spinner.gif' />">
+</ngx-spinner>

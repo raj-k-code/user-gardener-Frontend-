@@ -29,7 +29,7 @@ export class GardenerListComponent implements OnInit {
           for (let rating of data[gardener].gardenerRating) {
             total = total + rating.rate;
           }
-          this.starRating[gardener] = total / 5;
+          this.starRating[gardener] = total / data[gardener].gardenerRating.length;
           console.log(this.starRating[gardener]);
         }
 
@@ -96,5 +96,9 @@ export class GardenerListComponent implements OnInit {
     else {
       this.router.navigate(['signin']);
     }
+  }
+
+  public viewGardener(id: any) {
+    this.router.navigate(['gardener-profile/' + id]);
   }
 }

@@ -33,6 +33,7 @@ import { OrderHistoryComponent } from './user/order-history/order-history.compon
 import { ViewProfileComponent } from './user/view-profile/view-profile.component';
 import { ViewOrderComponent } from './user/view-order/view-order.component';
 import { NurserySignupComponent } from './user/nursery-signup/nursery-signup.component';
+import { GardenerProfileComponent } from './user/gardener-profile/gardener-profile.component';
 
 
 const socialProvider = {
@@ -72,6 +73,7 @@ const socialProvider = {
     ViewProfileComponent,
     ViewOrderComponent,
     NurserySignupComponent,
+    GardenerProfileComponent,
   ],
   imports: [
     BrowserModule,

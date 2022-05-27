@@ -8,6 +8,7 @@ import { BlogDescriptionComponent } from './user/blog-description/blog-descripti
 import { BlogsListComponent } from './user/blogs-list/blogs-list.component';
 import { ContactUsComponent } from './user/contact-us/contact-us.component';
 import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
+import { GardenerProfileComponent } from './user/gardener-profile/gardener-profile.component';
 import { NurserySignupComponent } from './user/nursery-signup/nursery-signup.component';
 import { OrderHistoryComponent } from './user/order-history/order-history.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: "order-history", component: OrderHistoryComponent },
   { path: "view-profile", component: ViewProfileComponent },
   { path: "order-history/view-order/:id", component: ViewOrderComponent, canActivate: [AuthGaurdService] },
-  { path: "nursery-signup", component: NurserySignupComponent }
+  { path: "nursery-signup", component: NurserySignupComponent },
+  { path: "gardener-profile/:id", component: GardenerProfileComponent },
 
 
 ];
