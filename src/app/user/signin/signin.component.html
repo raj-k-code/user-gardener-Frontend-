@@ -17,10 +17,14 @@
               Address</small></span>
 
           <div class="input-field">
-            <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text"
-              placeholder="Enter your password" required>
+            <input id="myInput" [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password"
+              type="{{passwordType}}" placeholder="Enter your password" required>
             <i class="uil uil-lock icon"></i>
-            <i class="uil uil-eye-slash showHidePw"></i>
+            <i *ngIf="passwordType == 'text'" (click)="showPassword()"
+              class="uil uil-eye showHidePw cursor-pointer"></i>
+            <i *ngIf="passwordType == 'password'" (click)="showPassword()"
+              class="uil uil-eye-slash showHidePw cursor-pointer"></i>
+
           </div>
           <div class="text-danger" *ngIf="Password.touched && !Password.valid">
             <div *ngIf="Password.errors?.required"><small>Password is required.</small></div>

@@ -15,6 +15,7 @@ import { UserService } from 'src/app/service/user.service';
 export class SignupComponent implements OnInit {
   user = new User("", "", "", "", "", "");
   gardener = new Gardener("", "", "", "", "", "", "", "", "");
+  passwordType = "password"
 
   constructor(private userService: UserService, private toaster: ToastrService, private router: Router, private gardenerService: GardenerService) { }
 
@@ -91,5 +92,18 @@ export class SignupComponent implements OnInit {
 
   goToSignIn() {
     this.router.navigate(['signin']);
+  }
+
+
+  public showPassword() {
+    if (this.passwordType === "password") {
+      this.passwordType = "text";
+    } else {
+      this.passwordType = "password";
+    }
+  }
+
+  checkEmail() {
+    alert("hello");
   }
 }

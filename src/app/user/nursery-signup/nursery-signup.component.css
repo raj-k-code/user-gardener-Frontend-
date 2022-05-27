@@ -1,148 +1,162 @@
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik&family=Sansita+Swashed:wght@300&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+/* nursery style start */
 
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* background-image: url(''); */
-        }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik&family=Sansita+Swashed:wght@300&display=swap');
 
-        .container {
-            position: relative;
-            max-width: 430px;
-            height: 610px;
-            width: 420px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-        }
+.signin {
+  position: relative;
+  /* max-width: 400px; */
+  max-height: 700px;
+  height: 700px;
+  width: 450px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
 
-        .container .forms {
-            padding: 30px;
-        }
+@media only screen and (max-width: 500px) {
+  .signin {
+    width: 390px;
+  }
+}
 
-        .container .forms .header {
-            position: relative;
-            font-size: 27px;
-            font-weight: 600;
-        }
+@media only screen and (max-width: 400px) {
+  .signin {
+    width: 340px;
+  }
+}
 
-        .forms .title::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            height: 3px;
-            width: 30px;
-            background-color: rgb(61, 61, 253);
-            border-radius: 25px;
-        }
+.container .forms {
+  padding: 30px;
+}
 
-        .forms .input-field {
-            position: relative;
-            margin-top: 20px;
-            margin-left: 30px;
-            margin-right: 30px;
-            height: 50px;
-        }
+.container .forms .header {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
 
-        .input-field input {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            padding: 0 35px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            border-bottom: 2px solid rgb(18, 17, 17);
-            border-top: 2px solid transparent;
-        }
+.forms .title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: rgb(61, 61, 253);
+  border-radius: 25px;
+}
 
-        .input-field input:is(:focus,
-         :valid) {
-            border-bottom-color: green
-        }
+.forms .input-field {
+  position: relative;
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+}
 
-        .input-field i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgb(56, 55, 55);
-            font-size: 23px;
-        }
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid rgb(18, 17, 17);
+  border-top: 2px solid transparent;
+}
 
-        .input-field input:is(:focus,
-         :valid) {
-            border-bottom-color: green
-        }
+.input-field input:is(:focus,
+  :valid) {
+  border-bottom-color: green
+}
 
-        .input-field i.icon {
-            left: 0;
-        }
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(56, 55, 55);
+  font-size: 23px;
+}
 
-        .input-field i.showHidePw {
-            right: 0;
-        }
+.input-field input:is(:focus,
+  :valid) {
+  border-bottom-color: green
+}
 
-        .forms .checkbox-text {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
+.input-field i.icon {
+  left: 0;
+}
 
-        .forms .text {
-            color: #333;
-            font-size: 14px;
-        }
+.input-field i.showHidePw {
+  right: 0;
+}
 
-        .forms a.text {
-            color: #12f77d;
-            text-decoration: none;
-            align-items: center;
-        }
+.forms .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 
-        .forms a:hover {
-            text-decoration: underline;
-        }
+.checkbox-text .checkbox-content {
+  display: flex;
+  align-items: center;
+}
 
-        .forms .button {
-            margin-top: 35px;
-        }
+.checkbox-content input {
+  margin: 0 8px -2px 4px;
+}
 
-        .forms .button input {
-            border: none;
-            color: rgb(242, 248, 243);
-            font-size: 17px;
-            width: 150px;
-            margin-left: 70px;
-            font-weight: 500px;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            background-color: rgb(121, 119, 119);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.forms .text {
+  color: #333;
+  font-size: 14px;
+}
 
-        .button input:hover {
-            box-shadow: inset 400px 0 0 0 rgb(76, 217, 97);
-            transition: ease-out 50s;
-            color: rgb(255, 255, 255)
-        }
+.forms a.text {
+  color: #12f77d;
+  text-decoration: none;
+  align-items: center;
+}
 
-        .forms .login-signup {
-            margin-top: 10px;
-            text-align: center;
-        }
+.forms a:hover {
+  text-decoration: underline;
+}
 
-        .forms .Google-signin {
-            margin-top: 10px;
-            text-align: center;
-        }
+.forms .button {
+  margin-top: 35px;
+}
+
+.forms .button input {
+  border: none;
+  color: rgb(239, 243, 240);
+  font-size: 17px;
+  width: 200px;
+  margin-left: 70px;
+  font-weight: 500px;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: rgb(121, 119, 119);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover {
+  box-shadow: inset 400px 0 0 0 rgb(76, 217, 97);
+  transition: ease-out 50s;
+  color: rgb(255, 255, 255)
+}
+
+.forms .login-signup {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.forms .Google-signin {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+/* nursery style end */
