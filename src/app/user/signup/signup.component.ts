@@ -61,7 +61,11 @@ export class SignupComponent implements OnInit {
       });
     }
     else {
+      console.log(this.gardener);
+
       this.gardenerService.signUp(this.gardener).subscribe(data => {
+        console.log(data);
+
         if (!data.message) {
           this.toaster.success("Signup Successfully", "Success");
           this.router.navigate(['signin']);
@@ -69,6 +73,7 @@ export class SignupComponent implements OnInit {
 
       }, err => {
         if (err instanceof HttpErrorResponse) {
+          console.log(err);
           if (err.status == 401) {
             this.toaster.error("Invalid User", "Error");
           }
@@ -82,5 +87,9 @@ export class SignupComponent implements OnInit {
         }
       });
     }
+  }
+
+  goToSignIn() {
+    this.router.navigate(['signin']);
   }
 }

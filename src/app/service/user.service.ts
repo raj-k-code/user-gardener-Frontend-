@@ -24,7 +24,7 @@ export class UserService {
 
   public signUp(user: User) {
     let signUpApi = "https://prakritee.herokuapp.com/user/signup";
-    return this.http.post<any>(signUpApi, user);
+    return this.http.post<any>(signUpApi, { userName: user.userName, userEmail: user.userEmail, userPassword: user.userPassword, userMobile: user.userMobile, userAddress: user.userAddress });
   }
 
   public forgotPassword(email: string) {

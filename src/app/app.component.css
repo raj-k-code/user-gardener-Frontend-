@@ -1,5 +1,7 @@
 /* Navigation======================== */
 
+
+
 .form-inline {
   display: inline-block;
 }
@@ -22,7 +24,8 @@
 }
 
 .navbar .nav-item:hover {
-  color: #faf9f9;
+  color: #02781d;
+  font-weight: 700;
 }
 
 .nav-link img {
@@ -57,8 +60,9 @@
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(3, 123, 29);
 }
+
 
 .navbar .nav-item {
   font-weight: 500;

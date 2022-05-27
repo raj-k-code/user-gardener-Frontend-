@@ -1,32 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik&family=Sansita+Swashed:wght@300&display=swap');
-/* * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        overflow-y: hidden;
-        overflow-x: hidden;
-    } */
-/* .modal {
-        overflow-y: hidden;
-        overflow-x: hidden;
-    } */
-/* body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    } */
 
 .signin {
   position: relative;
   max-width: 430px;
-  height: 450px;
-  width: 400px;
+  height: 470px;
+  width: 450px;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 500px) {
+  .signin {
+    width: 390px;
+  }
+
+  .logo {
+    padding: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .signin {
+    width: 340px;
+  }
+
+  .logo {
+    padding: 0px;
+  }
+}
+
+.logo {
+  object-fit: cover;
+  padding: 0 24%;
 }
 
 .container .forms {

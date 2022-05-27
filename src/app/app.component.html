@@ -1,12 +1,13 @@
 <!-- New Navigation======================================= -->
 <div class="mainpage-container">
 
-  <nav class="navbar  navbar-dark  navbar-expand-lg sticky-top navi ">
+  <nav class="navbar  navbar-light  navbar-expand-lg sticky-top navi ">
     <a class="navbar-brand ml-5" routerLink="/">
       <img src="../assets/images/Group40.png" width="150px" height="50px" alt="logo">
     </a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
+    <button style="border: 0;" type="button" class="navbar-toggler " data-toggle="collapse"
+      data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon text-dark"></span>
     </button>
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
       <div class="navbar-nav m-auto">
@@ -26,7 +27,7 @@
             style="font-size: 25px; padding-top: 8px;" class="fa fa-search"></i></a>
 
         <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-in</a>
+          <a class="nav-link  dropdown-toggle" data-toggle="dropdown">Sign-in</a>
           <div class="dropdown-menu">
             <a (click)="whoseSignIn(1)" class="dropdown-item">User</a>
             <a (click)="whoseSignIn(2)" class="dropdown-item">Gardener</a>
@@ -34,7 +35,7 @@
         </div>
 
         <div *ngIf="!isLoggedIn()" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sign-up</a>
+          <a class="nav-link  dropdown-toggle" data-toggle="dropdown">Sign-up</a>
           <div class="dropdown-menu">
             <a (click)="whoseSignUp(1)" class="dropdown-item">User</a>
             <a (click)="whoseSignUp(2)" class="dropdown-item">Gardener</a>
@@ -45,10 +46,9 @@
 
 
         <!-- <a href="#" class="nav-item nav-link">Signup</a> -->
-
         <div *ngIf="isLoggedIn()" class="nav-item dropdown mr-5">
           <a data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{profileImage}}"
-              class="avatar" alt="Image"> <b class="caret"></b></a>
+              class="avatar" alt=""> <b class="caret"></b></a>
           <div class="dropdown-menu">
             <a routerLink="view-profile" class="dropdown-item"><i class="fa fa-user-o" aria-hidden="true"></i>
               Profile</a>
@@ -58,19 +58,14 @@
               Favourite</a>
             <a *ngIf="isLoggedIn()" routerLink="order-history" class="dropdown-item"><i class="fa fa-history"
                 aria-hidden="true"></i> Orders</a>
-
             <div class="dropdown-divider"></div>
             <a style="cursor: pointer;" (click)="signOut()" *ngIf="isLoggedIn()" class="dropdown-item"><i
                 class="fa fa-sign-out" aria-hidden="true"></i>
               Sign-out</a>
-
           </div>
-
         </div>
-
       </div>
     </div>
-
   </nav>
 
   <router-outlet></router-outlet>

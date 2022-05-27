@@ -22,7 +22,7 @@ export class GardenerService {
 
   public signUp(gardener: Gardener) {
     let signUpApi = "https://prakritee.herokuapp.com/gardener/signup";
-    return this.http.post<any>(signUpApi, gardener)
+    return this.http.post<any>(signUpApi, { gardenerName: gardener.gardenerName, gardenerEmail: gardener.gardenerEmail, gardenerPassword: gardener.gardenerPassword, gardenerMobile: gardener.gardenerMobile, gardenerAddress: gardener.gardenerAddress, gardenerExperience: gardener.gardenerExperience })
   }
 
   public gardenerList(): Observable<Gardener[]> {
@@ -55,13 +55,18 @@ export class GardenerService {
     return this.http.post<any>(viewRequestApi, { gardenerId: gardenerId });
   }
 
-  public viewProfile(): Observable<Gardener> {
-    let viewProfileApi = "https://prakritee.herokuapp.com/gardener/gardner-by-id/" + sessionStorage.getItem('userId');
+  public viewProfile(id: any): Observable<Gardener> {
+    let viewProfileApi = "https://prakritee.herokuapp.com/gardener/gardner-by-id/" + id;
     return this.http.get<Gardener>(viewProfileApi);
   }
 
   public updateProfile(formData: any): Observable<any> {
     let updateProfileApi = "https://prakritee.herokuapp.com/gardener/edit";
     return this.http.post<any>(updateProfileApi, formData);
+  }
+
+  public rateTheGardener(rate: any, review: any, gardenerId: any) {
+    let rateTheGardenerApi = "https://prakritee.herokuapp.com/gardener/rate-the-gardener";
+    return this.http.post<any>(rateTheGardenerApi, { gardenerId: gardenerId, userId: sessionStorage.getItem('userId'), rate: rate, review: review });
   }
 }

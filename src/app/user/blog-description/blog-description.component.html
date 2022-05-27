@@ -1,90 +1,53 @@
-<!-- <section style="background: url({{blog.blogImage}}); background-repeat: no-repeat; background-size: cover;height: 500px;" class="py-5 bg-cover bg-center">
-    <div class="hero-overlay"></div>
-    <div class="container py-5 text-white text-center">
-        <h1 class="text-shadow hero-heading">Mauris placerat eleifend leo.</h1>
-    </div>
+<section class="banner-img py-5 bg-cover bg-center img-fluid jusitfy-content-center">
+  <div class="py-5 px-5 text-white text-center banner-text">
+    <h2 class="">Mauris placerat eleifend leo.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, eveniet.
+    </p>
+  </div>
 </section>
+
 <section class="py-5">
-    <div class="container py-5">
-        <h2 class="mb-4">{{blog.blogTitle}}</h2>
-        <p class="lead">{{blog.blogSubTitle}}</p>
-        <p class="text-small">{{blog.blogContent}}</p>
-    </div>
-    <div class="container mt-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-8">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center">
-                        <img src="{{blog.createdBy.Image}}" width="30" class="user-img rounded-circle mr-2" />
-                        <span><small class="font-weight-bold text-primary">{{blog.createdBy.nurseryName}}</small>
-            </span>
-                    </div>
+  <div class="container ">
 
-                    <small>posted: {{blog.createdDate | date}}</small>
-                </div>
-            </div>
+    <div class="col-sm-12 mt-2 mb-3 justify-content-center">
+      <div class="row">
+        <div class="col-sm-2">
+          <a href=""><img src="{{blog.blogImage}}" class="img-fluid" alt=""></a>
+
         </div>
-    </div>
-</section> -->
+        <div class="col-sm-10">
+          <h2 class="text-shadow hero-heading">{{blog.blogTitle}}</h2>
 
-
-
-
-<!--
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Multi - Multipurpose Bootstrap theme by Bootstrapious.com</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="all,follow" />
-  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/multi/2-0/css/style.default.e3719df8.css"
-    id="theme-stylesheet" />
-</head>
-
-<body> -->
-<section style="height: 400px;
-        background: url(../../../assets/images/banner.webp); background-repeat: no-repeat; background-size: cover;
-      " class="py-5 bg-cover bg-center img-fluid">
-    <div class="hero-overlay"></div>
-
-</section>
-<section class="py-5">
-    <div class="container py-5">
-        <h1 class="text-shadow hero-heading">{{blog.blogTitle}}</h1>
-        <!-- title -->
-        <h3 class="mb-4 mt-4">{{blog.blogSubTitle}}</h3>
-        <!-- subtitle -->
-
-        <!-- <p class="lead">
-            Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
-            eros eu erat. Aliquam erat volutpat.
-        </p> -->
-        <a href=""><img src="{{blog.blogImage}}" class="img-fluid" alt=""></a>
-        <!-- Content -->
-        <p class="text-small">
-            {{blog.blogContent}}
-        </p>
-    </div>
-    <div class="container mt-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-8">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center">
-                        <img src="{{blog.createdBy.Image}}" width="30" class="user-img rounded-circle mr-2" />
-                        <span><small class="font-weight-bold text-primary">{{blog.createdBy.nurseryName}}</small>
-              <!-- <small class="font-weight-bold text-primary">{{blog.createdBy.nurseryOwnerEmail}}</small> -->
-            </span>
-                    </div>
-
-                    <small>{{blog.createdDate | date}}</small>
-                </div>
-            </div>
+          <h5 class=" mt-4">{{blog.blogSubTitle}}</h5>
         </div>
+      </div>
+
     </div>
+    <div class="col-sm-12">
+      <p class="text-small">
+        {{blog.blogContent}}
+      </p>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-12">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="user d-flex flex-row align-items-center">
+              <img src="{{blog.createdBy.Image}}" width="30" class="user-img rounded-circle mr-2" />
+              <span><small class="font-weight-bold text-primary">{{blog.createdBy.nurseryName}}</small>
+                <!-- <small class="font-weight-bold text-primary">{{blog.createdBy.nurseryOwnerEmail}}</small> -->
+              </span>
+            </div>
+
+            <small>{{blog.createdDate | date}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 

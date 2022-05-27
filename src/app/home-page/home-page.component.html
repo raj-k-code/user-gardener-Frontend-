@@ -52,45 +52,45 @@
 
 <!--================= services ================================-->
 
-<!-- <section class="bg-light padding-md">
+<section class="bg-light padding-md">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="section-heading text-center">
-          <h2>OUR SERVICES</h2>
+        <div class="section-heading text-center mb-3 ">
+          <h2>Our Services</h2>
           <p>We provide the perfect service for you.</p>
         </div>
       </div>
     </div>
 
-    <div class="row justify-content-between">
+    <div class="row justify-content-between mt-5">
       <div class="col-12 col-lg-5">
         <div class="alazea-service-area mb-100">
-          <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+          <div class="single-service-area d-flex align-items-center animate__bounceOut" data-wow-delay="100ms">
             <div class="service-icon mr-30">
               <img src="../../assets/images/s1.png" alt="">
             </div>
-            <div class="service-content">
+            <div class="service-content pl-4">
               <h5>Plants Care</h5>
               <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat
                 sodales.service its.</p>
             </div>
           </div>
-          <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
+          <div class="single-service-area d-flex align-items-center animate__fadeInUp">
             <div class="service-icon mr-30">
               <img src="../../assets/images/s2.png" alt="">
             </div>
-            <div class="service-content">
+            <div class="service-content pl-4">
               <h5>Pressure Washing</h5>
               <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat
                 sodales.service its.</p>
             </div>
           </div>
-          <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
+          <div class="single-service-area d-flex align-items-center animate__fadeInUp" data-wow-delay="500ms">
             <div class="service-icon mr-30">
               <img src="../../assets/images/s1.png" alt="">
             </div>
-            <div class="service-content">
+            <div class="service-content pl-4">
               <h5>Tree Service &amp; Trimming</h5>
               <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat
                 sodales.service its.</p>
@@ -102,15 +102,15 @@
 
       <div class="col-12 col-lg-6">
         <div class="alazea-video-area bg-overlay mb-100">
-          <img src="../../assets/images/leaves-1498985_960_720.jpg" alt="">
-          <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-icon">
-            <i class="fa fa-play" aria-hidden="true"></i>
-          </a>
+          <!-- <img src="https://floora.co/wp-content/uploads/2020/06/Watering-Plants-Singapore.jpg" type="" alt=""> -->
+          <!-- <a href="" class="video-icon"> -->
+          <iframe src="https://www.youtube.com/embed/LZhnCxG5c6s" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 <!-- ##### Service Area End ##### -->
 
 
@@ -162,10 +162,8 @@
         data-aos-duration="3000">
         <div *ngIf="i < 8" class="single-product-area " data-wow-delay="100ms">
           <div class="product-img">
-            <a routerLink="view-particular-product/{{product._id}}"><img class="product-image"
-                src="{{product.productImage}}" alt=""></a>
-            <div class="product-meta d-flex">
-
+            <a><img class="product-image" src="{{product.productImage}}" alt=""></a>
+            <div class="product-meta d-flex cursor-pointer">
               <a (click)="addToFav(product._id)" class="wishlist-btn"><img
                   style="width: 20px; height:20px; filter: invert(1);"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEvFleFRwzAMhb9OQEeACYAJChuwAXQCGIVOUNiADYANYAIYASYo93JSTnWd2PFdiv+ksaL39J5kd8HMazEzPv9GcAPcAhem8BvYAC/2rvg9cGrvH8BziPfGpAqWwBYQQG692ebVQFwFrIEfj6cEquQc+AUegAj4CJxYosf1vZaUelx7lzmCO6teyZLeV2EfS10kzMVlpYqQiiflRQVKXsVgw4R5ke9AZ2Mk2BngGaBKWpaUf1lih31Ugtktcv/UPNmUNrFkmYZA9uiZbbIAfEz1vJ5AItBXG9fPcEAPrgofRZ2FWpIUXNMzeNCkYgrJKHg6RdHjGpIi+BhBSUkVeIlgiET7saF7nqejVvN/kNrll5umZRS8RoEXFEm0VwU+hSDapd/FynPXdemkNsVretAEfDQFf3ZDVxl/VBnpAAAAAElFTkSuQmCC" /></a>
@@ -190,6 +188,46 @@
     </div>
   </div>
 </section>
+
+
+<!-- ##### Blog Area Start ##### -->
+<section class="alazea-blog-area padding-md">
+  <div class=" container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading text-center">
+          <h2>Latest Blogs</h2>
+          <p>The breaking news about Gardening &amp; House plants</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center padding-md">
+
+      <!-- Single Blog Post Area -->
+      <div *ngFor="let blog of blogList" class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="single-blog-post mb-100">
+          <div class="post-thumbnail mb-30 cursor-pointer">
+            <a (click)="viewBlog(blog._id)"><img style="height: 255px; width: 350px;" src="{{blog.blogImage}}"
+                alt=""></a>
+          </div>
+          <div class="post-content">
+            <a (click)="viewBlog(blog._id)" class="post-title cursor-pointer">
+              <h5>{{blog.blogTitle}}</h5>
+            </a>
+            <div class="post-meta">
+              <a><i class="fa fa-clock-o" aria-hidden="true"></i> {{blog.createdDate | date}}</a>
+              <a><i class="fa fa-user" aria-hidden="true"></i> {{blog.createdBy.nurseryName}}</a>
+            </div>
+            <p class="post-excerpt">{{blog.blogSubTitle}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ##### Blog Area End ##### -->
+
 
 <!-- SPINNER -->
 <ngx-spinner bdColor="white" template="<img style='height:300px;width:300px;' src='../../assets/images/spinner.gif' />">

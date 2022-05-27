@@ -8,6 +8,7 @@ import { User } from 'src/app/model/user';
 import { GardenerService } from 'src/app/service/gardener.service';
 import { UserService } from 'src/app/service/user.service';
 
+
 @Component({
   selector: 'app-view-profile',
   templateUrl: './view-profile.component.html',
@@ -17,6 +18,7 @@ export class ViewProfileComponent implements OnInit {
   userData = new User("", "", "", "", "", "");
   gardenerData?: Gardener;
   id: any = sessionStorage.getItem('userId');
+  starRating: any;
 
   number = sessionStorage.getItem('number');
 
@@ -35,6 +37,7 @@ export class ViewProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     if (sessionStorage.getItem('number') == "1") {
       this.userService.viewProfile().subscribe(data => {
         if (data.userEmail) {
@@ -62,7 +65,8 @@ export class ViewProfileComponent implements OnInit {
       });
     }
     else if (sessionStorage.getItem('number') == "2") {
-      this.gardenerService.viewProfile().subscribe(data => {
+      let id = sessionStorage.getItem('userId')
+      this.gardenerService.viewProfile(id).subscribe(data => {
         if (data.gardenerEmail) {
           this.gardenerData = data;
 
@@ -72,10 +76,23 @@ export class ViewProfileComponent implements OnInit {
           this.address = data.gardenerAddress;
           this.image = data.gardenerImage;
           this.experience = data.gardenerExperience;
-          this.showImage = data.gardenerImage
+          this.showImage = data.gardenerImage;
+          this.gardenerRating = data.gardenerRating;
+
+          let total = 0;
+          for (let rate of this.gardenerRating) {
+            total += rate.rate;
+          }
+
+          this.starRating = total / this.gardenerRating.length;
+
+          console.log(this.gardenerRating);
+
 
           console.log(this.gardenerData + "============");
         }
+        this.spinner.hide();
+
       }, err => {
         if (err instanceof HttpErrorResponse) {
           if (err.status == 500) {
@@ -99,6 +116,8 @@ export class ViewProfileComponent implements OnInit {
         this.showImage = event.target.result;
       };
       this.image = e.target.files[0];
+      console.log(this.image);
+
       // console.log(this.showImage + '              Image');
     }
   }
@@ -116,6 +135,7 @@ export class ViewProfileComponent implements OnInit {
       this.userService.updateProfile(formData).subscribe(data => {
         if (data.success) {
           this.toaster.success("Profile Updated", "Success");
+          sessionStorage.setItem('userImage', this.showImage);
           this.ngOnInit();
         }
         else {
@@ -135,6 +155,7 @@ export class ViewProfileComponent implements OnInit {
       });
     }
     else if (sessionStorage.getItem('number') == "2") {
+
       const formData = new FormData();
       formData.append('gardenerName', this.name);
       formData.append('gardenerEmail', this.email);
@@ -148,6 +169,7 @@ export class ViewProfileComponent implements OnInit {
       this.gardenerService.updateProfile(formData).subscribe(data => {
         if (data.success) {
           this.toaster.success("Profile Updated Successfully", "Success");
+          sessionStorage.setItem('userImage', this.showImage);
           this.ngOnInit();
         }
         else {

@@ -3,6 +3,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+@import '~animate.css/animate.min.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 ul li {
@@ -27,7 +29,7 @@ h6 {
 h2 {
   font-size: 39px;
   line-height: 48px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 
@@ -53,6 +55,8 @@ h5 {
   color: #666;
 }
 
+
+
 body {
   font-family: 'Roboto', 'sans-serif';
   background-color: #fff;
@@ -65,6 +69,10 @@ body {
 .bg-light {
   background-color: #f9f9f9;
 }
+
+
+
+
 
 .toast-center-center {
   top: 50%;
@@ -447,3 +455,159 @@ footer h5 {
 
 
 /* buttun style end */
+
+
+.product-meta a img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+
+
+/* Product Css ============================== */
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  /* box-shadow: 0 0 8px green; */
+  /* border-radius: 50%; */
+}
+
+.product-image:hover {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 15px gray;
+  /* border-radius: 50%; */
+}
+
+.single-product-area {
+  position: relative;
+  margin-top: 30px;
+}
+
+.single-product-area .product-img {
+  position: relative;
+
+
+}
+
+.single-product-area .product-img a {
+  display: block;
+}
+
+.single-product-area .product-img img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.single-product-area .product-img .product-tag a {
+  background-color: #429edf;
+  border-radius: 2px;
+  display: inline-block;
+  height: 20px;
+  padding: 0 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.single-product-area .product-img .product-tag.sale-tag a {
+  background-color: #e61d47;
+}
+
+.single-product-area .product-img .product-meta {
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
+  right: 15px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-product-area .product-img .product-meta a {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  background-color: #303030;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50px;
+  flex: 0 0 50px;
+  max-width: 50px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.single-product-area .product-img .product-meta a:hover,
+.single-product-area .product-img .product-meta a:focus {
+  background-color: #70c745;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .single-product-area .product-img .product-meta a {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .single-product-area .product-img .product-meta a {
+    font-size: 11px;
+  }
+
+  /* .single-product-area .product-img .product-meta {
+    visibility: visible;
+    opacity: 1;
+  } */
+}
+
+@media only screen and (max-width: 767px) {
+  .single-product-area .product-img .product-meta a {
+    font-size: 14px;
+  }
+
+  .single-product-area .product-img .product-meta {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.single-product-area .product-img .product-meta .add-to-cart-btn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(100% - 100px);
+  flex: 0 0 calc(100% - 100px);
+  max-width: calc(100% - 100px);
+  width: calc(100% - 100px);
+  border-left: 1px solid rgba(235, 235, 235, 0.5);
+  border-right: 1px solid rgba(235, 235, 235, 0.5);
+}
+
+.single-product-area .product-info h6 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.single-product-area:hover .product-img {
+  box-shadow: 0 5px 30px 0 rgba(113, 226, 7, 0.15);
+}
+
+.single-product-area:hover .product-img .product-meta {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ++++++Product Style End+++++++ */

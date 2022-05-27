@@ -1,14 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--Iconlink-->
-  <!--closeIconLink-->
-
-  <title>SignUp</title>
 </head>
 
 <body>
@@ -18,7 +14,6 @@
         <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
           <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
         </div>
-
         <form action="#">
           <div class="input-field">
             <input [(ngModel)]="gardener.gardenerName" #Name="ngModel" name="username" type="text"
@@ -45,15 +40,14 @@
               Password</span>
             <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
               characters.like: Ab@123 </span>
-
           </div>
           <div class="input-field">
             <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
               [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
             <i class="uil uil-mobile-android"></i>
-            <span class="alert alert-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
+            <span class="text-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
               Number</span>
-            <span class="alert alert-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
+            <span class="text-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
               Mobile Number</span>
           </div>
           <div class="input-field">
@@ -70,13 +64,10 @@
             <span class="alert alert-danger" *ngIf="Experience.errors?.required && Experience.touched ">Please Enter
               Your Experience</span>
           </div>
-
           <div class="input-field button">
             <input [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid "
               (click)="SignUp()" type="button" value="SignUp ">
           </div>
-
-
         </form>
       </div>
     </div>
@@ -84,3 +75,95 @@
 </body>
 
 </html>
+ -->
+
+
+
+
+
+<div class="padding-md">
+  <div class="container signin" style=" overflow: hidden;">
+    <div class="forms">
+      <div class="form login">
+        <div class="form logo">
+          <img src="../../../assets/images/Group40.png" style="object-fit: cover; padding: 0 24%;" alt="" class="logo">
+        </div>
+        <form action=" #">
+          <div class="input-field">
+            <input [(ngModel)]="gardener.gardenerName" #Name="ngModel" name="username" type="text"
+              placeholder="Enter your Name" required>
+            <i class="uil uil-user"></i>
+          </div>
+          <span class="text-danger" *ngIf="Name.errors?.required && Name.touched "><small>Please Enter
+              Name</small></span>
+
+          <div class="input-field">
+            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail" #Email="ngModel"
+              name="email" type="text" placeholder="Enter your email" required>
+            <i class="uil uil-envelope-alt icon"></i>
+          </div>
+          <span class="text-danger" *ngIf="Email.errors?.required && Email.touched "><small>Please Enter Email
+              Address</small></span>
+          <span class="text-danger" *ngIf="Email.errors?.pattern&& Email.touched "><small>Please Enter Valid Email
+              Address</small></span>
+
+          <div class="input-field">
+            <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="text"
+              placeholder="Enter your password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+          </div>
+          <span class="text-danger" *ngIf="Password.errors?.required && Password.touched "><small>Please Enter
+              Password</small></span>
+          <span class="text-danger" *ngIf="Password.errors?.pattern && Password.touched "><small>Password must be 6
+              characters.like: Ab@123</small></span>
+
+          <div class="input-field">
+            <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
+              [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
+            <i class="uil uil-mobile-android"></i>
+          </div>
+          <span class="text-danger" *ngIf="Mobile.errors?.required && Mobile.touched "><small>Please Enter Mobile
+              Number</small></span>
+          <span class="text-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched "><small>Please Enter Valid
+              Mobile Number</small></span>
+
+          <div class="input-field">
+            <input #Address="ngModel" [(ngModel)]="gardener.gardenerAddress" name="address" type="text"
+              placeholder="Enter your Address" required>
+            <i class="uil uil-house-user"></i>
+          </div>
+          <span class="text-danger" *ngIf="Address.errors?.required && Address.touched "><small>Please Enter
+              Address</small></span>
+
+          <div *ngIf="!gardenerOrUser()" class="input-field">
+            <input #Experience="ngModel" [(ngModel)]="gardener.gardenerExperience" name="experience" type="text"
+              placeholder="Enter your Experience" required>
+            <i class="uil uil-user"></i>
+            <span class="text-danger" *ngIf="Experience.errors?.required && Experience.touched "><small>Please Enter
+                Your Experience</small></span>
+          </div>
+
+          <div class="text-center my-4">
+            <input class="btn btn-primary border-btn cursor-pointer"
+              [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid "
+              (click)="SignUp()" type="button" value="SignUp ">
+          </div>
+
+          <!-- <div class="text-center my-4">
+            <input [disabled]="Email.invalid ||  Password.invalid" class="btn btn-primary " data-toggle="modal"
+              data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
+          </div> -->
+
+          <div class="login-signup" style="justify-content: center;">
+            <span>Already have an account?
+              <a data-toggle="modal" data-target="#exampleModal" (click)="goToSignIn()"
+                class="text-link cursor-pointer">Signin</a>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,11 @@
 /* modal==================================== */
 
-.rounded {
+/* .rounded {
   max-width: 700px;
 }
 
 .form-control:focus {
   box-shadow: none;
-  /* border-color: #BA68C8; */
 }
 
 .profile-button {
@@ -37,11 +36,8 @@
 .a12 {
   box-shadow: 0 0 10px;
   border-radius: 10px;
-  /* border: 10px solid rgb(70, 228, 70); */
-}
+} */
 
-
-/* view-profile===================================== */
 
 body {
   background-color: #f9f9fa
@@ -215,7 +211,41 @@ body {
 }
 
 
+/* Review Style start */
+.table-fixed tbody {
+  height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display: block;
+}
+
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead>tr>th {
+  float: left;
+  position: relative;
+
+}
+
+
+
+/* Review Style End */
+
+
 ngb-rating {
   color: #FFC107;
+  font-size: 30px;
+}
+
+
+.edit-icon {
+  float: right;
   font-size: 30px;
 }

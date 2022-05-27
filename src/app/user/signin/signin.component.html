@@ -2,40 +2,36 @@
   <div class="container signin" style=" overflow: hidden;">
     <div class="forms">
       <div class="form login">
-        <div class="form logo">
-          <img src="../../../assets/images/logoprikriti1.png" style="margin-left: 30%; margin-bottom: 5px;" alt=""
-            class="logo">
+        <div class="form ">
+          <img src="../../../assets/images/Group40.png" alt="" class="logo">
         </div>
-
-        <form action="#">
+        <form action=" #">
           <div class="input-field" style="margin-top: 0%;">
             <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="user.userEmail" ngModel name="email"
               type="text" #Email="ngModel" placeholder="Enter your email" required>
             <i class="uil uil-envelope-alt icon"></i>
-            <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
-              Address</span>
-            <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
-              Address</span>
-            <!-- <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
-                              <div *ngIf="Email.errors?.required">Email is required.</div>
-                          </div> -->
           </div>
+          <span class="text-danger" *ngIf="Email.errors?.required && Email.touched "><small>Please Enter Email
+              Address</small></span>
+          <span class="text-danger" *ngIf="Email.errors?.pattern&& Email.touched "><small>Please Enter Valid Email
+              Address</small></span>
+
           <div class="input-field">
             <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text"
               placeholder="Enter your password" required>
             <i class="uil uil-lock icon"></i>
             <i class="uil uil-eye-slash showHidePw"></i>
-            <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
-              <div *ngIf="Password.errors?.required">Password is required.</div>
-            </div>
+          </div>
+          <div class="text-danger" *ngIf="Password.touched && !Password.valid">
+            <div *ngIf="Password.errors?.required"><small>Password is required.</small></div>
           </div>
           <div class="text cursor-pointer mt-2">
             <a data-toggle="modal" data-target="#exampleModalCenter">Forgot
               password?</a>
           </div>
           <div class="text-center my-4">
-            <input class="btn btn-primary " data-toggle="modal" data-target="#exampleModal" (click)="login()"
-              type="button" value="Signin ">
+            <input [disabled]="Email.invalid ||  Password.invalid" class="btn btn-primary border-btn cursor-pointer"
+              data-toggle=" modal" data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
           </div>
           <div class="Google-signin">
             <span>
