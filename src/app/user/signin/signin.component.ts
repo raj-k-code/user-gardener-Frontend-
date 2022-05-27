@@ -20,6 +20,8 @@ export class SigninComponent implements OnInit {
   number: any;
   status = false;
   whichApi: any;
+  passwordType = "password";
+
 
   constructor(private toaster: ToastrService, private userService: UserService, private socialService: SocialAuthService, private router: Router, private gardenerService: GardenerService) {
     // this.toaster.success("Login Successfully", "Success")
@@ -245,6 +247,14 @@ export class SigninComponent implements OnInit {
     else {
       this.whichApi = "goToSignUp"
       this.status = true
+    }
+  }
+
+  public showPassword() {
+    if (this.passwordType === "password") {
+      this.passwordType = "text";
+    } else {
+      this.passwordType = "password";
     }
   }
 

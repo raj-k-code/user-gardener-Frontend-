@@ -98,8 +98,8 @@
               Name</small></span>
 
           <div class="input-field">
-            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail" #Email="ngModel"
-              name="email" type="text" placeholder="Enter your email" required>
+            <input (blur)="checkEmail()" pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail"
+              #Email="ngModel" name="email" type="text" placeholder="Enter your email" required>
             <i class="uil uil-envelope-alt icon"></i>
           </div>
           <span class="text-danger" *ngIf="Email.errors?.required && Email.touched "><small>Please Enter Email
@@ -108,16 +108,20 @@
               Address</small></span>
 
           <div class="input-field">
-            <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-              [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="text"
+            <input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="{{passwordType}}"
               placeholder="Enter your password" required>
             <i class="uil uil-lock icon"></i>
-            <i class="uil uil-eye-slash showHidePw"></i>
+            <i *ngIf="passwordType == 'text'" (click)="showPassword()"
+              class="uil uil-eye showHidePw cursor-pointer"></i>
+            <i *ngIf="passwordType == 'password'" (click)="showPassword()"
+              class="uil uil-eye-slash showHidePw cursor-pointer"></i>
+
           </div>
           <span class="text-danger" *ngIf="Password.errors?.required && Password.touched "><small>Please Enter
               Password</small></span>
-          <span class="text-danger" *ngIf="Password.errors?.pattern && Password.touched "><small>Password must be 6
-              characters.like: Ab@123</small></span>
+          <span class="text-danger" *ngIf="Password.errors?.pattern && Password.touched "><small>Password must be 8
+              characters.like: Abc@1234</small></span>
 
           <div class="input-field">
             <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
@@ -150,12 +154,6 @@
               [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid "
               (click)="SignUp()" type="button" value="SignUp ">
           </div>
-
-          <!-- <div class="text-center my-4">
-            <input [disabled]="Email.invalid ||  Password.invalid" class="btn btn-primary " data-toggle="modal"
-              data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
-          </div> -->
-
           <div class="login-signup" style="justify-content: center;">
             <span>Already have an account?
               <a data-toggle="modal" data-target="#exampleModal" (click)="goToSignIn()"

@@ -12,6 +12,8 @@ import { NurseryownerService } from 'src/app/service/nurseryowner.service';
 })
 export class NurserySignupComponent implements OnInit {
   nursery = new Nursury("", "", "", "", "", "", "", "", "", "");
+  passwordType = "password";
+
   constructor(private nurseryService: NurseryownerService, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,5 +37,14 @@ export class NurserySignupComponent implements OnInit {
         }
       }
     });
+  }
+
+
+  public showPassword() {
+    if (this.passwordType === "password") {
+      this.passwordType = "text";
+    } else {
+      this.passwordType = "password";
+    }
   }
 }
