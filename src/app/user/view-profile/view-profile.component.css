@@ -201,11 +201,14 @@ body {
 }
 
 .pHeading {
-  margin-top: 5%;
+  /* padding-top: 5px;
+  padding-bottom: 5%; */
   font-size: 20px;
+  /* margin-bottom: 0%; */
 }
 
 .pData {
+  /* margin-top: 10%; */
   font-size: 20px;
 }
 
