@@ -10,13 +10,19 @@
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
+
+.logo {
+  object-fit: cover;
+  padding: 10px 24%;
+}
+
 @media only screen and (max-width: 500px) {
   .signin {
     width: 390px;
   }
 
   .logo {
-    padding: 0px;
+    padding: 10px 16%;
   }
 
 }
@@ -27,14 +33,10 @@
   }
 
   .logo {
-    padding: 0px;
+    padding: 10px 14%;
   }
 }
 
-.logo {
-  object-fit: cover;
-  padding: 0 24%;
-}
 
 .container .forms {
   padding: 30px;

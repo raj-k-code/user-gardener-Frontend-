@@ -88,8 +88,8 @@
   <div class="container signin" style=" overflow: hidden;">
     <div class="forms">
       <div class="form login">
-        <div class="form logo">
-          <img src="../../../assets/images/Group40.png" style="object-fit: cover; padding: 0 24%;" alt="" class="logo">
+        <div class="form">
+          <img src="../../../assets/images/Group40.png" alt="" class="logo">
         </div>
         <form action=" #">
           <div class="input-field">
@@ -110,14 +110,16 @@
               Name</small></span>
 
           <div class="input-field">
-            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="nursery.nurseryOwnerEmail" #Email="ngModel"
-              name="email" type="text" placeholder="Enter your email" required>
+            <input (blur)="checkEmail()" pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)"
+              [(ngModel)]="nursery.nurseryOwnerEmail" #Email="ngModel" name="email" type="text"
+              placeholder="Enter your email" required>
             <i class="uil uil-envelope-alt icon"></i>
           </div>
           <span class="text-danger" *ngIf="Email.errors?.required && Email.touched "><small>Please Enter Email
               Address</small></span>
           <span class="text-danger" *ngIf="Email.errors?.pattern&& Email.touched "><small>Please Enter Valid Email
               Address</small></span>
+          <span class="text-danger" *ngIf="exist"><small>This Email Is Already Exist</small></span>
 
           <div class="input-field">
             <input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
@@ -135,7 +137,7 @@
               characters.like: Abc@1234</small></span>
 
           <div class="input-field">
-            <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
+            <input (blur)="checkMobile()" pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
               [(ngModel)]="nursery.nurseryOwnerMobile" name="mobile" type="text" placeholder="Enter your Mobile"
               required>
             <i class="uil uil-mobile-android"></i>
@@ -144,6 +146,8 @@
               Number</small></span>
           <span class="text-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched "><small>Please Enter Valid
               Mobile Number</small></span>
+          <span class="text-danger" *ngIf="mobileExist"><small>This Mobile Number Is Already Exist</small></span>
+
 
           <div class="input-field">
             <input #Address="ngModel" [(ngModel)]="nursery.nurseryAddress" name="address" type="text"
@@ -155,7 +159,7 @@
 
           <div class="text-center my-4">
             <input class="btn btn-primary border-btn cursor-pointer" (click)="SignUp()"
-              [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid || NurName.invalid "
+              [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid || NurName.invalid ||  exist || mobileExist"
               (click)="SignUp()" type="button" value="Register ">
           </div>
         </form>

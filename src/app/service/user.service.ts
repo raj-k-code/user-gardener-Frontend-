@@ -41,4 +41,14 @@ export class UserService {
     let updateProfileApi = "https://prakritee.herokuapp.com/user/edit";
     return this.http.post<any>(updateProfileApi, formData);
   }
+
+  public checkEmail(email: any) {
+    let checkEmailApi = "https://prakritee.herokuapp.com/user/check-email/" + email;
+    return this.http.get<any>(checkEmailApi);
+  }
+
+  public checkMobile(mobile: any) {
+    let checkMobileApi = "https://prakritee.herokuapp.com/user/check-mobile/" + mobile;
+    return this.http.get<any>(checkMobileApi);
+  }
 }

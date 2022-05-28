@@ -1,13 +1,12 @@
+/* .box:hover {
+  box-shadow: 0 0 15px gray;
+} */
 
 
-/* .box:hover{
-    box-shadow: 0 0 15px gray;
-  } */
+.paddingCON {
+  padding-top: -40px;
+}
 
-
-  .paddingCON{
-     padding-top: -40px;
-  }
- .paddingROW{
-     padding-top: 50px;
- }
+.paddingROW {
+  padding-top: 50px;
+}

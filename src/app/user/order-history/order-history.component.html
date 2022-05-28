@@ -1,37 +1,85 @@
-<div class="container mt-3">
-    <h2>Order History</h2>
-    <div class="box">
+<div class="container-xl">
+  <div class="table-responsive">
+    <div *ngIf="orderData.length >0" class="table-wrapper ">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2><b>Order History</b></h2>
+          </div>
 
-        <table class="table" style="margin-top: 30px;">
-            <thead class="table" style="background-color:rgb(74, 199, 74) ;">
-                <tr>
-                    <th>Order Id</th>
-                    <th>Order Date</th>
-                    <th>Totel Products</th>
-                    <th>Total Amount</th>
-                    <th>Status</th>
-                    <th>View</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let order of orderData">
-                    <td>{{order._id}}</td>
-                    <td>{{order.createdAt | date}}</td>
-                    <td>{{order.productList.length}}</td>
-                    <td>{{order.total}}</td>
-                    <td>{{order.orderStatus}}</td>
-                    <td>
-                        <div class="text-center">
-                            <a routerLink="view-order/{{order._id}}" class="btn btn-success text-light px-3 py-2 mr-2 main-btn">View
-                More</a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Total Products</th>
+            <th>Total Price</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orderData">
+            <td>{{order._id}}</td>
+            <td>{{order.createdAt | date}}</td>
+            <td>{{order.productList.length}}</td>
+            <td>{{order.total}}</td>
+            <!-- <td>{{order.orderStatus}}</td> -->
+            <td><span class="status text-success">&bull;</span> {{order.orderStatus}}</td>
+            <td>
+              <button routerLink="view-order/{{order._id}}" class="btn btn-primary ">View</button>
+              <!-- <div class="text-center">
+                <a routerLink="view-order/{{order._id}}" class="btn btn-primary ">View More</a>
+              </div> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
+  </div>
+  <div *ngIf="orderData.length == 0" style="text-align: center;" class="row text-danger padding-md">
+    <div class="col">
+      <h2>No History Found</h2>
+    </div>
+  </div>
 </div>
+
+
+
+<!-- <div class="container mt-3">
+  <h2>Order History</h2>
+  <div class="box">
+    <table class="table" style="margin-top: 30px;">
+      <thead class="table" style="background-color:rgb(74, 199, 74) ;">
+        <tr>
+          <th>Order Id</th>
+          <th>Order Date</th>
+          <th>Totel Products</th>
+          <th>Total Total</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderData">
+          <td>{{order._id}}</td>
+          <td>{{order.createdAt | date}}</td>
+          <td>{{order.productList.length}}</td>
+          <td>{{order.total}}</td>
+          <td>{{order.orderStatus}}</td>
+          <td>
+            <div class="text-center">
+              <a routerLink="view-order/{{order._id}}" class="btn btn-success text-light px-3 py-2 mr-2 main-btn">View
+                More</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
 
 
 <!-- SPINNER -->
