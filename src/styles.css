@@ -42,7 +42,6 @@ h5 {
 }
 
 
-
 .item-price {
   color: #999;
 }
@@ -453,6 +452,9 @@ footer h5 {
   font-weight: 500;
 }
 
+.text-link:hover {
+  color: #04791d;
+}
 
 /* buttun style end */
 

@@ -1,4 +1,4 @@
-<div class="container-fluid hero-section mb-5">
+<!-- <div class="container-fluid hero-section mb-5">
   <div class="col-12 col-md-6">
     <div class="contact--abc">
       <img src="../../../assets/images/bg7.1.jpg">
@@ -9,44 +9,62 @@
   </div>
 </div>
 
-
-<div class="container m-auto ">
-  <div class="row align-items-center justify-content-between mb-5">
-    <!-- Contact Thumbnail -->
-    <div class="col-12 col-md-6">
-      <div class="contact--thumbnail">
-        <img src="../../../assets/images/zane-lee-BbXYnYigR0U-unsplash(1).jpg" class="img-fluid" alt="Responsive image">
-      </div>
+<div class="container ">
+  <h1 class="text-center">Contact Us</h1>
+  <p class="text-center">Feel free to ask anything to us </p>
+  <br />
+  <div class="row">
+    <div class="col-md-3">
     </div>
-
-    <div class="col-12 col-md-6 section-detail">
-      <!-- Section Heading -->
-      <div class="section-heading">
-        <h2>CONTACT US</h2>
-        <p>We are improving our services to serve you better.</p>
-      </div>
-      <!-- Contact Information -->
-      <div class="contact-information">
-        <p><span>Address:</span> 505 Silk Rd, New York</p>
-        <p><span>Phone:</span> +1 234 122 122</p>
-        <p><span>Email:</span> info.deercreative@gmail.com</p>
-        <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
-        <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
-      </div>
+    <div class="col-md-6 form jusitfy-content-center">
+      <form class="my-form">
+        <div class="form-group">
+          <label for="form-name">Name</label>
+          <input type="email" class="form-control" id="form-name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="form-email">Email Address</label>
+          <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+          <label for="form-subject">Telephone</label>
+          <input type="text" class="form-control" id="form-subject" placeholder="Subject">
+        </div>
+        <div class="form-group">
+          <label for="form-message">Email your Message</label>
+          <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+        </div>
+        <button class="btn btn-secondary" type="submit">Contact Us</button>
+        <br>
+        <br>
+      </form>
+    </div>
+    <div class="col-md-3">
     </div>
   </div>
-</div>
+</div> -->
 
-<section class="contact-area">
+
+
+
+<section class="banner-img py-5 bg-cover bg-center img-fluid jusitfy-content-center">
+  <div class="py-5 px-5 text-white text-center banner-text">
+    <h2 class="">We are always for you !</h2>
+    <p>Be a better gardener with prakriti .<br> find all the helpful tips hear for free and make your plants more
+      healthy
+    </p>
+  </div>
+</section>
+
+
+<section class="contact-area padding-md">
   <div class="container m-auto">
     <div class="row align-items-center justify-content-between">
       <div class="col-12 col-lg-5">
-        <!-- Section Heading -->
         <div class="section-heading">
           <h2>GET IN TOUCH</h2>
           <p>Send us a message, we will call back later</p>
         </div>
-        <!-- Contact Form Area -->
         <div class="contact-form-area mb-100">
           <form action="#" method="post">
             <div class="row">
@@ -86,17 +104,15 @@
                       Message</small></span>
                 </div>
               </div>
-              <div class="col-12">
+              <div class="col-12 mb-3">
                 <button [disabled]="Nam.invalid || Email.invalid || Sub.invalid || Mess.invalid" (click)="addQuery()"
-                  type="submit" class="btn btn-primary border-btn mt-15">Send Message</button>
+                  type="submit" class="btn btn-primary border-btn mt-15">Send</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-
       <div class="col-12 col-md-6">
-        <!-- Google Maps -->
         <div class="map-area mb-100">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137"
@@ -107,3 +123,27 @@
 
   </div>
 </section>
+
+<div class="container ">
+  <div class="row align-items-center justify-content-between mb-5">
+    <div class="col-12 col-md-6">
+      <div class="contact--thumbnail">
+        <img src="../../../assets/images/zane-lee-BbXYnYigR0U-unsplash(1).jpg" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 section-detail">
+      <div class="section-heading">
+        <h2>CONTACT US</h2>
+        <p>We are improving our services to serve you better.</p>
+      </div>
+      <div class="contact-information">
+        <p><span>Address:</span> 505 Silk Rd, New York</p>
+        <p><span>Phone:</span> +1 234 122 122</p>
+        <p><span>Email:</span> info.deercreative@gmail.com</p>
+        <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
+        <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
+      </div>
+    </div>
+  </div>
+</div>

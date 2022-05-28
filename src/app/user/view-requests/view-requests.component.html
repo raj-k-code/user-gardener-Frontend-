@@ -28,42 +28,47 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
-            <h2 class="text-center">All Booking Requests</h2>
-        </div>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
+      <h2 class="text-center">All Booking Requests</h2>
     </div>
+  </div>
 
-    <div class="row">
-        <div *ngFor="let user of dataList; index as i" class="col-md-4">
-            <div *ngIf="user.userId != null" class="card-box text-center">
-                <div class="user-pic">
-                    <img src="{{user.userId.userImage}}" class="img-fluid" alt="User Pic">
-                </div>
-                <h4>{{user.userId.userName | uppercase}}</h4>
-                <p>(User)</p>
-                <h6>+91 {{user.userId.userMobile}}</h6>
-                <hr>
-                <p>{{user.userId.userAddress}}</p>
-                <hr>
-                <a (click)="approveRequest(user)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Accept</span></a>
-                <a (click)="cancelRequest(user,i)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Reject</span></a>
-            </div>
-            <div *ngIf="user.nurseryId != null" class="card-box text-center">
-                <div class="user-pic">
-                    <img src="{{user.nurseryId.Image}}" class="img-fluid" alt="User Pic">
-                </div>
-                <h4>{{user.nurseryId.nurseryName | uppercase}}</h4>
-                <p>(NurseryOwner)</p>
-                <h6>+91 {{user.nurseryId.nurseryOwnerMobile}}</h6>
-                <hr>
-                <p>{{user.nurseryId.nurseryAddress}}</p>
-                <hr>
-                <a (click)="approveRequest(user)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Accept</span></a>
-                <a (click)="cancelRequest(user,i)" style="--clr:#77CD5A; --1:0;" class="btn btn-primary"><span>Reject</span></a>
-            </div>
+  <div class="row">
+    <div *ngFor="let user of dataList; index as i" class="col-md-4">
+      <div *ngIf="user.userId != null" class="card-box text-center">
+        <div class="user-pic">
+          <img style="object-fit: contain;" src="{{user.userId.userImage}}" class="img-fluid" alt="User Pic">
         </div>
+        <h4>{{user.userId.userName | uppercase}}</h4>
+        <p>(User)</p>
+        <h6>+91 {{user.userId.userMobile}}</h6>
+        <hr>
+        <p>{{user.userId.userAddress}}</p>
+        <hr>
+        <button (click)="approveRequest(user)" class="btn btn-primary mr-3">Accept</button>
+        <button (click)="cancelRequest(user,i)" class="btn btn-primary border-btn">Reject</button>
+
+        <!-- <a (click)="approveRequest(user)" class="btn btn-primary"><span>Accept</span></a> -->
+        <!-- <a (click)="cancelRequest(user,i)" class="btn btn-primary border-btn"><span>Reject</span></a> -->
+      </div>
+      <div *ngIf="user.nurseryId != null" class="card-box text-center">
+        <div class="user-pic">
+          <img src="{{user.nurseryId.Image}}" class="img-fluid" alt="User Pic">
+        </div>
+        <h4>{{user.nurseryId.nurseryName | uppercase}}</h4>
+        <p>(NurseryOwner)</p>
+        <h6>+91 {{user.nurseryId.nurseryOwnerMobile}}</h6>
+        <hr>
+        <p>{{user.nurseryId.nurseryAddress}}</p>
+        <hr>
+        <button (click)="approveRequest(user)" class="btn btn-primary mr-3">Accept</button>
+        <button (click)="cancelRequest(user,i)" class="btn btn-primary border-btn">Reject</button>
+        <!-- <a (click)="approveRequest(user)" class="btn btn-primary "><span>Accept</span></a>
+        <a (click)="cancelRequest(user,i)" class="btn btn-primary border-btn ml-5"><span>Reject</span></a> -->
+      </div>
     </div>
+  </div>
 </div>
 
 

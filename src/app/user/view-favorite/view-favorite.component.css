@@ -249,31 +249,32 @@ display: inline-block;
 
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
-:root {
-    --primary-color: #9B5DE5;
-}
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"); */
 
-body {
+/* :root {
+  --primary-color: #9B5DE5;
+} */
+
+/* body {
     font-family: "Poppins", sans-serif !important;
-}
+} */
 
-small,
+/* small,
 span {
-    font-weight: 600;
-}
-
+  font-weight: 600;
+} */
+/*
 .headline {
-    color: var(--primary-color);
-}
+  color: var(--primary-color);
+} */
 
-.main-btn {
-    background-color: var(--primary-color);
-    border-radius: 30px;
+.btn {
+  /* background-color: var(--primary-color); */
+  border-radius: 30px;
 }
 
 @media (max-width:767px) {
-    .main-btn {
-        margin-top: 20px;
-    }
+  .btn {
+    margin-top: 20px;
+  }
 }

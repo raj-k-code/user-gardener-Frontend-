@@ -75,31 +75,34 @@
               <div class="card-block">
                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600 pHeading">Information</h6>
                 <div class="row mt-5">
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600 pData">Name</p>
-                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerName}}</h6>
+                  <div class="col-sm-6 mb-2">
+                    <p class="mb-1 pData">Name</p>
+                    <h6 class="text-muted  pHeading">{{gardenerData.gardenerName}}</h6>
                   </div>
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600 pData">Address</p>
-                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerAddress}}
+                  <div class="col-sm-6 mb-2">
+                    <p class="mb-1 pData">Address</p>
+                    <h6 class="text-muted  pHeading">{{gardenerData.gardenerAddress}}
                     </h6>
                   </div>
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600 pData">Email</p>
-                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerEmail}}</h6>
+                  <div class="col-sm-6 mb-2">
+                    <p class="mb-1 pData">Email</p>
+                    <h6 class="text-muted  pHeading">{{gardenerData.gardenerEmail}}</h6>
                   </div>
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600 pData">Phone</p>
-                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerMobile}}</h6>
+                  <div class="col-sm-6 mb-2">
+                    <p class="mb-1 pData">Phone</p>
+                    <h6 class="text-muted  pHeading">{{gardenerData.gardenerMobile}}</h6>
                   </div>
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600 pData">Experience</p>
-                    <h6 class="text-muted f-w-400 pHeading">{{gardenerData.gardenerExperience}}</h6>
+                  <div class="col-sm-6 mb-2">
+                    <p class="mb-1 pData">Experience</p>
+                    <h6 class="text-muted  pHeading">{{gardenerData.gardenerExperience}}</h6>
                   </div>
-                  <div *ngIf="!oldRate" class="col-12 text-center mt-3">
+                  <!-- <div *ngIf="!oldRate" class="col-12 text-center mt-3">
                     <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary border-btn">Rate
                       Gardener</a>
-                  </div>
+                  </div> -->
+                  <button *ngIf="!oldRate" data-toggle="modal" data-target="#exampleModalCenter"
+                    class="mt-5 btn btn-primary" style="width: 25%; margin-left: 35%;">Rate
+                    Gardener</button>
                 </div>
               </div>
             </div>

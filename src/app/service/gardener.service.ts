@@ -69,4 +69,14 @@ export class GardenerService {
     let rateTheGardenerApi = "https://prakritee.herokuapp.com/gardener/rate-the-gardener";
     return this.http.post<any>(rateTheGardenerApi, { gardenerId: gardenerId, userId: sessionStorage.getItem('userId'), rate: rate, review: review });
   }
+
+  public checkEmail(email: any) {
+    let checkEmailApi = "https://prakritee.herokuapp.com/gardener/check-email/" + email;
+    return this.http.get<any>(checkEmailApi);
+  }
+
+  public checkMobile(mobile: any) {
+    let checkMobileApi = "https://prakritee.herokuapp.com/gardener/check-mobile/" + mobile;
+    return this.http.get<any>(checkMobileApi);
+  }
 }

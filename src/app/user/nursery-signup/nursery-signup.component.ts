@@ -13,6 +13,8 @@ import { NurseryownerService } from 'src/app/service/nurseryowner.service';
 export class NurserySignupComponent implements OnInit {
   nursery = new Nursury("", "", "", "", "", "", "", "", "", "");
   passwordType = "password";
+  exist = false;
+  mobileExist = false;
 
   constructor(private nurseryService: NurseryownerService, private toaster: ToastrService, private router: Router) { }
 
@@ -46,5 +48,27 @@ export class NurserySignupComponent implements OnInit {
     } else {
       this.passwordType = "password";
     }
+  }
+
+  checkEmail() {
+    this.nurseryService.checkEmail(this.nursery.nurseryOwnerEmail).subscribe(data => {
+      if (data.exist == true) {
+        this.exist = true
+      }
+      else {
+        this.exist = false
+      }
+    });
+  }
+
+  checkMobile() {
+    this.nurseryService.checkMobile(this.nursery.nurseryOwnerMobile).subscribe(data => {
+      if (data.exist == true) {
+        this.mobileExist = true
+      }
+      else {
+        this.mobileExist = false
+      }
+    });
   }
 }
