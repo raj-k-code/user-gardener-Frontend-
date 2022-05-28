@@ -2,7 +2,7 @@
   <div class="container signin" style=" overflow: hidden;">
     <div class="forms">
       <div class="form login">
-        <div class="form ">
+        <div class="form">
           <img src="../../../assets/images/Group40.png" alt="" class="logo">
         </div>
         <form action=" #">
@@ -17,10 +17,14 @@
               Address</small></span>
 
           <div class="input-field">
-            <input [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password" type="text"
-              placeholder="Enter your password" required>
+            <input id="myInput" [(ngModel)]="user.userPassword" ngModel #Password="ngModel" name="password"
+              type="{{passwordType}}" placeholder="Enter your password" required>
             <i class="uil uil-lock icon"></i>
-            <i class="uil uil-eye-slash showHidePw"></i>
+            <i *ngIf="passwordType == 'text'" (click)="showPassword()"
+              class="uil uil-eye showHidePw cursor-pointer"></i>
+            <i *ngIf="passwordType == 'password'" (click)="showPassword()"
+              class="uil uil-eye-slash showHidePw cursor-pointer"></i>
+
           </div>
           <div class="text-danger" *ngIf="Password.touched && !Password.valid">
             <div *ngIf="Password.errors?.required"><small>Password is required.</small></div>
@@ -31,7 +35,7 @@
           </div>
           <div class="text-center my-4">
             <input [disabled]="Email.invalid ||  Password.invalid" class="btn btn-primary border-btn cursor-pointer"
-              data-toggle=" modal" data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
+              data-toggle="modal" data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
           </div>
           <div class="Google-signin">
             <span>
@@ -104,7 +108,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Forgot Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

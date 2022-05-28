@@ -15,6 +15,9 @@ import { UserService } from 'src/app/service/user.service';
 export class SignupComponent implements OnInit {
   user = new User("", "", "", "", "", "");
   gardener = new Gardener("", "", "", "", "", "", "", "", "");
+  passwordType = "password"
+  exist = false;
+  mobileExist = false;
 
   constructor(private userService: UserService, private toaster: ToastrService, private router: Router, private gardenerService: GardenerService) { }
 
@@ -91,5 +94,60 @@ export class SignupComponent implements OnInit {
 
   goToSignIn() {
     this.router.navigate(['signin']);
+  }
+
+
+  public showPassword() {
+    if (this.passwordType === "password") {
+      this.passwordType = "text";
+    } else {
+      this.passwordType = "password";
+    }
+  }
+
+  checkEmail() {
+    if (sessionStorage.getItem('number') == "1") {
+      this.userService.checkEmail(this.gardener.gardenerEmail).subscribe(data => {
+        if (data.exist == true) {
+          this.exist = true
+        }
+        else {
+          this.exist = false
+        }
+      });
+    }
+    else if (sessionStorage.getItem('number') == "2") {
+      this.gardenerService.checkEmail(this.gardener.gardenerEmail).subscribe(data => {
+        if (data.exist == true) {
+          this.exist = true
+        }
+        else {
+          this.exist = false
+        }
+      });
+    }
+  }
+
+  checkMobile() {
+    if (sessionStorage.getItem('number') == "1") {
+      this.userService.checkMobile(this.gardener.gardenerMobile).subscribe(data => {
+        if (data.exist == true) {
+          this.mobileExist = true
+        }
+        else {
+          this.mobileExist = false
+        }
+      });
+    }
+    else if (sessionStorage.getItem('number') == "2") {
+      this.gardenerService.checkMobile(this.gardener.gardenerMobile).subscribe(data => {
+        if (data.exist == true) {
+          this.mobileExist = true
+        }
+        else {
+          this.mobileExist = false
+        }
+      });
+    }
   }
 }

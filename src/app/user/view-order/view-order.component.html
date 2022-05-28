@@ -1,101 +1,108 @@
 <!-- blogs section Starts -->
 <section class="services section-padding" id="services">
 
-    <div class="container">
-        <div class="card">
-            <div class="col-sm-12">
-                <div class="card-block">
-                    <h4 class="m-b-20 p-b-5 b-b-default f-w-600 font-weight-bold">Order Details</h4>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Order Id</p>
-                            <h6 class="text-muted f-w-400">{{orderData._id}}</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Address</p>
-                            <h6 class="text-muted f-w-400">{{orderData.Address}}</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Order Date</p>
-                            <h6 class="text-muted f-w-400">{{orderData.createdAt | date}}</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Order Status</p>
-                            <h6 class="text-muted f-w-400">{{orderData.orderStatus}}</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Total Amount</p>
-                            <h6 class="text-muted f-w-400 text-muted font-weight-bold">₹{{orderData.total}}</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <p class="m-b-10 f-w-600">Payment Method</p>
-                            <h6 class="text-muted f-w-400 text-muted font-weight-bold">₹{{orderData.paymentMethod}}</h6>
-                        </div>
-                        <!-- <div class="col-sm-2">
+  <div class="container">
+    <div class="card">
+      <div class="col-sm-12">
+        <div class="card-block">
+          <h4 class="m-b-20 p-b-5 b-b-default f-w-600 font-weight-bold">Order Details</h4>
+          <div class="row">
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Order Id</p>
+              <h6 class="text-muted f-w-400">{{orderData._id}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Address</p>
+              <h6 class="text-muted f-w-400">{{orderData.Address}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Order Date</p>
+              <h6 class="text-muted f-w-400">{{orderData.createdAt | date}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Order Status</p>
+              <h6 class="text-muted f-w-400">{{orderData.orderStatus}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Total Amount</p>
+              <h6 class="text-muted f-w-400 text-muted font-weight-bold">₹{{orderData.total}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <p class="m-b-10 f-w-600">Payment Method</p>
+              <h6 class="text-muted f-w-400 text-muted font-weight-bold">₹{{orderData.paymentMethod}}</h6>
+            </div>
+            <!-- <div class="col-sm-2">
                 <a href="#" class="btn text-white btn-success main-btn">Re-order</a>
 
               </div> -->
-                    </div>
+          </div>
 
-                </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
 
 </section>
 
 <!-- Ordered product      -->
 <div class="container my-5">
-    <div class="text-center mb-5">
-        <h4 class="font-weight-bold">Products <span class="headline">Ordered</span></h4>
-    </div>
+  <div class="text-center mb-5">
+    <h4 class="font-weight-bold">Products <span class="headline">Ordered</span></h4>
+  </div>
 
-    <div *ngFor="let product of orderData.productList; index as i" class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between">
-        <div style="cursor: pointer;" (click)="viewProduct(product.productId._id)" class="text-center">
-            <img src="{{product.productId.productImage}}" style="height: 100px; width: 100px;" class="img-fluid" alt="...">
-        </div>
-        <div class="text-center ">
-            <span class="f-w-600">Name</span>
-            <small class="d-block text-muted my-3 f-w-600">{{product.productId.productName}}</small>
-        </div>
-        <div class="text-center ">
-            <span class="f-w-600">Qty</span>
-            <small class="d-block my-3 text-muted f-w-600">{{product.qty}}</small>
-        </div>
-        <div class="text-center">
-            <span class="f-w-600">Price</span>
-            <h4 class="my-2 text-muted font-weight-bold">₹{{product.productId.productPrice}}</h4>
-        </div>
-        <div class="text-center">
-            <a (click)="setProductId(product.productId._id,[])" data-toggle="modal" data-target="#exampleModal" *ngIf="rateButton[i] == false || product.productId.productRating.length == 0" class="btn btn-success text-light px-3 py-2 mr-2 main-btn">Rate This</a>
-            <a (click)="setProductId(product.productId._id,product.productId.productRating)" data-toggle="modal" data-target="#exampleModal" *ngIf="rateButton[i] == true" class="btn btn-success text-light px-3 py-2 mr-2 main-btn"> Edit
-        Rate</a>
-        </div>
+  <div *ngFor="let product of orderData.productList; index as i"
+    class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between">
+    <div style="cursor: pointer;" (click)="viewProduct(product.productId._id)" class="text-center">
+      <img src="{{product.productId.productImage}}" style="height: 100px; width: 100px;" class="img-fluid" alt="...">
     </div>
+    <div class="text-center ">
+      <span class="f-w-600">Name</span>
+      <small class="d-block text-muted my-3 f-w-600">{{product.productId.productName}}</small>
+    </div>
+    <div class="text-center ">
+      <span class="f-w-600">Qty</span>
+      <small class="d-block my-3 text-muted f-w-600">{{product.qty}}</small>
+    </div>
+    <div class="text-center">
+      <span class="f-w-600">Price</span>
+      <h4 class="my-2 text-muted font-weight-bold">₹{{product.productId.productPrice}}</h4>
+    </div>
+    <div class="text-center">
+      <a (click)="setProductId(product.productId._id,[])" data-toggle="modal" data-target="#exampleModal"
+        *ngIf="rateButton[i] == false || product.productId.productRating.length == 0"
+        class="btn btn-primary  px-3 py-2 mr-2 ">Rate This</a>
+      <a (click)="setProductId(product.productId._id,product.productId.productRating)" data-toggle="modal"
+        data-target="#exampleModal" *ngIf="rateButton[i] == true" class="btn btn-primary border-btn  px-3 py-2 mr-2 ">
+        Edit
+        Rate</a>
+    </div>
+  </div>
 </div>
 
 
 <!-- MOdel -->
 <div class="modal fade" id="exampleModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
 
-            <div class="modal-header">
-                <h4 class="modal-title">Rate The Product</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+      <div class="modal-header">
+        <h4 class="modal-title">Rate The Product</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
 
-            <div class="modal-body inline-block">
-                <ngb-rating required ngModel #rating="ngModel" [(ngModel)]="starRating" [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
-            </div>
+      <div class="modal-body inline-block">
+        <ngb-rating required ngModel #rating="ngModel" [(ngModel)]="starRating" [max]="5" [(rate)]="starRating"
+          [readonly]="false"></ngb-rating>
+      </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-                <button data-dismiss="modal" [disabled]="rating.invalid" (click)="rateTheProduct()" type="button" class="btn btn-success">Rate</button>
-            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+        <button data-dismiss="modal" [disabled]="rating.invalid" (click)="rateTheProduct()" type="button"
+          class="btn btn-success">Rate</button>
+      </div>
 
-        </div>
     </div>
+  </div>
 </div>
 
 <!-- SPINNER -->

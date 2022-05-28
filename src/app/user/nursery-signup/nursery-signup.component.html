@@ -1,74 +1,169 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>SignUp</title>
+  <title>SignUp</title>
 </head>
 
 <body>
-    <div class="container ">
-        <div class="forms">
-            <div class="form login">
-                <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
-                    <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
-                </div>
-
-                <form action="#">
-                    <div class="input-field">
-                        <input [(ngModel)]="nursery.nurseryOwnerName" #Name="ngModel" name="username" type="text" placeholder="Enter your Name" required>
-                        <i class="uil uil-user"></i>
-                        <span class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched ">Please Enter Name</span>
-                    </div>
-                    <div class="input-field">
-                        <input [(ngModel)]="nursery.nurseryName" #NurName="ngModel" name="nurname" type="text" placeholder="Enter your Nursery Name" required>
-                        <i class="uil uil-home"></i>
-                        <span class="alert alert-danger" *ngIf="NurName.errors?.required && NurName.touched ">Please Enter Nursery
-              Name</span>
-                    </div>
-                    <div class="input-field">
-                        <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="nursery.nurseryOwnerEmail" #Email="ngModel" name="email" type="text" placeholder="Enter your email" required>
-                        <i class="uil uil-envelope-alt icon"></i>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
-              Address</span>
-                        <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
-              Address</span>
-                    </div>
-                    <div class="input-field">
-                        <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" [(ngModel)]="nursery.nurseryOwnerPassword" #Password="ngModel" name="password" type="text" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                        <span class="alert alert-danger" *ngIf="Password.errors?.required && Password.touched ">Please Enter
-              Password</span>
-                        <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
-              characters.like: Ab@123 </span>
-
-                    </div>
-                    <div class="input-field">
-                        <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel" [(ngModel)]="nursery.nurseryOwnerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
-                        <i class="uil uil-mobile-android"></i>
-                        <span class="alert alert-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
-              Number</span>
-                        <span class="alert alert-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
-              Mobile Number</span>
-                    </div>
-                    <div class="input-field">
-                        <input #Address="ngModel" [(ngModel)]="nursery.nurseryAddress" name="address" type="text" placeholder="Enter Your Nursery Address" required>
-                        <i class="uil uil-house-user"></i>
-                        <span class="alert alert-danger" *ngIf="Address.errors?.required && Address.touched ">Please Enter
-              Nursery Address</span>
-                    </div>
-                    <div class="input-field button">
-                        <input (click)="SignUp()" [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid || NurName.invalid " (click)="SignUp()" type="button" value="SignUp ">
-                    </div>
-                </form>
-            </div>
+  <div class="container ">
+    <div class="forms">
+      <div class="form login">
+        <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
+          <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
         </div>
+
+        <form action="#">
+          <div class="input-field">
+            <input [(ngModel)]="nursery.nurseryOwnerName" #Name="ngModel" name="username" type="text"
+              placeholder="Enter your Name" required>
+            <i class="uil uil-user"></i>
+            <span class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched ">Please Enter Name</span>
+          </div>
+          <div class="input-field">
+            <input [(ngModel)]="nursery.nurseryName" #NurName="ngModel" name="nurname" type="text"
+              placeholder="Enter your Nursery Name" required>
+            <i class="uil uil-home"></i>
+            <span class="alert alert-danger" *ngIf="NurName.errors?.required && NurName.touched ">Please Enter Nursery
+              Name</span>
+          </div>
+          <div class="input-field">
+            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="nursery.nurseryOwnerEmail" #Email="ngModel"
+              name="email" type="text" placeholder="Enter your email" required>
+            <i class="uil uil-envelope-alt icon"></i>
+            <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
+              Address</span>
+            <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
+              Address</span>
+          </div>
+          <div class="input-field">
+            <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              [(ngModel)]="nursery.nurseryOwnerPassword" #Password="ngModel" name="password" type="text"
+              placeholder="Enter your password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+            <span class="alert alert-danger" *ngIf="Password.errors?.required && Password.touched ">Please Enter
+              Password</span>
+            <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
+              characters.like: Ab@123 </span>
+          </div>
+          <div class="input-field">
+            <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
+              [(ngModel)]="nursery.nurseryOwnerMobile" name="mobile" type="text" placeholder="Enter your Mobile"
+              required>
+            <i class="uil uil-mobile-android"></i>
+            <span class="alert alert-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
+              Number</span>
+            <span class="alert alert-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
+              Mobile Number</span>
+          </div>
+          <div class="input-field">
+            <input #Address="ngModel" [(ngModel)]="nursery.nurseryAddress" name="address" type="text"
+              placeholder="Enter Your Nursery Address" required>
+            <i class="uil uil-house-user"></i>
+            <span class="alert alert-danger" *ngIf="Address.errors?.required && Address.touched ">Please Enter
+              Nursery Address</span>
+          </div>
+          <div class="input-field button">
+            <input (click)="SignUp()"
+              [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid || NurName.invalid "
+              (click)="SignUp()" type="button" value="SignUp ">
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </body>
 
-</html>
+</html> -->
+
+
+
+<div class="padding-md">
+  <div class="container signin" style=" overflow: hidden;">
+    <div class="forms">
+      <div class="form login">
+        <div class="form">
+          <img src="../../../assets/images/Group40.png" alt="" class="logo">
+        </div>
+        <form action=" #">
+          <div class="input-field">
+            <input [(ngModel)]="nursery.nurseryOwnerName" #Name="ngModel" name="username" type="text"
+              placeholder="Enter your Name" required>
+            <i class="uil uil-user"></i>
+          </div>
+          <span class="text-danger" *ngIf="Name.errors?.required && Name.touched "><small>Please Enter
+              Name</small></span>
+
+          <div class="input-field">
+            <input [(ngModel)]="nursery.nurseryName" #NurName="ngModel" name="nurname" type="text"
+              placeholder="Enter your Nursery Name" required>
+            <i class="uil uil-home"></i>
+          </div>
+          <span class="text-danger" *ngIf="NurName.errors?.required && NurName.touched "><small>Please Enter
+              Nursery
+              Name</small></span>
+
+          <div class="input-field">
+            <input (blur)="checkEmail()" pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)"
+              [(ngModel)]="nursery.nurseryOwnerEmail" #Email="ngModel" name="email" type="text"
+              placeholder="Enter your email" required>
+            <i class="uil uil-envelope-alt icon"></i>
+          </div>
+          <span class="text-danger" *ngIf="Email.errors?.required && Email.touched "><small>Please Enter Email
+              Address</small></span>
+          <span class="text-danger" *ngIf="Email.errors?.pattern&& Email.touched "><small>Please Enter Valid Email
+              Address</small></span>
+          <span class="text-danger" *ngIf="exist"><small>This Email Is Already Exist</small></span>
+
+          <div class="input-field">
+            <input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              [(ngModel)]="nursery.nurseryOwnerPassword" #Password="ngModel" name="password" type="{{passwordType}}"
+              placeholder="Enter your password" required>
+            <i class="uil uil-lock icon"></i>
+            <i *ngIf="passwordType == 'text'" (click)="showPassword()"
+              class="uil uil-eye showHidePw cursor-pointer"></i>
+            <i *ngIf="passwordType == 'password'" (click)="showPassword()"
+              class="uil uil-eye-slash showHidePw cursor-pointer"></i>
+          </div>
+          <span class="text-danger" *ngIf="Password.errors?.required && Password.touched "><small>Please Enter
+              Password</small></span>
+          <span class="text-danger" *ngIf="Password.errors?.pattern && Password.touched "><small>Password must be 8
+              characters.like: Abc@1234</small></span>
+
+          <div class="input-field">
+            <input (blur)="checkMobile()" pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
+              [(ngModel)]="nursery.nurseryOwnerMobile" name="mobile" type="text" placeholder="Enter your Mobile"
+              required>
+            <i class="uil uil-mobile-android"></i>
+          </div>
+          <span class="text-danger" *ngIf="Mobile.errors?.required && Mobile.touched "><small>Please Enter Mobile
+              Number</small></span>
+          <span class="text-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched "><small>Please Enter Valid
+              Mobile Number</small></span>
+          <span class="text-danger" *ngIf="mobileExist"><small>This Mobile Number Is Already Exist</small></span>
+
+
+          <div class="input-field">
+            <input #Address="ngModel" [(ngModel)]="nursery.nurseryAddress" name="address" type="text"
+              placeholder="Enter your Address" required>
+            <i class="uil uil-house-user"></i>
+          </div>
+          <span class="text-danger" *ngIf="Address.errors?.required && Address.touched "><small>Please Enter Nursery
+              Address</small></span>
+
+          <div class="text-center my-4">
+            <input class="btn btn-primary border-btn cursor-pointer" (click)="SignUp()"
+              [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid || NurName.invalid ||  exist || mobileExist"
+              (click)="SignUp()" type="button" value="Register ">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

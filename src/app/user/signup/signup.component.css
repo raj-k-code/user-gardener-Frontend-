@@ -5,8 +5,8 @@
 .signin {
   position: relative;
   /* max-width: 400px; */
-  max-height: 700px;
-  height: 700px;
+  max-height: 730px;
+  height: 730px;
   width: 450px;
   background: white;
   border-radius: 10px;
@@ -14,9 +14,18 @@
   box-sizing: border-box;
 }
 
+.logo {
+  object-fit: cover;
+  padding: 10px 25%;
+}
+
 @media only screen and (max-width: 500px) {
   .signin {
     width: 390px;
+  }
+
+  .logo {
+    padding: 10px 16%;
   }
 }
 
@@ -24,7 +33,14 @@
   .signin {
     width: 340px;
   }
+
+  .logo {
+    padding: 10px 14%;
+  }
 }
+
+
+
 
 .container .forms {
   padding: 30px;

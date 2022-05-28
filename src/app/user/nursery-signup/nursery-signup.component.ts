@@ -12,6 +12,10 @@ import { NurseryownerService } from 'src/app/service/nurseryowner.service';
 })
 export class NurserySignupComponent implements OnInit {
   nursery = new Nursury("", "", "", "", "", "", "", "", "", "");
+  passwordType = "password";
+  exist = false;
+  mobileExist = false;
+
   constructor(private nurseryService: NurseryownerService, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -33,6 +37,37 @@ export class NurserySignupComponent implements OnInit {
         else if (err.status == 400) {
           this.toaster.error("Bad Request", "Error");
         }
+      }
+    });
+  }
+
+
+  public showPassword() {
+    if (this.passwordType === "password") {
+      this.passwordType = "text";
+    } else {
+      this.passwordType = "password";
+    }
+  }
+
+  checkEmail() {
+    this.nurseryService.checkEmail(this.nursery.nurseryOwnerEmail).subscribe(data => {
+      if (data.exist == true) {
+        this.exist = true
+      }
+      else {
+        this.exist = false
+      }
+    });
+  }
+
+  checkMobile() {
+    this.nurseryService.checkMobile(this.nursery.nurseryOwnerMobile).subscribe(data => {
+      if (data.exist == true) {
+        this.mobileExist = true
+      }
+      else {
+        this.mobileExist = false
       }
     });
   }
