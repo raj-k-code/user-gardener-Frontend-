@@ -13,16 +13,25 @@ import { GardenerService } from 'src/app/service/gardener.service';
 export class ViewRequestsComponent implements OnInit {
   dataList: any;
   gardenerId = sessionStorage.getItem('userId');
+  flag = false;
+  tempData: any = [];
 
   constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService) {
     spinner.show();
   }
 
   ngOnInit(): void {
+    var i = 0;
     this.gardenerService.viewRequest(this.gardenerId).subscribe(data => {
+      this.tempData = [];
       if (!data.message) {
-        console.log(data)
         this.dataList = data.bookRequests;
+
+        for (let request in this.dataList) {
+          if (this.dataList[request].isApproved == false) {
+            this.tempData[i++] = this.dataList[request]
+          }
+        }
       }
       this.spinner.hide()
     }, err => {
@@ -39,11 +48,53 @@ export class ViewRequestsComponent implements OnInit {
   }
 
   public approveRequest(user: any) {
+
     var userId = "";
     var nurseryId = "";
     var email = "";
 
     if (user.isApproved == false) {
+      if (confirm("Are You Sure ?")) {
+        if (user.userId) {
+          userId = user.userId._id
+          email = user.userId.userEmail
+        }
+        else {
+          nurseryId = user.nurseryId._id
+          email = user.nurseryId.nurseryOwnerEmail
+        }
+
+        this.gardenerService.approveRequest(userId, email, nurseryId).subscribe(data => {
+          if (data.failed) {
+            this.toaster.error("Not Approved");
+          }
+          else {
+            this.toaster.success("Aprroved Successfully");
+            this.ngOnInit();
+          }
+        }, err => {
+          if (err instanceof HttpErrorResponse) {
+            if (err.status == 500) {
+              this.toaster.error("Internal Server Error", "Error");
+            }
+            else if (err.status == 400) {
+              this.toaster.error("Bad Request", "Error");
+            }
+          }
+        });
+
+      }
+    }
+    else
+      this.toaster.info("Already Approved");
+  }
+
+  public cancelRequest(user: any, index: any) {
+    if (confirm('Are sure you wanna reject this user ?')) {
+      var userId = "";
+      var nurseryId = "";
+      var email = "";
+
       if (user.userId) {
         userId = user.userId._id
         email = user.userId.userEmail
@@ -53,13 +104,13 @@ export class ViewRequestsComponent implements OnInit {
         email = user.nurseryId.nurseryOwnerEmail
       }
 
-      this.gardenerService.approveRequest(userId, email, nurseryId).subscribe(data => {
+      this.gardenerService.cancelRequest(userId, email, nurseryId).subscribe(data => {
         if (data.failed) {
-          this.toaster.error("Not Approved");
+          this.toaster.error("Not Canceled");
         }
         else {
-          this.toaster.success("Aprroved Successfully");
-          this.ngOnInit()
+          this.toaster.success("Canceled Successfully");
+          this.dataList.splice(index, 1)
         }
       }, err => {
         if (err instanceof HttpErrorResponse) {
@@ -72,42 +123,7 @@ export class ViewRequestsComponent implements OnInit {
         }
       });
     }
-    else
-      this.toaster.info("Already Approved");
-  }
 
-  public cancelRequest(user: any, index: any) {
-    var userId = "";
-    var nurseryId = "";
-    var email = "";
-
-    if (user.userId) {
-      userId = user.userId._id
-      email = user.userId.userEmail
-    }
-    else {
-      nurseryId = user.nurseryId._id
-      email = user.nurseryId.nurseryOwnerEmail
-    }
-
-    this.gardenerService.cancelRequest(userId, email, nurseryId).subscribe(data => {
-      if (data.failed) {
-        this.toaster.error("Not Canceled");
-      }
-      else {
-        this.toaster.success("Canceled Successfully");
-        this.dataList.splice(index, 1)
-      }
-    }, err => {
-      if (err instanceof HttpErrorResponse) {
-        if (err.status == 500) {
-          this.toaster.error("Internal Server Error", "Error");
-        }
-        else if (err.status == 400) {
-          this.toaster.error("Bad Request", "Error");
-        }
-      }
-    });
   }
 
 }

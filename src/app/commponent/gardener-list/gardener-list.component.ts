@@ -99,6 +99,15 @@ export class GardenerListComponent implements OnInit {
   }
 
   public viewGardener(id: any) {
-    this.router.navigate(['gardener-profile/' + id]);
+    if (sessionStorage.getItem('token') && sessionStorage.getItem('userId')) {
+      this.router.navigate(['gardener-profile/' + id]);
+    }
+    else {
+      this.router.navigate(['signin']);
+    }
+  }
+
+  public alreadyExist() {
+
   }
 }

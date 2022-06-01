@@ -7,7 +7,8 @@
       <div class="container-fluid">
         <div class="carousel-caption text-white text-center">
           <h2>Why you should keep plants</h2>
-          <p>We are here to inspire a world where every plant journey is a personal revolution<br> of inner change and growth</p>
+          <p>We are here to inspire a world where every plant journey is a personal revolution<br> of inner change and
+            growth</p>
           <!-- <p><a class="btn btn-lg btn-primary " routerLink="search-product" role="button">View Products</a></p> -->
         </div>
       </div>
@@ -17,17 +18,19 @@
       <div class="container-fluid">
         <div class="carousel-caption text-white text-center">
           <h2>Only destination for all your gardening need</h2>
-          <p>get your garden ready with parakite <br> Find all gardening product , gardener and important tips here .</p>
+          <p>get your garden ready with parakite <br> Find all gardening product , gardener and important tips here .
+          </p>
           <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <img src="../../assets/images/seedlings-7110591_960_720.webp" alt="First slide">
-        <div class="container-fluid">
+      <div class="container-fluid">
         <div class="carousel-caption text-white text-center">
           <h2>Only destination for all your gardening need</h2>
-          <p>get your garden ready with parakite <br> Find all gardening product , gardener and important tips here .</p>
+          <p>get your garden ready with parakite <br> Find all gardening product , gardener and important tips here .
+          </p>
           <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
         </div>
       </div>
@@ -56,7 +59,8 @@
       <div class="col-12">
         <div class="section-heading text-center mb-3 ">
           <h2>Our Services</h2>
-          <p>We are here to inspire a world where every plant journey is a personal revolution<br> of inner change and growth</p>
+          <p>We are here to inspire a world where every plant journey is a personal revolution<br> of inner change and
+            growth</p>
         </div>
       </div>
     </div>
@@ -70,7 +74,7 @@
             </div>
             <div class="service-content pl-4">
               <h5>Plants Care</h5>
-              <p>Our team is continuously  working to ashore the quality of our products .</p>
+              <p>Our team is continuously working to ashore the quality of our products .</p>
             </div>
           </div>
           <div class="single-service-area d-flex align-items-center animate__fadeInUp">
@@ -88,7 +92,7 @@
             </div>
             <div class="service-content pl-4">
               <h5>Product delivery</h5>
-              <p> we are committed to deliver your favorite product  on your door .</p>
+              <p> we are committed to deliver your favorite product on your door .</p>
             </div>
           </div>
 
@@ -192,17 +196,17 @@
         <div class="section-heading text-center">
           <h2>Latest Blogs</h2>
           <p>
-            Be a better gardener with prakriti .<br> find all the helpful tips hear for free and make your plants more healthy 
-            </p>
+            Be a better gardener with prakriti .<br> find all the helpful tips hear for free and make your plants more
+            healthy
+          </p>
         </div>
       </div>
     </div>
 
     <div class="row justify-content-center padding-md">
-
       <!-- Single Blog Post Area -->
-      <div *ngFor="let blog of blogList" class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="single-blog-post mb-100">
+      <div *ngFor="let blog of blogList; index as i" class="col-12 col-md-6 col-lg-4 mb-3">
+        <div *ngIf="i < 3" class="single-blog-post mb-100">
           <div class="post-thumbnail mb-30 cursor-pointer">
             <a (click)="viewBlog(blog._id)"><img style="height: 255px; width: 350px;" src="{{blog.blogImage}}"
                 alt=""></a>
