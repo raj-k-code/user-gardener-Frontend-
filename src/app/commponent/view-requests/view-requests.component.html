@@ -37,6 +37,10 @@
   <div class="row">
     <div *ngFor="let user of tempData; index as i" class="col-md-4">
       <div *ngIf="user.userId != null " class="card-box text-center">
+        <img (click)="showQuery(user.query)" data-toggle="modal" data-target="#exampleModalCenter"
+          class="cursor-pointer" style="float: right;"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3UlEQVRIS92V0Q3CMAxE2wlgA8oEMELZBCaDTdoRYAPYgA3gTsJSlNoJjuQPiOSf2OdnX1Hou+DTB/fvcsAI4BkxNILv0J0Qs+hzAAs2jc1Fxh5bC/D6JFqtW+jzRv8HkI1qn0WccFsUDqhNnufdG4QDShZpP2X3BuGAcIt+D/DEyCtl7CvuDgjmedaICbFXah+4G6zHbkTiYryoAqG21PyI/GwBNM85LQU7BCE8nPyG4ECylaZd/OGoRbhMIaz5qjkLPe++QKirTu6xKN2KEJ6iLanAs4FlX/E+HPAGR1g1GWsPmacAAAAASUVORK5CYII=" />
+
         <div class="user-pic">
           <img style="object-fit: contain;" src="{{user.userId.userImage}}" class="img-fluid" alt="User Pic">
         </div>
@@ -53,6 +57,10 @@
         <!-- <a (click)="cancelRequest(user,i)" class="btn btn-primary border-btn"><span>Reject</span></a> -->
       </div>
       <div *ngIf="user.nurseryId != null " class="card-box text-center">
+        <img (click)="showQuery(user.query)" data-toggle="modal" data-target="#exampleModalCenter"
+          class="cursor-pointer" style="float: right;"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3UlEQVRIS92V0Q3CMAxE2wlgA8oEMELZBCaDTdoRYAPYgA3gTsJSlNoJjuQPiOSf2OdnX1Hou+DTB/fvcsAI4BkxNILv0J0Qs+hzAAs2jc1Fxh5bC/D6JFqtW+jzRv8HkI1qn0WccFsUDqhNnufdG4QDShZpP2X3BuGAcIt+D/DEyCtl7CvuDgjmedaICbFXah+4G6zHbkTiYryoAqG21PyI/GwBNM85LQU7BCE8nPyG4ECylaZd/OGoRbhMIaz5qjkLPe++QKirTu6xKN2KEJ6iLanAs4FlX/E+HPAGR1g1GWsPmacAAAAASUVORK5CYII=" />
+
         <div class="user-pic">
           <img src="{{user.nurseryId.Image}}" class="img-fluid" alt="User Pic">
         </div>
@@ -76,6 +84,29 @@
   </div>
 </div>
 
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Query From User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{userQuery}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- SPINNER -->
 <ngx-spinner bdColor="white" template="<img style='height:300px;width:300px;' src='../../assets/images/spinner.gif' />">

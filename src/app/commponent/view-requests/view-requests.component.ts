@@ -15,6 +15,7 @@ export class ViewRequestsComponent implements OnInit {
   gardenerId = sessionStorage.getItem('userId');
   flag = false;
   tempData: any = [];
+  userQuery: any;
 
   constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService) {
     spinner.show();
@@ -110,7 +111,8 @@ export class ViewRequestsComponent implements OnInit {
         }
         else {
           this.toaster.success("Canceled Successfully");
-          this.dataList.splice(index, 1)
+          this.dataList.splice(index, 1);
+          this.ngOnInit();
         }
       }, err => {
         if (err instanceof HttpErrorResponse) {
@@ -126,5 +128,8 @@ export class ViewRequestsComponent implements OnInit {
 
   }
 
+  public showQuery(query: String) {
+    this.userQuery = query;
+  }
 }
 // raj

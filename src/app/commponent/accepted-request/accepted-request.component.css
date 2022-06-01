@@ -72,6 +72,8 @@ img {
   border: 1px solid #eee;
   box-shadow: 0px 0px 8px 0px #d4d4d4;
   transition: 0.5s;
+  overflow: hidden !important;
+  position: relative;
 }
 
 .card-box:hover {
@@ -129,4 +131,16 @@ ngb-rating {
   /* color: #469609; */
   color: #FFC107;
   font-size: 25px;
+}
+
+
+.tag {
+  position: absolute;
+  background-color: green;
+  color: white;
+  width: 52%;
+  top: 27px;
+  left: -45px;
+  transform: translate(180);
+  transform: rotate(-41deg);
 }

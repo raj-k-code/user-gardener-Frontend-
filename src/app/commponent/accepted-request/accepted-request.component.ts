@@ -14,6 +14,7 @@ export class AcceptedRequestComponent implements OnInit {
   gardenerId = sessionStorage.getItem('userId');
   flag = false;
   tempData: any = [];
+  userQuery: any;
 
   constructor(private spinner: NgxSpinnerService, private gardenerService: GardenerService, private toaster: ToastrService) {
     spinner.show();
@@ -47,7 +48,7 @@ export class AcceptedRequestComponent implements OnInit {
   }
 
   public cancelRequest(user: any, index: any) {
-    if (confirm('Are sure you wanna reject this user ?')) {
+    if (confirm('Are sure you wanna cancel this user ?')) {
       var userId = "";
       var nurseryId = "";
       var email = "";
@@ -67,7 +68,8 @@ export class AcceptedRequestComponent implements OnInit {
         }
         else {
           this.toaster.success("Canceled Successfully");
-          this.dataList.splice(index, 1)
+          this.dataList.splice(index, 1);
+          this.ngOnInit();
         }
       }, err => {
         if (err instanceof HttpErrorResponse) {
@@ -80,5 +82,40 @@ export class AcceptedRequestComponent implements OnInit {
         }
       });
     }
+  }
+
+  public completeRequest(user: any) {
+    var userId = "";
+    var nurseryId = "";
+
+    if (user.userId) {
+      userId = user.userId._id
+    }
+    else {
+      nurseryId = user.nurseryId._id
+    }
+
+    this.gardenerService.completeRequest(userId, nurseryId).subscribe(data => {
+      if (data.failed) {
+        this.toaster.error("Not Completed");
+      }
+      else {
+        this.toaster.success("Completed Successfully");
+        this.ngOnInit();
+      }
+    }, err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status == 500) {
+          this.toaster.error("Internal Server Error", "Error");
+        }
+        else if (err.status == 400) {
+          this.toaster.error("Bad Request", "Error");
+        }
+      }
+    });
+  }
+
+  public showQuery(query: String) {
+    this.userQuery = query;
   }
 }

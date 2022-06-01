@@ -35,9 +35,9 @@ export class GardenerService {
     return this.http.post<any>(forgotPasswordApi, { gardenerEmail: email });
   }
 
-  public bookTheGardener(gardenerId: string) {
+  public bookTheGardener(gardenerId: string, query: any) {
     let bookTheGardenerApi = "https://prakritee.herokuapp.com/gardener/book-gardener"
-    return this.http.post<any>(bookTheGardenerApi, { userId: sessionStorage.getItem('userId'), gardenerId: gardenerId });
+    return this.http.post<any>(bookTheGardenerApi, { userId: sessionStorage.getItem('userId'), gardenerId: gardenerId, query: query });
   }
 
   public approveRequest(userId: any, email: any, nurseryId: any) {
@@ -54,6 +54,12 @@ export class GardenerService {
     let viewRequestApi = "https://prakritee.herokuapp.com/gardener/view-request"
     return this.http.post<any>(viewRequestApi, { gardenerId: gardenerId });
   }
+
+  public viewAllRequest() {
+    let viewAllRequestApi = "https://prakritee.herokuapp.com/gardener/view-all-request"
+    return this.http.get<any>(viewAllRequestApi);
+  }
+
 
   public viewProfile(id: any): Observable<Gardener> {
     let viewProfileApi = "https://prakritee.herokuapp.com/gardener/gardner-by-id/" + id;
@@ -78,5 +84,15 @@ export class GardenerService {
   public checkMobile(mobile: any) {
     let checkMobileApi = "https://prakritee.herokuapp.com/gardener/check-mobile/" + mobile;
     return this.http.get<any>(checkMobileApi);
+  }
+
+  public completeRequest(userId: any, nurseryId: any) {
+    let approveRequestApi = "https://prakritee.herokuapp.com/gardener/complete-request"
+    return this.http.post<any>(approveRequestApi, { gardenerId: sessionStorage.getItem('userId'), nurseryId: nurseryId, userId: userId });
+  }
+
+  public alreadyExist(gardenerId: any) {
+    let approveRequestApi = "https://prakritee.herokuapp.com/gardener/already-exist"
+    return this.http.post<any>(approveRequestApi, { gardenerId: gardenerId, nurseryId: null, userId: sessionStorage.getItem('userId') });
   }
 }

@@ -19,14 +19,11 @@
         <a (click)="viewGardener(gardener._id)" class="cursor-pointer">
           More..
         </a>
-        <!-- <hr> -->
-        <!-- <p>{{gardener.gardenerAddress}}</p> -->
         <hr>
-        <!-- <a (click)="bookGardener(gardener._id)" class="btn btn-primary"><span>Book
-              Now</span>
-          </a> -->
         <div class="button">
-          <a (click)="bookGardener(gardener._id)" class="btn btn-primary border-btn">Book</a>
+          <a (click)="setData(gardener._id)" *ngIf="!isBooked[i]" data-toggle="modal" data-target="#exampleModalCenter"
+            class="btn btn-primary border-btn">Book</a>
+          <a *ngIf="isBooked[i]" (click)="alreadyBook()" class="btn btn-primary border-btn">Booked</a>
         </div>
       </div>
     </div>
@@ -39,6 +36,33 @@
     <div class="col col-lg-4 col-md-3"></div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Write your message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea required #que="ngModel" [(ngModel)]="query" name="query" id="" cols="30" class="form-control"
+          rows="5"></textarea>
+        <span *ngIf="que.errors?.required && que.touched" class="text-danger"><small>Please Write
+            Something</small></span>
+      </div>
+      <div class=" modal-footer">
+        <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Back</button>
+        <button data-dismiss="modal" [disabled]="que.invalid" class="btn btn-primary"
+          (click)="bookGardener()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- SPINNER -->
 <ngx-spinner bdColor="white" template="<img style='height:300px;width:300px;' src='../../assets/images/spinner.gif' />">
