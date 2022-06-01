@@ -3,26 +3,27 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { GardenerAuthService } from './service/gardener-auth.service';
-import { AboutUsComponent } from './user/about-us/about-us.component';
-import { BlogDescriptionComponent } from './user/blog-description/blog-description.component';
-import { BlogsListComponent } from './user/blogs-list/blogs-list.component';
-import { ContactUsComponent } from './user/contact-us/contact-us.component';
-import { GardenerListComponent } from './user/gardener-list/gardener-list.component';
-import { GardenerProfileComponent } from './user/gardener-profile/gardener-profile.component';
-import { NurserySignupComponent } from './user/nursery-signup/nursery-signup.component';
-import { OrderHistoryComponent } from './user/order-history/order-history.component';
-import { PlaceOrderComponent } from './user/place-order/place-order.component';
-import { ProductByCategoryComponent } from './user/product-by-category/product-by-category.component';
-import { SearchProductComponent } from './user/search-product/search-product.component';
-import { SigninComponent } from './user/signin/signin.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { ViewCartComponent } from './user/view-cart/view-cart.component';
-import { ViewFavoriteComponent } from './user/view-favorite/view-favorite.component';
-import { ViewOrderComponent } from './user/view-order/view-order.component';
-import { ViewParticularProductComponent } from './user/view-particular-product/view-particular-product.component';
-import { ViewProductComponent } from './user/view-product/view-product.component';
-import { ViewProfileComponent } from './user/view-profile/view-profile.component';
-import { ViewRequestsComponent } from './user/view-requests/view-requests.component';
+import { AboutUsComponent } from './commponent/about-us/about-us.component';
+import { BlogDescriptionComponent } from './commponent/blog-description/blog-description.component';
+import { BlogsListComponent } from './commponent/blogs-list/blogs-list.component';
+import { ContactUsComponent } from './commponent/contact-us/contact-us.component';
+import { GardenerListComponent } from './commponent/gardener-list/gardener-list.component';
+import { GardenerProfileComponent } from './commponent/gardener-profile/gardener-profile.component';
+import { NurserySignupComponent } from './commponent/nursery-signup/nursery-signup.component';
+import { OrderHistoryComponent } from './commponent/order-history/order-history.component';
+import { PlaceOrderComponent } from './commponent/place-order/place-order.component';
+import { ProductByCategoryComponent } from './commponent/product-by-category/product-by-category.component';
+import { SearchProductComponent } from './commponent/search-product/search-product.component';
+import { SigninComponent } from './commponent/signin/signin.component';
+import { SignupComponent } from './commponent/signup/signup.component';
+import { ViewCartComponent } from './commponent/view-cart/view-cart.component';
+import { ViewFavoriteComponent } from './commponent/view-favorite/view-favorite.component';
+import { ViewOrderComponent } from './commponent/view-order/view-order.component';
+import { ViewParticularProductComponent } from './commponent/view-particular-product/view-particular-product.component';
+import { ViewProductComponent } from './commponent/view-product/view-product.component';
+import { ViewProfileComponent } from './commponent/view-profile/view-profile.component';
+import { ViewRequestsComponent } from './commponent/view-requests/view-requests.component';
+import { AcceptedRequestComponent } from './commponent/accepted-request/accepted-request.component';
 
 const routes: Routes = [
   { path: "signin", component: SigninComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: "order-history/view-order/:id", component: ViewOrderComponent, canActivate: [AuthGaurdService] },
   { path: "nursery-signup", component: NurserySignupComponent },
   { path: "gardener-profile/:id", component: GardenerProfileComponent },
+  { path: "accepted-request", component: AcceptedRequestComponent },
 
 
 ];
