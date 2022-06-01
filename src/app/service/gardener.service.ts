@@ -80,4 +80,3 @@ export class GardenerService {
     return this.http.get<any>(checkMobileApi);
   }
 }
-//
