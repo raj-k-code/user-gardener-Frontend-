@@ -23,7 +23,7 @@ export class CartService {
   }
 
   public deleteCart() {
-    let deleteCartApi = "https://prakritee.herokuapp.com/3000/cart/delete";
+    let deleteCartApi = "https://prakritee.herokuapp.com/cart/delete";
     return this.http.post<any>(deleteCartApi, { userId: sessionStorage.getItem('userId') });
   }
 }
