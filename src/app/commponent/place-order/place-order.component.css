@@ -1,4 +1,4 @@
-.order-form .container {
+/* .order-form .container {
   color: #050505;
   padding: 20px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
@@ -13,8 +13,6 @@
 
 .main {
   background-color: #fff;
-  /* background-image: linear-gradient(rgb(154, 231, 130), rgb(255, 255, 255)); */
-  /* background-image: radial-gradient(circle,rgb(88, 196, 88),white ,rgba(59, 191, 231, 0.26) ); */
 }
 
 .main:hover {
@@ -38,4 +36,41 @@
 
 .btn-submit:hover {
   background-color: #39f542 !important;
+} */
+
+
+.order-form .container {
+  color: #050505;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+}
+
+.order-form-label {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.main {
+  max-width: 500px;
+  background-color: white;
+}
+
+.main:hover {
+  box-shadow: 0 0 12px gray;
+}
+
+.order-form-input {
+  width: 100%;
+  padding: 8px 8px;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 3px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2em;
+  background-color: white;
+  border-color: #0a0a0a;
 }
