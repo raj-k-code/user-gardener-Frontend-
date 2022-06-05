@@ -53,8 +53,9 @@
         More</a>
       <!-- <a (click)="viewProduct(product._id)" class="btn btn-primary border-btn">View</a> -->
 
-      <a class=" text-success px-4 py-3 h2 main-btn"><i (click)="moveToFav(product._id, i)" class="fa fa-cart-plus"></i>
-        <i (click)="removeFromFav(i, product._id)" class="fa fa-trash text-danger ml-4"></i></a>
+      <a class=" text-success px-4 py-3 h2 main-btn"><i (click)="moveToFav(product._id, i)"
+          class="fa fa-cart-plus  cart-delete-icon"></i>
+        <i (click)="removeFromFav(i, product._id)" class="fa fa-trash text-primary ml-4 cart-delete-icon"></i></a>
     </div>
   </div>
 

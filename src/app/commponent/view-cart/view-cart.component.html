@@ -27,10 +27,10 @@
                   </p>
                 </div>
                 <div class="col px-5">₹ {{product.productPrice}} </div>
-                <div class="col  icon"><i (click)="removeFromCart(i,product._id)"
-                    class="text-danger fa fa-trash btn-area mr-3 cursor-pointer"></i>
-                  <span><i (click)="moveToFav(product._id,i)"
-                      class="text-success fa fa-heart btn-area1 cursor-pointer"></i></span>
+                <div class="col  icon"><i (click)="moveToFav(product._id,i)"
+                    class="text-success mr-3 fa fa-heart btn-area1 cursor-pointer cart-delete-icon"></i>
+                  <span><i (click)="removeFromCart(i,product._id)"
+                      class="text-primary fa fa-trash btn-area  cursor-pointer cart-delete-icon"></i></span>
                 </div>
               </div>
             </div>
@@ -39,8 +39,8 @@
                 <h1 class="text-danger">Your Cart is empty.</h1>
               </div>
             </div>
-            <div routerLink="/" class="back-to-shop "><a>&leftarrow;</a><span class="text-muted cursor-pointer">Back to
-                Home</span>
+            <div routerLink="/" class="back-to-shop cursor-pointer mt-2 "><a
+                style="font-size: 30px; font-weight: 800;">&leftarrow;</a><span class="text-muted ">Back</span>
             </div>
           </div>
         </div>
