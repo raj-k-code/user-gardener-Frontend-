@@ -132,6 +132,9 @@ img {
   background-color: rgb(40, 165, 40);
 }
 
+.icon {
+  text-align: end;
+}
 
 /* .wrapper {
     max-width: 1000px;

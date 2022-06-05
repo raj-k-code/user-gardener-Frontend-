@@ -98,7 +98,7 @@
               <div class="col-12">
                 <div class="form-group">
                   <textarea required ngModel #Mess="ngModel" name="message" [(ngModel)]="queryData.message"
-                    class="form-control" name="message" id="message" cols="30" rows="10"
+                    class="form-control" name="message" id="message" cols="30" rows="6"
                     placeholder="Message"></textarea>
                   <span class="text-danger" *ngIf="Mess.errors?.required && Mess.touched "><small>Please Enter
                       Message</small></span>

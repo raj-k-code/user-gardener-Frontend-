@@ -29,7 +29,7 @@
           <div class="text-danger" *ngIf="Password.touched && !Password.valid">
             <div *ngIf="Password.errors?.required"><small>Password is required.</small></div>
           </div>
-          <div class="text cursor-pointer mt-2">
+          <div class="text-link cursor-pointer mt-2">
             <a data-toggle="modal" data-target="#exampleModalCenter">Forgot
               password?</a>
           </div>
@@ -38,16 +38,16 @@
               data-toggle="modal" data-target="#exampleModal" (click)="login()" type="button" value="Signin ">
           </div>
           <div class="Google-signin">
-            <span>
-              <a data-toggle="modal" data-target="#exampleModal" (click)="googleSignin()"
-                class="text-link cursor-pointer">Signin with
+            <span class="text-link">
+              <a data-toggle="modal" data-target="#exampleModal" (click)="googleSignin()" class=" cursor-pointer">Signin
+                with
                 Google</a>
             </span>
           </div>
           <div class="login-signup" style="justify-content: center;">
-            <span>Not a member?
-              <a data-toggle="modal" data-target="#exampleModal" (click)="goToSignUp()"
-                class="text-link cursor-pointer">Signup
+            <span>Not a member? </span>
+            <span class="text-link">
+              <a data-toggle="modal" data-target="#exampleModal" (click)="goToSignUp()" class="cursor-pointer">Signup
                 Now</a>
             </span>
           </div>
