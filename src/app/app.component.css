@@ -77,12 +77,12 @@
 .navbar .nav-item {
   font-weight: 500;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: normal;
   color: #333;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -190,19 +190,6 @@
   background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
 
-
-/* .back {
-        background-color: #000000;
-    }
-
-
-    .nav-item :hover {    background: linear-gradient(to top, rgb(148, 155, 148), rgba(38, 224, 13, 0.6)), url("../assets/images/3.jpg");
-
-
-/* nav.img {
-    border-radius: 10px;
-} */
-
 li {
   list-style: none;
 }
@@ -211,10 +198,4 @@ li.icons {
   list-style: none;
   display: inline-block;
   padding: 20px;
-}
-
-footer {
-  /* background-color: rgb(119, 205, 90, 0.6); */
-  /* background-image: url("./3.jpg"), linear-gradient(#179c06, #f3e3e2); */
-  /* background: linear-gradient(to top, rgba(119,205,90, 0.6), rgb(119,205,90,0.6)), url("../assets/images/3.jpg"); */
 }

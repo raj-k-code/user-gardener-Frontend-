@@ -19,22 +19,19 @@
         <!-- <a *ngIf="!gardenerOrUser() && isLoggedIn()" routerLink="view-requests" class="nav-item nav-link">Requests</a> -->
 
         <div *ngIf="!gardenerOrUser() && isLoggedIn()" class="nav-item dropdown cursor-pointer"
-          style="padding-top: 0px;">
+          style="margin-top: -5px; padding-top: 8px;">
           <a class="nav-link  dropdown-toggle" data-toggle="dropdown">Requests</a>
           <div class="dropdown-menu" style="left: -8px;">
             <a routerLink="view-requests" class="dropdown-item">New</a>
             <a routerLink="accepted-request" class="dropdown-item">Accepted</a>
           </div>
         </div>
-
         <!-- <a *ngIf="isLoggedIn()" routerLink="order-history" class="nav-item nav-link">Order History</a> -->
-
-
       </div>
 
       <div class="navbar-nav ml-auto ">
         <a routerLink="search-product" class="nav-item nav-link messages mr-0"><i
-            style="font-size: 25px; padding-top: 8px;" class="fa fa-search"></i></a>
+            style="font-size: 20px; padding-top: 8px;" class="fa fa-search"></i></a>
 
         <div *ngIf="!isLoggedIn()" class="nav-item dropdown cursor-pointer">
           <a class="nav-link  dropdown-toggle" data-toggle="dropdown">Sign-in</a>
@@ -67,7 +64,8 @@
             <a routerLink="view-favorite" class="dropdown-item"><i class="fa fa-heart" aria-hidden="true"></i>
               Favourite</a>
             <a *ngIf="isLoggedIn()" routerLink="order-history" class="dropdown-item"><i class="fa fa-history"
-                aria-hidden="true"></i> Orders</a>
+                aria-hidden="true"></i>
+              Orders</a>
             <div class="dropdown-divider"></div>
             <a style="cursor: pointer;" (click)="signOut()" *ngIf="isLoggedIn()" class="dropdown-item"><i
                 class="fa fa-sign-out" aria-hidden="true"></i>
@@ -84,6 +82,101 @@
   <!-- ===============Footer============== -->
 
   <footer>
+    <div class="container">
+      <div class="row align-content-center ">
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>shopping online</h5>
+          <ul class="footer-menu">
+            <li>
+              <a class="cursor-pointer">frequently asked questions</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">delivery</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">pricing</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>Cards</h5>
+          <ul class="footer-menu">
+            <li>
+              <a class="cursor-pointer">frequently asked questions</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">delivery and payment</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">activate the card</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">rules</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>About</h5>
+          <ul class="footer-menu">
+            <li>
+              <a class="cursor-pointer">buy a gift card</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">history</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">return</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-duration="2000">
+          <h5>Nursury</h5>
+          <ul class="footer-menu">
+            <li>
+              <a class="cursor-pointer">registration</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">application</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">about</a>
+            </li>
+            <li>
+              <a class="cursor-pointer">rules</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container copy-right">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="social-menu">
+            <ul>
+              <li><a class="cursor-pointer" target="blank"><i class="fa fa-github"></i></a></li>
+              <li><a class="cursor-pointer" target="blank"><i class="fa fa-instagram"></i></a>
+              </li>
+              <li><a class="cursor-pointer" target="blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="cursor-pointer"><i class="fa fa-linkedin" target="blank"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center text-md-right copy-text">
+            <small>© 2022 Copyright:
+              <a>Prakriti.com</a></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center " data-aos="fade-up" data-aos-duration="2000">
+    </div>
+  </footer>
+
+  <!-- <footer>
     <div class="container">
       <div class="row align-content-center ">
         <div class="col-lg-3 col-md-4 " data-aos="fade-right" data-aos-duration="2000">
@@ -153,7 +246,6 @@
         </div>
       </div>
     </div>
-
     <div class="container copy-right">
       <div class="row">
         <div class="col-md-6">
@@ -178,18 +270,15 @@
         </div>
         <div class="col-md-6">
           <div class="text-center text-md-right">
-            © 2022 Copyright:
-            <a>Prakriti.com</a>
+            <small>© 2022 Copyright:
+              <a>Prakriti.com</a></small>
           </div>
         </div>
       </div>
     </div>
     <div class="text-center " data-aos="fade-up" data-aos-duration="2000">
     </div>
-
-    <!-- Copyright -->
-  </footer>
-
+  </footer> -->
 </div>
 
 

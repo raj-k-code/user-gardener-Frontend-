@@ -43,7 +43,8 @@ h5 {
 
 
 .item-price {
-  color: #999;
+  /* color: #999; */
+  color: #3d3d3d;
 }
 
 .section-heading p {
@@ -388,7 +389,7 @@ footer h5 {
   padding-top: 30px;
 }
 
-.footer-social {
+/* .footer-social {
   display: flex;
 }
 
@@ -402,14 +403,90 @@ footer h5 {
   width: 26px;
   object-fit: contain;
   filter: invert(1);
+} */
+
+/* ==============Social Icon Start========== */
+
+.social-menu ul {
+  position: absolute;
+  display: flex;
 }
+
+.social-menu ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.social-menu ul li .fa {
+  font-size: 25px;
+  line-height: 40px;
+  transition: .3s;
+  color: #000;
+}
+
+.social-menu ul li .fa:hover {
+  color: #fff;
+}
+
+.social-menu ul li a {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  transition: .6s;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
+}
+
+.social-menu ul li a:hover {
+  transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover {
+  background-color: rgba(0, 0, 0, 0.829);
+}
+
+.social-menu ul li:nth-child(2) a:hover {
+  background-color: #E4405F;
+}
+
+.social-menu ul li:nth-child(3) a:hover {
+  background-color: #0077b5;
+}
+
+.social-menu ul li:nth-child(4) a:hover {
+  background-color: #000;
+}
+
+@media only screen and (max-width: 767px) {
+  .social-menu ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+  }
+
+  .copy-text {
+    margin-top: 25px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+/* ==============Social Icon End========== */
 
 /* footer style end */
 
 
 
 /* buttuon style start */
-
 .btn {}
 
 .btn-primary {
@@ -448,12 +525,12 @@ footer h5 {
 }
 
 .text-link {
-  color: #52734D;
+  color: #007a1b;
   font-weight: 500;
 }
 
 .text-link:hover {
-  color: #04791d;
+  color: blue;
 }
 
 /* buttun style end */
