@@ -16,7 +16,7 @@
 }
 
 .banner-text p {
-  font-weight: 500;
+  /* font-weight: 500; */
   font-size: 20px;
   line-height: 30px;
   color: #fff;
@@ -42,6 +42,12 @@
     line-height: 25px;
   }
 }
+/* input{
+  border: none;
+  border-bottom: 2px solid rgb(100, 97, 97);
+  border-top: transparent;
+  outline: none;
+} */
 
 /* Banner Css End */
 
