@@ -127,13 +127,20 @@ img {
 .right-bar i {
   margin-right: 15px;
 }
+h4{
+ 
+}
 
 .right-bar a:hover {
   background-color: rgb(40, 165, 40);
 }
+.new{
+  right: 80px;
+}
+
 
 .icon {
-  text-align: end;
+  /* text-align: end; */
 }
 
 /* .wrapper {

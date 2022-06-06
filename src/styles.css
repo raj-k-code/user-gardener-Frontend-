@@ -44,7 +44,7 @@ h5 {
 
 .item-price {
   /* color: #999; */
-  color: #3d3d3d;
+  color: #111010;
 }
 
 .section-heading p {
@@ -52,7 +52,7 @@ h5 {
   font-size: 18px;
   line-height: 28px;
   font-weight: 300;
-  color: #666;
+  color: rgb(26, 25, 25);
 }
 
 
@@ -60,7 +60,7 @@ h5 {
 body {
   font-family: 'Roboto', 'sans-serif';
   background-color: #fff;
-  color: #666;
+  color: rgb(27, 27, 27);
   font-size: 18px;
   line-height: 30px;
   overflow-x: hidden;
