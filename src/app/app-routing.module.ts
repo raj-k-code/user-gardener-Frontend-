@@ -24,6 +24,7 @@ import { ViewProductComponent } from './commponent/view-product/view-product.com
 import { ViewProfileComponent } from './commponent/view-profile/view-profile.component';
 import { ViewRequestsComponent } from './commponent/view-requests/view-requests.component';
 import { AcceptedRequestComponent } from './commponent/accepted-request/accepted-request.component';
+import { ErrorPageComponent } from './commponent/error-page/error-page.component';
 
 const routes: Routes = [
   { path: "signin", component: SigninComponent },
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: "nursery-signup", component: NurserySignupComponent },
   { path: "gardener-profile/:id", component: GardenerProfileComponent },
   { path: "accepted-request", component: AcceptedRequestComponent },
+  { path: "**", component: ErrorPageComponent }
 
 
 ];

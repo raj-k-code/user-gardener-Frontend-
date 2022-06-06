@@ -35,6 +35,7 @@ import { ViewOrderComponent } from './commponent/view-order/view-order.component
 import { NurserySignupComponent } from './commponent/nursery-signup/nursery-signup.component';
 import { GardenerProfileComponent } from './commponent/gardener-profile/gardener-profile.component';
 import { AcceptedRequestComponent } from './commponent/accepted-request/accepted-request.component';
+import { ErrorPageComponent } from './commponent/error-page/error-page.component';
 
 
 const socialProvider = {
@@ -76,6 +77,7 @@ const socialProvider = {
     NurserySignupComponent,
     GardenerProfileComponent,
     AcceptedRequestComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
