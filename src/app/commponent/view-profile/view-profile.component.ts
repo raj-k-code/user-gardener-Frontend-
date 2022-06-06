@@ -15,6 +15,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./view-profile.component.css']
 })
 export class ViewProfileComponent implements OnInit {
+  year:string="Year";
   userData = new User("", "", "", "", "", "");
   gardenerData?: Gardener;
   id: any = sessionStorage.getItem('userId');
