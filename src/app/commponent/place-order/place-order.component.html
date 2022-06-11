@@ -1,5 +1,5 @@
- <!-- <section class="order-form my-4 mx-4 padding-md">
-  <div class="container pt-4 main"> 
+<!-- <section class="order-form my-4 mx-4 padding-md">
+  <div class="container pt-4 main">
     <div class="row ">
       <div class="col-12">
         <h5 class="text-center">Place Your Order Now</h5>
@@ -8,7 +8,7 @@
       <div class="col-12 ">
         <div class="row mx-4 ">
           <div class="col-12 mb-2">
-            
+
           </div>
           <div class="col-12 ">
             <input ngModel #nam="ngModel" [(ngModel)]="Name" class="order-form-input" type="text" placeholder="Name"
@@ -19,7 +19,7 @@
         </div>
         <div class="row mt-3 mx-4">
           <div class="col-12">
-            
+
           </div>
           <div class="col-12">
             <input ngModel pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #mobile="ngModel" [(ngModel)]="Mobile"
@@ -32,7 +32,7 @@
         </div>
         <div class="row mt-3 mx-4">
           <div class="col-12">
-            
+
           </div>
           <div class="col-12">
             <input ngModel #add="ngModel" [(ngModel)]="Address" class="order-form-input" placeholder="Street Address"
@@ -50,7 +50,7 @@
             <span class="alert alert-danger" *ngIf="country.errors?.required && country.touched ">Please Enter
               Country</span>
           </div> -->
-        <!-- </div>
+<!-- </div>
         <div class="form-check new mt-2 ">
           <input required #pay="ngModel" ngModel [(ngModel)]="paymentMethod" value="1" class="form-check-input"
             type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
@@ -88,153 +88,60 @@
 
 <!-- ........................................................................................... -->
 
-  <!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-  <div class="container">
-    <div class="forms">
-      <div class="form login">
-        <div class="form logo" style="margin-left: 30%; margin-bottom: 5px;">
-          <img src="../../../assets/images/logoprikriti1.png" alt="" class="logo">
-        </div>
-        <form action="#">
-          <div class="input-field">
-            <input [(ngModel)]="gardener.gardenerName" #Name="ngModel" name="username" type="text"
-              placeholder="Enter your Name" required>
-            <i class="uil uil-user"></i>
-            <span class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched ">Please Enter Name</span>
-          </div>
-          <div class="input-field">
-            <input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" [(ngModel)]="gardener.gardenerEmail" #Email="ngModel"
-              name="email" type="text" placeholder="Enter your email" required>
-            <i class="uil uil-envelope-alt icon"></i>
-            <span class="alert alert-danger" *ngIf="Email.errors?.required && Email.touched ">Please Enter Email
-              Address</span>
-            <span class="alert alert-danger" *ngIf="Email.errors?.pattern&& Email.touched ">Please Enter Valid Email
-              Address</span>
-          </div>
-          <div class="input-field">
-            <input pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-              [(ngModel)]="gardener.gardenerPassword" #Password="ngModel" name="password" type="text"
-              placeholder="Enter your password" required>
-            <i class="uil uil-lock icon"></i>
-            <i class="uil uil-eye-slash showHidePw"></i>
-            <span class="alert alert-danger" *ngIf="Password.errors?.required && Password.touched ">Please Enter
-              Password</span>
-            <span class="alert alert-danger" *ngIf="Password.errors?.pattern && Password.touched ">Password must be 6
-              characters.like: Ab@123 </span>
-          </div>
-          <div class="input-field">
-            <input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #Mobile="ngModel"
-              [(ngModel)]="gardener.gardenerMobile" name="mobile" type="text" placeholder="Enter your Mobile" required>
-            <i class="uil uil-mobile-android"></i>
-            <span class="text-danger" *ngIf="Mobile.errors?.required && Mobile.touched ">Please Enter Mobile
-              Number</span>
-            <span class="text-danger" *ngIf="Mobile.errors?.pattern && Mobile.touched ">Please Enter Valid
-              Mobile Number</span>
-          </div>
-          <div class="input-field">
-            <input #Address="ngModel" [(ngModel)]="gardener.gardenerAddress" name="address" type="text"
-              placeholder="Enter your Address" required>
-            <i class="uil uil-house-user"></i>
-            <span class="alert alert-danger" *ngIf="Address.errors?.required && Address.touched ">Please Enter
-              Address</span>
-          </div>
-          <div *ngIf="!gardenerOrUser()" class="input-field">
-            <input #Experience="ngModel" [(ngModel)]="gardener.gardenerExperience" name="experience" type="text"
-              placeholder="Enter your Experience" required>
-            <i class="uil uil-user"></i>
-            <span class="alert alert-danger" *ngIf="Experience.errors?.required && Experience.touched ">Please Enter
-              Your Experience</span>
-          </div>
-          <div class="input-field button">
-            <input [disabled]="Name.invalid || Email.invalid || Password.invalid || Mobile.invalid || Address.invalid "
-              (click)="SignUp()" type="button" value="SignUp ">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
-
-</html>
- -->
-
-
-
-
-
 <div class="padding-md">
   <div class="container signin" style=" overflow: hidden;">
     <div class="forms">
       <div class="form login">
         <div class="form">
-          <!-- <img src="../../../assets/images/Group40.png" alt="" class="logo"> -->
-     <h4 class="text-center">Place your order now</h4>
+          <h4 class="text-center">Place your order now</h4>
         </div>
-        <form action=" #">
+        <form action="#">
           <div class="input-field">
-            <input ngModel #nam="ngModel" [(ngModel)]="Name" class="order-form-input" type="text" placeholder="Name"
-              required>
-                     <i class="uil uil-user"></i>
+            <input name="namah" ngModel #nam="ngModel" [(ngModel)]="Name" class="order-form-input" type="text"
+              placeholder="Name" required>
+            <i class="uil uil-user"></i>
           </div>
           <span class="text-danger" *ngIf="nam.errors?.required && nam.touched "><small>Please Enter
-            Name</small></span>  
-          
-         
-         
+              Name</small></span>
           <div class="input-field">
-            <input ngModel pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #mobile="ngModel" [(ngModel)]="Mobile"
-            class="order-form-input" type="number-fild" placeholder="Number" required>
-          
-<i class="uil uil-mobile-android"></i>
+            <input name="numberam" ngModel pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" #mobile="ngModel"
+              [(ngModel)]="Mobile" class="order-form-input" type="number-fild" placeholder="Number" required>
+            <i class="uil uil-mobile-android"></i>
           </div>
           <span class="text-danger" *ngIf="mobile.errors?.required && mobile.touched "><small>Please Enter Mobile
-            Number</small></span>
-        <span class="text-danger" *ngIf="mobile.errors?.pattern && mobile.touched "><small>Please Enter Valid
-            Mobile Number</small></span>
+              Number</small></span>
+          <span class="text-danger" *ngIf="mobile.errors?.pattern && mobile.touched "><small>Please Enter Valid
+              Mobile Number</small></span>
           <div class="input-field">
-            <input ngModel #add="ngModel" [(ngModel)]="Address" class="order-form-input" placeholder="Street Address"
-            required>
+            <input name="addressam" ngModel #add="ngModel" [(ngModel)]="Address" class="order-form-input"
+              placeholder="Street Address" required>
             <i class="uil uil-house-user"></i>
           </div>
           <span class="text-danger" *ngIf="add.errors?.required && add.touched "><small>Please Enter
-            Address</small></span>
-
-
-            <div class="form-check new mt-4 ">
-              <input required #pay="ngModel" ngModel [(ngModel)]="paymentMethod" value="1" class="form-check-input"
-                type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-              <label class="form-check-label" for="flexRadioDefault1">
-                Pay Now
-              </label>
+              Address</small></span>
+          <div class="form-check new mt-4 ">
+            <input required #pay="ngModel" ngModel [(ngModel)]="paymentMethod" value="1" class="form-check-input"
+              type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Pay Now
+            </label>
+          </div>
+          <div class="form-check new mt-3 ">
+            <input required #pay="ngModel" ngModel [(ngModel)]="paymentMethod" class="form-check-input" type="radio"
+              name="flexRadioDefault" id="flexRadioDefault2" value="2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Cash On Delivery
+            </label>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12">
+              <button [disabled]="nam.invalid || add.invalid || mobile.invalid  || pay.invalid" (click)="placeOrder()"
+                type="button" id="btnSubmit" class="btn btn-primary border-btn  d-block mx-auto">Place
+                Order</button>
             </div>
-            <div class="form-check new mt-3 ">
-              <input required #pay="ngModel" ngModel [(ngModel)]="paymentMethod" class="form-check-input" type="radio"
-                name="flexRadioDefault" id="flexRadioDefault2" value="2">
-              <label class="form-check-label" for="flexRadioDefault2">
-                Cash On Delivery
-              </label>
-            </div>
-            
-            <div class="row mt-5">
-              <div class="col-12">
-                <button [disabled]="nam.invalid || add.invalid || mobile.invalid  || pay.invalid"
-                  (click)="placeOrder()" type="button" id="btnSubmit"
-                  class="btn btn-primary border-btn  d-block mx-auto">Place
-                  Order</button>
-              </div>
-            </div>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-
