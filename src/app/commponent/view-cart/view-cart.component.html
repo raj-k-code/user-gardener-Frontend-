@@ -7,11 +7,16 @@
             <div class="title">
               <div class="row">
                 <div class="col">
-                  <h4><b>Shopping Cart</b></h4>
+                  <h4><b>Shopping Cart</b> </h4>
+                  <div *ngIf="productList.length > 0" class="d-flex">
+                    {{productList.length}} items</div>
                 </div>
-                <div *ngIf="productList.length > 0" class="col align-self-center text-right text-muted">
+                </div>
+                <!-- <div  routerLink="/"  class="col align-self-center text-right new "><i style="font-size: 30px; top: 0;" class=" mt-5 fa fa-arrow-circle-left" aria-hidden="true"></i><span class="text-muted "></span>
+                </div> -->
+                <!-- <div *ngIf="productList.length > 0" class="col align-self-center text-right new text-muted">
                   {{productList.length}} items</div>
-              </div>
+              </div> -->
             </div>
             <div *ngIf="productList.length > 0" class="row border-top ">
               <div *ngFor="let product of productList; index as i" class="row main align-items-center">
@@ -27,10 +32,10 @@
                   </p>
                 </div>
                 <div class="col px-5">₹ {{product.productPrice}} </div>
-                <div class="col"><i (click)="removeFromCart(i,product._id)"
-                    class="text-danger fa fa-trash btn-area mr-3 cursor-pointer"></i>
-                  <span><i (click)="moveToFav(product._id,i)"
-                      class="text-success fa fa-heart btn-area1 cursor-pointer"></i></span>
+                <div class="col  icon"><i (click)="moveToFav(product._id,i)"
+                    class="text-success mr-5 fa fa-heart btn-area1 cursor-pointer cart-delete-icon"></i>
+                  <span><i (click)="removeFromCart(i,product._id)"
+                      class="text-primary  fa fa-trash btn-area  cursor-pointer cart-delete-icon"></i></span>
                 </div>
               </div>
             </div>
@@ -39,8 +44,7 @@
                 <h1 class="text-danger">Your Cart is empty.</h1>
               </div>
             </div>
-            <div routerLink="/" class="back-to-shop "><a>&leftarrow;</a><span class="text-muted cursor-pointer">Back to
-                Home</span>
+            <div routerLink="/" class="back-to-shop cursor-pointer mt-2 "><i style="font-size: 30px;" class=" mt-5 fa fa-arrow-circle-left" aria-hidden="true"></i><span class="text-muted "></span>
             </div>
           </div>
         </div>

@@ -203,9 +203,9 @@
       </div>
     </div>
 
-    <div class="row justify-content-center padding-md">
+    <div class="row justify-content-center mt-5">
       <!-- Single Blog Post Area -->
-      <div *ngFor="let blog of blogList; index as i" class="col-12 col-md-6 col-lg-4 mb-3">
+      <div *ngFor="let blog of blogList; index as i" class="col-12 col-sm-12 col-md-6 col-lg-4 mb-5">
         <div *ngIf="i < 3" class="single-blog-post mb-100">
           <div class="post-thumbnail mb-30 cursor-pointer">
             <a (click)="viewBlog(blog._id)"><img style="height: 255px; width: 350px;" src="{{blog.blogImage}}"
@@ -213,7 +213,7 @@
           </div>
           <div class="post-content">
             <a (click)="viewBlog(blog._id)" class="post-title cursor-pointer">
-              <h5>{{blog.blogTitle}}</h5>
+              <h5 class="mt-2">{{blog.blogTitle}}</h5>
             </a>
             <div class="post-meta">
               <a><i class="fa fa-clock-o" aria-hidden="true"></i> {{blog.createdDate | date}}</a>
@@ -229,9 +229,13 @@
 <!-- ##### Blog Area End ##### -->
 
 
+
 <!-- SPINNER -->
 <ngx-spinner bdColor="white" template="<img style='height:300px;width:300px;' src='../../assets/images/spinner.gif' />">
 </ngx-spinner>
+
+
+
 
 
 <!-- Bootstrap core JavaScript ================================================== -->

@@ -1,7 +1,7 @@
 <div class="container padding-md">
-  <div class=" row pt-5 ">
+  <div class=" row  ">
     <div class="col">
-      <h2 class="text-center mb-5">PRODUCT DETAILS</h2>
+      <h2 class="text-center mb-5">Product Details</h2>
     </div>
   </div>
   <div class="container">
@@ -10,28 +10,23 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="{{product.productImage}}" alt="First slide">
+              <img class="d-block w-100" src="{{product.productImage}}" alt="Product Image">
             </div>
-
           </div>
         </div>
       </div>
       <div class="col-md-7">
-        <h2>{{product.productName | uppercase}}</h2>
-
+        <h2 class="product-name">{{product.productName | uppercase}}</h2>
         <p class="price">Price: ₹{{product.productPrice}}.00</p>
-        <p *ngIf="product.productRating.length > 0"><b>Rating: </b>
-          <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
+        <p  *ngIf="product.productRating.length > 0"><b>Rating: </b>
+          <ngb-rating class="pr-2 pl-2" style="font-size: 25px;" [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
           {{product.productRating.length}} Ratings
         </p>
-
-
-        <p><b>Description:</b>{{product.productDescription}}</p>
-
-        <button (click)="addToFav(product._id)" type="button" class="btn btn-primary mb-3 mr-3">Add to
-          favourite</button>
-        <button (click)="addToCart(product._id)" type="button" class="btn btn-primary border-btn mb-3">Add to
+        <p class="product-name"><b>Description:</b>{{product.productDescription}}</p>
+        <button (click)="addToCart(product._id)" type="button" class="btn btn-primary mr-3 mb-3">Add to
           cart</button>
+        <button (click)="addToFav(product._id)" type="button" class="btn btn-primary border-btn mb-3 ">Add to
+          favourite</button>
       </div>
     </div>
   </div>

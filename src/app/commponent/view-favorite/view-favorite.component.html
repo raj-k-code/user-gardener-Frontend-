@@ -39,22 +39,22 @@
   <div *ngFor="let product of productList;  index as i"
     class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between">
     <div (click)="viewProduct(product._id)" class="text-center cursor-pointer">
-      <img style="height: 100px" src={{product.productImage}} alt="" />
+      <img style="height: 100px; width: 150px;" src={{product.productImage}} alt="" />
     </div>
     <div class="text-center text-uppercase text-secondary">
-      <h5 (click)="viewProduct(product._id)" class="d-block my-3 cursor-pointer">{{product.productName}}</h5>
+      <h5 (click)="viewProduct(product._id)" style="width: 150px ; height:25px; overflow:hidden;" class="d-block my-3 cursor-pointer">{{product.productName}}</h5>
     </div>
     <div class="text-center">
-      <h3 class="my-2 font-weight-bold">₹{{product.productPrice}}</h3>
+      <h5 class="my-2 font-weight-bold">₹{{product.productPrice}}</h5>
     </div>
 
     <div class="text-center cursor-pointer">
-      <a (click)="viewProduct(product._id)" class="btn btn-primary border-btn  px-3 py-2 mr-2 ">View
-        More</a>
-      <!-- <a (click)="viewProduct(product._id)" class="btn btn-primary border-btn">View</a> -->
-
-      <a class=" text-success px-4 py-3 h2 main-btn"><i (click)="moveToFav(product._id, i)" class="fa fa-cart-plus"></i>
-        <i (click)="removeFromFav(i, product._id)" class="fa fa-trash text-danger ml-4"></i></a>
+      <button (click)="viewProduct(product._id)" class="btn btn-primary border-btn  px-3 py-2 mr-2 ">View More</button>
+      <!-- <a (click)="viewProduct(product._id)" class="btn btn-primary border-btn  px-3 py-2 mr-2 ">View
+        More</a> -->
+      <a class=" text-success px-4 py-3 h2 main-btn"><i (click)="moveToFav(product._id, i)"
+          class="fa fa-cart-plus  cart-delete-icon"></i>
+        <i (click)="removeFromFav(i, product._id)" class="fa fa-trash text-primary ml-4 cart-delete-icon"></i></a>
     </div>
   </div>
 

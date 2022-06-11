@@ -212,6 +212,9 @@ line-height: 25px;
   z-index: 1;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
+  overflow: hidden;
+  height: 400px;
+  max-width: 350px;
 }
 
 .single-blog-post .post-thumbnail {
@@ -224,6 +227,8 @@ line-height: 25px;
   transition-duration: 500ms;
   line-height: 1.5;
   margin-bottom: 15px;
+  height: 30px;
+  overflow: hidden;
 }
 
 .single-blog-post .post-content .post-title h5:hover {
@@ -327,7 +332,5 @@ line-height: 25px;
   background-color: #70c745;
   color: #ffffff;
 }
-
-
 
 /* Blog CSS End   */

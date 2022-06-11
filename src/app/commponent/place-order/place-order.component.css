@@ -41,7 +41,7 @@
 
 .order-form .container {
   color: #050505;
-  padding: 20px;
+ 
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
 
@@ -60,7 +60,7 @@
   box-shadow: 0 0 12px gray;
 }
 
-.order-form-input {
+/* .order-form-input {
   width: 100%;
   padding: 8px 8px;
   border-width: 1px !important;
@@ -73,4 +73,352 @@
   line-height: 1.2em;
   background-color: white;
   border-color: #0a0a0a;
+} */
+/* .new{
+  margin-left: 5%;
+} */
+input{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(31, 163, 31);
+  border-top: transparent;
+  margin-bottom: 2%;
+  
+
 }
+
+
+
+
+
+
+
+
+
+/* signup style start */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik&family=Sansita+Swashed:wght@300&display=swap');
+
+.signin {
+  position: relative;
+  /* max-width: 400px; */
+  max-height: 730px;
+  height: 530px;
+  width: 450px;
+  background: white;
+  border-radius: 10px;
+  box-shadow:  0 0 10px  rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.logo {
+  object-fit: cover;
+  padding:  25%;
+}
+
+@media only screen and (max-width: 500px) {
+  .signin {
+    width: 390px;
+  }
+
+  .logo {
+    padding: 10px 16%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .signin {
+    width: 340px;
+  }
+
+  .logo {
+    padding: 10px 14%;
+  }
+}
+
+
+
+
+.container .forms {
+  padding: 30px;
+}
+
+.container .forms .header {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.forms .title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: rgb(61, 61, 253);
+  border-radius: 25px;
+}
+
+.forms .input-field {
+  position: relative;
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+}
+
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid rgb(18, 17, 17);
+  border-top: 2px solid transparent;
+}
+
+.input-field input:is(:focus,
+  :valid) {
+  border-bottom-color: green
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(56, 55, 55);
+  font-size: 23px;
+}
+
+.input-field input:is(:focus,
+  :valid) {
+  border-bottom-color: green
+}
+
+.input-field i.icon {
+  left: 0;
+}
+
+.input-field i.showHidePw {
+  right: 0;
+}
+
+.forms .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input {
+  margin: 0 8px -2px 4px;
+}
+
+.forms .text {
+  color: #333;
+  font-size: 14px;
+}
+
+.forms a.text {
+  color: #12f77d;
+  text-decoration: none;
+  align-items: center;
+}
+
+.forms a:hover {
+  text-decoration: underline;
+}
+
+.forms .button {
+  margin-top: 35px;
+}
+
+.forms .button input {
+  border: none;
+  color: rgb(239, 243, 240);
+  font-size: 17px;
+  width: 200px;
+  margin-left: 70px;
+  font-weight: 500px;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: rgb(121, 119, 119);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover {
+  box-shadow: inset 400px 0 0 0 rgb(76, 217, 97);
+  transition: ease-out 50s;
+  color: rgb(255, 255, 255)
+}
+
+.forms .login-signup {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.forms .Google-signin {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+/* signup style end */
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik&family=Sansita+Swashed:wght@300&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+            max-width: 430px;
+            height: 610px;
+            width: 420px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .forms {
+            padding: 30px;
+        }
+
+        .container .forms .header {
+            position: relative;
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .forms .title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            background-color: rgb(61, 61, 253);
+            border-radius: 25px;
+        }
+
+        .forms .input-field {
+            position: relative;
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-right: 30px;
+            height: 50px;
+        }
+
+        .input-field input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 0 35px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            border-bottom: 2px solid rgb(18, 17, 17);
+            border-top: 2px solid transparent;
+        }
+
+        .input-field input:is(:focus,
+         :valid) {
+            border-bottom-color: green
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(56, 55, 55);
+            font-size: 23px;
+        }
+
+        .input-field input:is(:focus,
+         :valid) {
+            border-bottom-color: green
+        }
+
+        .input-field i.icon {
+            left: 0;
+        }
+
+        .input-field i.showHidePw {
+            right: 0;
+        }
+
+        .forms .checkbox-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .forms .text {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .forms a.text {
+            color: #12f77d;
+            text-decoration: none;
+            align-items: center;
+        }
+
+        .forms a:hover {
+            text-decoration: underline;
+        }
+
+        .forms .button {
+            margin-top: 35px;
+        }
+
+        .forms .button input {
+            border: none;
+            color: rgb(242, 248, 243);
+            font-size: 17px;
+            width: 150px;
+            margin-left: 70px;
+            font-weight: 500px;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            background-color: rgb(121, 119, 119);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button input:hover {
+            box-shadow: inset 400px 0 0 0 rgb(76, 217, 97);
+            transition: ease-out 50s;
+            color: rgb(255, 255, 255)
+        }
+
+        .forms .login-signup {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .forms .Google-signin {
+            margin-top: 10px;
+            text-align: center;
+        } */
+

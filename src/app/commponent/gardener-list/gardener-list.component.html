@@ -1,4 +1,4 @@
-<div class="container">
+<div id="" class="container">
   <div class="row">
     <div class="section-heading col-sm-6 offset-sm-3 mt-4 mb-4">
       <h2 class="text-center">Our Expert Gardeners</h2>
@@ -21,9 +21,15 @@
         </a>
         <hr>
         <div class="button">
-          <a (click)="setData(gardener._id)" *ngIf="!isBooked[i]" data-toggle="modal" data-target="#exampleModalCenter"
-            class="btn btn-primary border-btn">Book</a>
-          <a *ngIf="isBooked[i]" (click)="alreadyBook()" class="btn btn-primary border-btn">Booked</a>
+          <button (click)="setData(gardener._id)" *ngIf="!isBooked[i]" data-toggle="modal"
+            data-target="#exampleModalCenter" class="btn btn-primary ">Book</button>
+
+          <!-- <a (click)="setData(gardener._id)" *ngIf="!isBooked[i]" data-toggle="modal" data-target="#exampleModalCenter"
+            class="btn btn-primary border-btn">Book</a> -->
+
+          <!-- <a *ngIf="isBooked[i]" (click)="alreadyBook()" class="btn btn-primary border-btn">Booked</a> -->
+
+          <button *ngIf="isBooked[i]" (click)="alreadyBook()" class="btn btn-primary border-btn">Booked</button>
         </div>
       </div>
     </div>

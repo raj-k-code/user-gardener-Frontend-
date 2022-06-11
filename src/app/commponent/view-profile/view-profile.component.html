@@ -60,30 +60,64 @@
 <div class="page-content page-container" id="page-content">
   <div class="padding">
     <div class="row  d-flex justify-content-center">
-      <div class="col-xl-10 col-md-12">
+      <div class="col-xl-8 col-md-12">
         <div class="card user-card-full">
-          <div class="row m-l-0 m-r-0 hightw">
+          <div class="  row m-l-0 m-r-0 hightw">
+            
             <div class="col-sm-4 bg-c-lite-green border1 user-profile">
               <div class="card-block text-center ">
                 <div class="m-b-25 " style="margin-top: 10%;">
                   <img src="{{image}}" width="200px" height="200px" class="img-radius" alt="User-Profile-Image">
                 </div>
                 <h6 class="f-w-600 mt-3 imageName">{{name}}</h6>
-                <p class="mt-3" *ngIf="!(number == '2')">User</p>
-                <p class="mt-3" *ngIf="number == '2'">Gardener</p>
+                <!-- <p class="mt-3" *ngIf="!(number == '2')">User</p>
+                <p class="mt-3" *ngIf="number == '2'">Gardener</p> -->
                 <ngb-rating *ngIf="number == '2'" [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating>
                 <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 mt-5 f-16"></i>
               </div>
             </div>
             <div class="col-sm-8">
               <div class="card-block">
-                <h6 class="m-b-20 p-b-5 b-b-default f-w-600 pHeading">Information</h6>
+                <h6 class="m-b-20 mt-3 p-b-5 b-b-default f-w-600 pHeading"><p class=""  *ngIf="!(number == '2')">User Information</p><p class=""  *ngIf="number == '2'">Gardener Information</p></h6>
                 <div class="row mt-5">
-                  <div class="col-sm-6 mb-2">
-                    <p class="mb-1  pData">Name</p>
-                    <h6 class="text-muted  pHeading">{{name}}</h6>
+                  <div class="col-sm-4 mb-2">
+                    <h5 class="  ">Name :</h5>
                   </div>
-                  <div class="col-sm-6 mb-2">
+                  
+                  <div class="col-sm-6">
+                    <h6 class="text-muted  ">{{name}}</h6>
+                  </div>
+                 
+                  <div class="col-sm-4 mb-2">
+                    <h5 class="  ">Address :</h5>
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <h6 class="text-muted  ">{{address}}</h6>
+                  </div>
+                  <div class="col-sm-4 mb-2">
+                    <h5 class="  ">Email :</h5>
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <h6 class="text-muted  ">{{email}}</h6>
+                  </div>
+                  <div class="col-sm-4 mb-2">
+                    <h5 class="  ">Phone :</h5>
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <h6 class="text-muted  ">{{mobile}}</h6>
+                  </div>
+                  <div *ngIf="number =='2'" class="col-sm-4 mb-2">
+                    <h5 class="  ">Experience :</h5>
+                  </div>
+                  
+                  <div *ngIf="number =='2'" class="col-sm-6">
+                    <h6 class="text-muted  ">{{experience}}</h6>
+                  </div> 
+                  
+                  <!-- <div class="col-sm-6 mb-2">
                     <p class="mb-1  pData">Address</p>
                     <h6 class="text-muted  pHeading">{{address}}
                     </h6>
@@ -99,12 +133,13 @@
                   <div *ngIf="number =='2'" class="col-sm-6 mb-2">
                     <p class="mb-1  pData ">Experience</p>
                     <h6 class="text-muted  pHeading">{{experience}}</h6>
-                  </div>
-                  <button data-toggle="modal" data-target="#exampleModalCenter" class="mt-5 btn btn-primary"
-                    style="width: 25%; margin-left: 35%;">Edit</button>
+                  </div> -->
+                  <button data-toggle="modal" data-target="#exampleModalCenter" class="mt-5 mi-2 mr-2 btn btn-primary"
+                    style="margin-left: 3%; ">Edit</button>
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
@@ -128,10 +163,10 @@
             <div class="col-md-4 border-right">
 
               <div class="d-flex flex-column align-items-center text-center p-3 py-5 ">
-                <img class="rounded-circle mt-5" [src]="showImage" width="150" alt="">
+                <img class="rounded-circle mt-3 mr-2" [src]="showImage" width="130" height="130" alt="">
                 <span class="font-weight-bold">{{name}}</span>
                 <span class="text-black-50">
-                  <label for="file-input"><i style="cursor: pointer;" class="fa fa-edit"></i></label>
+                  <label for="file-input"><i style="cursor: pointer; color: blue;" class="fa fa-edit"></i></label>
                   <input ngModel #foto="ngModel" id="file-input" (change)="onSelect($event)" type="file"
                     style="display: none;" />
                 </span>
@@ -139,25 +174,25 @@
 
             </div>
             <div class="col-md-8">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <div class="p-3 py-5">
+              <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+              <div class="p-1 py-2">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                    <h6 routerLink="/" data-dismiss="modal">Back to home</h6>
+                  <div class="d-flex flex-row align-items-center back">
                   </div>
                 </div>
                 <div class="row mt-2">
                   <div class="col-md-12"><input required ngModel #nam="ngModel" [(ngModel)]="name" type="text"
-                      class="form-control" placeholder="Name" value="{{name}}">
+                      class="" placeholder="Name" value="{{name}}">
                   </div>
                 </div>
                 <span class="text-danger" *ngIf="nam.errors?.required && nam.touched "><small>Please Enter
                     Name</small></span>
                 <div class="row mt-3">
                   <div class="col-md-12"><input pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)" required ngModel
-                      #emailId="ngModel" [(ngModel)]="email" type="text" class="form-control" placeholder="Email"
+                      #emailId="ngModel" [(ngModel)]="email" type="text" class="" placeholder="Email"
                       value="{{email}}">
                   </div>
                 </div>
@@ -167,7 +202,7 @@
                     Email Address</small></span>
                 <div class="row mt-3">
                   <div class="col-md-12"><input pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" required ngModel
-                      #mob="ngModel" [(ngModel)]="mobile" type="text" class="form-control" value="{{mobile}}"
+                      #mob="ngModel" [(ngModel)]="mobile" type="text" class="" value="{{mobile}}"
                       placeholder="Mobile"></div>
                 </div>
                 <span class="text-danger" *ngIf="mob.errors?.required && mob.touched "><small>Please Enter Mobile
@@ -176,7 +211,7 @@
                     Mobile Number</small></span>
                 <div class="row mt-3">
                   <div class="col-md-12">
-                    <input required ngModel #add="ngModel" [(ngModel)]="address" type="text" class="form-control"
+                    <input required ngModel #add="ngModel" [(ngModel)]="address" type="text" class=""
                       placeholder="Address" value="{{address}}">
                   </div>
                 </div>
@@ -184,8 +219,8 @@
                     Address</small></span>
                 <div *ngIf="number =='2'" class="row mt-3">
                   <div class="col-md-12">
-                    <input required ngModel #exp="ngModel" [(ngModel)]="experience" type="text" class="form-control"
-                      placeholder="Experience" value="{{experience}}">
+                    <input required ngModel #exp="ngModel" [(ngModel)]="experience" type="text" class=""
+                      placeholder="Experience" value="{{experience }} ">
                   </div>
                   <span class="text-danger" *ngIf="exp.errors?.required && exp.touched "><small>Please Enter
                       Your Experience</small></span>

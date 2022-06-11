@@ -281,11 +281,17 @@ iframe {
 
 
 /* :: 19.0 Blog Area CSS */
+
+
+
 .single-blog-post {
   position: relative;
   z-index: 1;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
+  overflow: hidden;
+  height: 400px;
+  max-width: 350px;
 }
 
 .single-blog-post .post-thumbnail {
@@ -298,6 +304,8 @@ iframe {
   transition-duration: 500ms;
   line-height: 1.5;
   margin-bottom: 15px;
+  height: 30px;
+  overflow: hidden;
 }
 
 .single-blog-post .post-content .post-title h5:hover {

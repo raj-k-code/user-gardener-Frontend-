@@ -38,7 +38,7 @@ export class PlaceOrderComponent implements OnInit {
     this.orderDetails = {
       Name: this.Name,
       Mobile: this.Mobile,
-      Address: this.Address + "," + this.City + "," + this.Country,
+      Address: this.Address,
       userId: sessionStorage.getItem('userId'),
       productList: cartData.cartData,
       total: cartData.total,

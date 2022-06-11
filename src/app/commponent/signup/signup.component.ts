@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
       this.userService.signUp(this.user).subscribe(data => {
 
         if (!data.message) {
-          this.toaster.success("Signup Successfully", "Success");
+          this.toaster.success("Check your inbox and verify your email", "Success");
           this.router.navigate(['signin']);
         }
 
@@ -70,7 +70,7 @@ export class SignupComponent implements OnInit {
         console.log(data);
 
         if (!data.message) {
-          this.toaster.success("Signup Successfully", "Success");
+          this.toaster.success("Check your inbox and verify your email", "Success");
           this.router.navigate(['signin']);
         }
 

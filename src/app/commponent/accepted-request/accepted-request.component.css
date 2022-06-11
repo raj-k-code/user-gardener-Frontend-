@@ -74,6 +74,7 @@ img {
   transition: 0.5s;
   overflow: hidden !important;
   position: relative;
+  height: 472px;
 }
 
 .card-box:hover {
