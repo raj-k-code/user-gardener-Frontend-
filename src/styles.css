@@ -697,3 +697,30 @@ footer h5 {
 }
 
 /*  */
+
+#top-btn {
+  display: none;
+  background-color: #70c745;
+  border-radius: 0;
+  bottom: 0;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  right: 50px;
+  text-align: center;
+  width: 40px;
+  transition-duration: 500ms;
+}
+
+#top-btn:hover {
+  background-color: #303030;
+  color: #ffffff;
+}
+
+/* remove the below if you don't want smooth scrolling */
+html,
+body {
+  scroll-behavior: smooth;
+}
