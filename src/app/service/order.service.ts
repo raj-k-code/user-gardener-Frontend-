@@ -10,17 +10,17 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   public placeOrder(orderDetails: any) {
-    let placeOrderPi = "https://prakritee.herokuapp.com/order/order";
+    let placeOrderPi = "http://localhost:3000/order/order";
     return this.http.post<any>(placeOrderPi, orderDetails);
   }
 
   public viewOrderHistory() {
-    let viewOrderHistoryApi = "https://prakritee.herokuapp.com/order/view-order";
+    let viewOrderHistoryApi = "http://localhost:3000/order/view-order";
     return this.http.post(viewOrderHistoryApi, { userId: sessionStorage.getItem('userId') });
   }
 
   public particularOrder(orderId: any) {
-    let particularOrderApi = "https://prakritee.herokuapp.com/order/order-by-id/" + orderId;
+    let particularOrderApi = "http://localhost:3000/order/order-by-id/" + orderId;
     return this.http.get(particularOrderApi);
   }
 

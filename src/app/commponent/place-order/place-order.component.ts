@@ -63,7 +63,7 @@ export class PlaceOrderComponent implements OnInit {
             "description": "The Green Wave",
             "image": "../../../assets/images/logoprikriti1.png",
             "order_id": data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": "https://prakritee.herokuapp.com/order/order-status",
+            "callback_url": "http://localhost:3000/order/order-status",
             "prefill": {
               "name": this.orderDetails.Name,
               "email": "rajkasotiya26@gmail.com",

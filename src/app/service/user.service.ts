@@ -13,42 +13,42 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   public signIn(user: User) {
-    let signInApi = "https://prakritee.herokuapp.com/user/signin";
+    let signInApi = "http://localhost:3000/user/signin";
     return this.http.post<any>(signInApi, { userEmail: user.userEmail, userPassword: user.userPassword });
   }
 
   public signInWithGoogle(email: any) {
-    let signInWithGoogleApi = "https://prakritee.herokuapp.com/user/signin-with-google";
+    let signInWithGoogleApi = "http://localhost:3000/user/signin-with-google";
     return this.http.post<any>(signInWithGoogleApi, { userEmail: email });
   }
 
   public signUp(user: User) {
-    let signUpApi = "https://prakritee.herokuapp.com/user/signup";
+    let signUpApi = "http://localhost:3000/user/signup";
     return this.http.post<any>(signUpApi, { userName: user.userName, userEmail: user.userEmail, userPassword: user.userPassword, userMobile: user.userMobile, userAddress: user.userAddress });
   }
 
   public forgotPassword(email: string) {
-    let forgotPasswordApi = "https://prakritee.herokuapp.com/user/forgot-password"
+    let forgotPasswordApi = "http://localhost:3000/user/forgot-password"
     return this.http.post<any>(forgotPasswordApi, { userEmail: email });
   }
 
   public viewProfile(): Observable<User> {
-    let viewProfileApi = "https://prakritee.herokuapp.com/user/user-by-id/" + sessionStorage.getItem('userId');
+    let viewProfileApi = "http://localhost:3000/user/user-by-id/" + sessionStorage.getItem('userId');
     return this.http.get<User>(viewProfileApi);
   }
 
   public updateProfile(formData: any): Observable<any> {
-    let updateProfileApi = "https://prakritee.herokuapp.com/user/edit";
+    let updateProfileApi = "http://localhost:3000/user/edit";
     return this.http.post<any>(updateProfileApi, formData);
   }
 
   public checkEmail(email: any) {
-    let checkEmailApi = "https://prakritee.herokuapp.com/user/check-email/" + email;
+    let checkEmailApi = "http://localhost:3000/user/check-email/" + email;
     return this.http.get<any>(checkEmailApi);
   }
 
   public checkMobile(mobile: any) {
-    let checkMobileApi = "https://prakritee.herokuapp.com/user/check-mobile/" + mobile;
+    let checkMobileApi = "http://localhost:3000/user/check-mobile/" + mobile;
     return this.http.get<any>(checkMobileApi);
   }
 }

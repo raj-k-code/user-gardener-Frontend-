@@ -9,7 +9,7 @@ export class QueryService {
   constructor(private http: HttpClient) { }
 
   public sendQuery(queryData: any) {
-    let sendQueryApi = "https://prakritee.herokuapp.com/query/add"
+    let sendQueryApi = "http://localhost:3000/query/add"
     return this.http.post<any>(sendQueryApi, queryData);
   }
 

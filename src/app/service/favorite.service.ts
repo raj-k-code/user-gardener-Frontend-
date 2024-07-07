@@ -9,16 +9,16 @@ export class FavoriteService {
   constructor(private http: HttpClient) { }
 
   public addToFav(productId: any) {
-    let addToFavApi = "https://prakritee.herokuapp.com/fav/add";
+    let addToFavApi = "http://localhost:3000/fav/add";
     return this.http.post<any>(addToFavApi, { userId: sessionStorage.getItem('userId'), productId: productId })
   }
 
   public viewFav() {
-    let viewFavApi = "https://prakritee.herokuapp.com/fav/view";
+    let viewFavApi = "http://localhost:3000/fav/view";
     return this.http.post<any>(viewFavApi, { userId: sessionStorage.getItem('userId') });
   }
   public removeFromFav(productId: any) {
-    let removeFromFavApi = "https://prakritee.herokuapp.com/fav/removeProduct";
+    let removeFromFavApi = "http://localhost:3000/fav/removeProduct";
     return this.http.post<any>(removeFromFavApi, { userId: sessionStorage.getItem('userId'), productId: productId });
   }
 }

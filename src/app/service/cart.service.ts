@@ -9,21 +9,21 @@ export class CartService {
   constructor(private http: HttpClient,) { }
 
   public addToCart(productId: any) {
-    let addToCartApi = "https://prakritee.herokuapp.com/cart/add";
+    let addToCartApi = "http://localhost:3000/cart/add";
     return this.http.post<any>(addToCartApi, { userId: sessionStorage.getItem('userId'), productId: productId })
   }
 
   public viewCart() {
-    let viewCartApi = "https://prakritee.herokuapp.com/cart/view";
+    let viewCartApi = "http://localhost:3000/cart/view";
     return this.http.post<any>(viewCartApi, { userId: sessionStorage.getItem('userId') });
   }
   public removeFromCart(productId: any) {
-    let removeFromCartApi = "https://prakritee.herokuapp.com/cart/removeProduct";
+    let removeFromCartApi = "http://localhost:3000/cart/removeProduct";
     return this.http.post<any>(removeFromCartApi, { userId: sessionStorage.getItem('userId'), productId: productId });
   }
 
   public deleteCart() {
-    let deleteCartApi = "https://prakritee.herokuapp.com/cart/delete";
+    let deleteCartApi = "http://localhost:3000/cart/delete";
     return this.http.post<any>(deleteCartApi, { userId: sessionStorage.getItem('userId') });
   }
 }
